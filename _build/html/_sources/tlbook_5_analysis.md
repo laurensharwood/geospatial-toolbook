@@ -2,11 +2,15 @@
 
 ---
 
+
 ## 1st 'Law' of Geography 
 "everything is related to everything else, but near things are more related than distant things." - Walder Tobler
 * *not a scientific law, more of a starting point for thinking about why things are happening where*
 
 ## Spatial Autocorrelation
+Spatial autocorrelation measures how similar values of a variable are relative to how close they are. 
+- Values range from -1 to +1, such that -1 would represent a checkerboard pattern and elevation in flat regions would have values closer to +1. 
+
 - Moran's I - measure of spatial autocorrelation 
 
 ## Topological Relations
@@ -19,11 +23,10 @@
 ## Set Operations
 ![setoperations](img/setoperations.png)
 ## Point Pattern Analysis
-- Avg Nearest Neighbor   
-- Convex hull/envelope from common points    
-- Ripley's K - test for significant clustering 
-- Getis Ord D - hot/cold spot   
-
+- [Avg Nearest Neighbor](https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-statistics/h-how-average-nearest-neighbor-distance-spatial-st.htm)   
+- Convex hull / envelope / minimum bounding geometry from common points    
+- [Ripley's K](https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-statistics/h-how-multi-distance-spatial-cluster-analysis-ripl.htm) - Point Clustering at different search distances / bandwidths
+- [Getis Ord D](https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-statistics/h-how-hot-spot-analysis-getis-ord-gi-spatial-stati.htm) - Hot Spot / Cold Spot Analysis 
 ## Buffer 
 - points, lines, or polygon vectors. Add or subtract buffer distance area 
 

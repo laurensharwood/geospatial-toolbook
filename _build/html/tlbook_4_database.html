@@ -185,7 +185,7 @@
 <li class="toctree-l1"><a class="reference internal" href="tlbook_3_geodata.html">3. Geographic Data</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tlbook_5_analysis.html">5. Geospatial Analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tlbook_6_programming.html">6.Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tlbook_6_programming.html">6. Programming</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tlbook_7_hpc.html">7. High Performance Computing</a></li>
 </ul>
 
@@ -473,15 +473,11 @@ The process of breaking down tables in a database &amp; managing the relationshi
 <p>Similar to indexes in books, indexes in tables improve lookup performance, but by building a tree diagram using a unique ID key</p>
 <p><b>Clustered Index</b>: index sorted by a column</p>
 <p><em>Note different syntax to create clustered index in postgreSQL vs mySQL</em>:</p>
-<ul class="simple">
-<li><p>postgreSQL:</p></li>
-</ul>
+<p><b>postgreSQL</b>:</p>
 <blockquote>
 <div><p>CLUSTER table_name USING column_name;</p>
 </div></blockquote>
-<ul class="simple">
-<li><p>mySQL:</p></li>
-</ul>
+<p><b>mySQL</b>:</p>
 <blockquote>
 <div><p>CREATE CLUSTERED INDEX index_name ON db.table_name (column_name);</p>
 </div></blockquote>

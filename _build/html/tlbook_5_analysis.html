@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'tlbook_5_analysis';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="6.Programming" href="tlbook_6_programming.html" />
+    <link rel="next" title="6. Programming" href="tlbook_6_programming.html" />
     <link rel="prev" title="4. Databases" href="tlbook_4_database.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -185,7 +185,7 @@
 <li class="toctree-l1"><a class="reference internal" href="tlbook_3_geodata.html">3. Geographic Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tlbook_4_database.html">4. Databases</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Geospatial Analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tlbook_6_programming.html">6.Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tlbook_6_programming.html">6. Programming</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tlbook_7_hpc.html">7. High Performance Computing</a></li>
 </ul>
 
@@ -417,7 +417,9 @@ document.write(`
 </section>
 <section id="spatial-autocorrelation">
 <h2>Spatial Autocorrelation<a class="headerlink" href="#spatial-autocorrelation" title="Link to this heading">#</a></h2>
+<p>Spatial autocorrelation measures how similar values of a variable are relative to how close they are.</p>
 <ul class="simple">
+<li><p>Values range from -1 to +1, such that -1 would represent a checkerboard pattern and elevation in flat regions would have values closer to +1.</p></li>
 <li><p>Moran’s I - measure of spatial autocorrelation</p></li>
 </ul>
 </section>
@@ -438,10 +440,10 @@ document.write(`
 <section id="point-pattern-analysis">
 <h2>Point Pattern Analysis<a class="headerlink" href="#point-pattern-analysis" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Avg Nearest Neighbor</p></li>
-<li><p>Convex hull/envelope from common points</p></li>
-<li><p>Ripley’s K - test for significant clustering</p></li>
-<li><p>Getis Ord D - hot/cold spot</p></li>
+<li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-statistics/h-how-average-nearest-neighbor-distance-spatial-st.htm">Avg Nearest Neighbor</a></p></li>
+<li><p>Convex hull / envelope / minimum bounding geometry from common points</p></li>
+<li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-statistics/h-how-multi-distance-spatial-cluster-analysis-ripl.htm">Ripley’s K</a> - Point Clustering at different search distances / bandwidths</p></li>
+<li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-statistics/h-how-hot-spot-analysis-getis-ord-gi-spatial-stati.htm">Getis Ord D</a> - Hot Spot / Cold Spot Analysis</p></li>
 </ul>
 </section>
 <section id="buffer">
@@ -556,7 +558,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">6.Programming</p>
+        <p class="prev-next-title">6. Programming</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

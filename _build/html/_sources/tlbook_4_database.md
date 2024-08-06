@@ -58,10 +58,10 @@ Similar to indexes in books, indexes in tables improve lookup performance, but b
 
 *Note different syntax to create clustered index in postgreSQL vs mySQL*: 
 
-* postgreSQL:
+<b>postgreSQL</b>:  
 > CLUSTER table_name USING column_name;
 
-* mySQL:
+<b>mySQL</b>:  
 > CREATE CLUSTERED INDEX index_name ON db.table_name (column_name);
 
 ### Integrity
