@@ -1,4 +1,4 @@
-# 6.Programming
+# 6. Programming
 
 ---
 
