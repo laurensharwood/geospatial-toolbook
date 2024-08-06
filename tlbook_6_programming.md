@@ -5,22 +5,22 @@
 ## Python packages used in [geo-tlbx repository](https://github.com/laurensharwood/geo-tlbx)
 
 General:  
-- ```numpy``` - arrays   
-- ```pandas``` - tables   
-- ```datetime``` - dates, times  
-- ```tqdm```- progress bars   
-- ```dask``` -  for parallel computing / reading arrays / tables larger than memory  
+- ```numpy``` arrays   
+- ```pandas``` tables   
+- ```datetime``` dates, times  
+- ```tqdm``` progress bars   
+- ```dask``` parallel computing / reading arrays / tables larger than memory  
 
 Database Translation:  
-- ```sqlalchemy``` - ORM: generates SQL statements
-- ```psycopg2-binary``` - driver: sends SQL statements to postgreSQL database
-- ```sqlglot``` -  SQL parser, transpiler, optimizer, & engine  DuckDB, Spark / Databricks, Snowflake, BigQuery
+- ```sqlalchemy``` ORM: generates SQL statements
+- ```psycopg2-binary``` driver: sends SQL statements to postgreSQL database
+- ```sqlglot``` SQL parser, transpiler, optimizer, & engine  DuckDB, Spark / Databricks, Snowflake, BigQuery
 
 
 Vector:
-- ```pyproj``` - projection information 
-- ```shapely``` - vector geometry 
-- ```geopandas``` - pandas table + shapely geometry + pyproj projection
+- ```pyproj``` projection information 
+- ```shapely``` vector geometry 
+- ```geopandas``` pandas table + shapely geometry + pyproj projection
 
 Read in spatial subset of file_name that's within region_gdf bounds to improve file reading speed: 
 ~~~
@@ -53,43 +53,43 @@ features_sub = features_gdf[features_gdf.index.isin(list(features_gdf.sindex.que
 
 
 Raster:
-- ```rasterio``` - for reading/writing .tiff (geoTIFF) files
-- ```rasterstats``` - for zonal statistics w/ a raster & vector
-- ```xarray``` - dask arrays, for .nc (netCDF) files
-- ```rioxarray``` - for saving netCDF files as geoTIFFs
-- ```geowombat``` - dask arrays
+- ```rasterio``` reading/writing geoTIFF (.tiff) files
+- ```rasterstats``` for zonal statistics w/ a raster & vector
+- ```xarray``` dask arrays, netCDF (.nc) files
+- ```rioxarray``` for saving netCDF files as geoTIFFs
+- ```geowombat``` dask arrays
 
 Analysis:
-- ```whitebox``` - WhiteboxTools is an advanced geospatial data analysis platform
-- ```scipy``` - math / algorithms 
-- ```scikit-learn``` - machine learning
-- ```scikit-image``` - image (raster) processing
-- ```pysal``` - spatial analysis
-- ```pointpats``` - point pattern analysis  
-- ```haversine``` - lon-lat distance calculation
+- ```whitebox``` WhiteboxTools is an advanced geospatial data analysis platform
+- ```scipy``` math / algorithms 
+- ```scikit-learn``` machine learning
+- ```scikit-image``` image (raster) processing
+- ```pysal``` spatial analysis
+- ```pointpats``` point pattern analysis  
+- ```haversine``` (longitude, latitude) distance calculation
 
 Data Visualization:  
-- ```matplotlib``` - standard static figures
-- ```plotly``` - interactive charts 
-- ```seaborn``` - interactive charts   
-- ```branca``` - color maps
+- ```matplotlib``` standard static figures
+- ```plotly``` interactive charts 
+- ```seaborn``` interactive charts   
+- ```branca``` color maps
 
 Mapping:  
-- ```localtileserver``` - loading basemap raster tiles 
-- ```ipyleaflet```  - Leaflet.js interactive web maps 
-- ```leafmap``` - interactive web mapping
-- ```folium``` - web mapping
-- ```mapclassify``` -  choropleth map classification schemes
+- ```localtileserver``` loading basemap raster tiles 
+- ```ipyleaflet```  Leaflet.js interactive web maps 
+- ```leafmap``` interactive web mapping
+- ```folium``` web mapping
+- ```mapclassify``` choropleth map classification schemes
 
 Data APIs:   
-- ```pygris```: US Census ## ACS & TIGER   
-- ```overpy```, ```osmnx```: OpenStreetMap    
-- ```openrouteservice```: routes
-- ```py3dep```: US 3D Elevation Program (3DEP)
+- ```pygris``` US Census ## ACS & TIGER   
+- ```overpy```, ```osmnx``` OpenStreetMap    
+- ```openrouteservice``` routes
+- ```py3dep``` US 3D Elevation Program (3DEP)
 
 GPX/TCX activity parsing:  
-- ```tcxreader```: parses .tcx activity files
-- ```gpxpy```: parses .gpx activity files
+- ```tcxreader``` parses .tcx activity files
+- ```gpxpy``` parses .gpx activity files
 
 IMAGERY / EARTH OBSERVATION DATA CATALOGS:       
 Microsoft Stac Catalog:
@@ -104,9 +104,9 @@ Planet Labs:
 - https://github.com/planetlabs/planet-client-python   
 - [Planet Labs Jupyter Notebooks](https://github.com/planetlabs/notebooks/tree/master/jupyter-notebooks)
 
-Google Earth Engine:
-- ```earthengine-api``` - earth engine 
-- ```geemap```- earth engine mapping helper
+Google Earth Engine (GEE):  
+- ```earthengine-api``` GEE   
+- ```geemap``` GEE mapping helper   
 
 ### Google Earth Engine - Python API
 

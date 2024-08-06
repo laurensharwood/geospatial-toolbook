@@ -420,23 +420,23 @@ document.write(`
 <h2>Python packages used in <a class="reference external" href="https://github.com/laurensharwood/geo-tlbx">geo-tlbx repository</a><a class="headerlink" href="#python-packages-used-in-geo-tlbx-repository" title="Link to this heading">#</a></h2>
 <p>General:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">numpy</span></code> - arrays</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pandas</span></code> - tables</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">datetime</span></code> - dates, times</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">tqdm</span></code>- progress bars</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">dask</span></code> -  for parallel computing / reading arrays / tables larger than memory</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">numpy</span></code> arrays</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pandas</span></code> tables</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">datetime</span></code> dates, times</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tqdm</span></code> progress bars</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dask</span></code> parallel computing / reading arrays / tables larger than memory</p></li>
 </ul>
 <p>Database Translation:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">sqlalchemy</span></code> - ORM: generates SQL statements</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">psycopg2-binary</span></code> - driver: sends SQL statements to postgreSQL database</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">sqlglot</span></code> -  SQL parser, transpiler, optimizer, &amp; engine  DuckDB, Spark / Databricks, Snowflake, BigQuery</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sqlalchemy</span></code> ORM: generates SQL statements</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">psycopg2-binary</span></code> driver: sends SQL statements to postgreSQL database</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sqlglot</span></code> SQL parser, transpiler, optimizer, &amp; engine  DuckDB, Spark / Databricks, Snowflake, BigQuery</p></li>
 </ul>
 <p>Vector:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pyproj</span></code> - projection information</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">shapely</span></code> - vector geometry</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">geopandas</span></code> - pandas table + shapely geometry + pyproj projection</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pyproj</span></code> projection information</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">shapely</span></code> vector geometry</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">geopandas</span></code> pandas table + shapely geometry + pyproj projection</p></li>
 </ul>
 <p>Read in spatial subset of file_name that’s within region_gdf bounds to improve file reading speed:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">bbox</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">region_gdf</span><span class="o">.</span><span class="n">total_bounds</span><span class="p">))</span>
@@ -485,48 +485,48 @@ document.write(`
 <p><a class="reference external" href="https://geopandas.org/en/stable/docs/reference/api/geopandas.GeoDataFrame.sjoin.html#geopandas.GeoDataFrame.sjoin">Spatial Joins</a></p>
 <p>Raster:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">rasterio</span></code> - for reading/writing .tiff (geoTIFF) files</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">rasterstats</span></code> - for zonal statistics w/ a raster &amp; vector</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">xarray</span></code> - dask arrays, for .nc (netCDF) files</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">rioxarray</span></code> - for saving netCDF files as geoTIFFs</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">geowombat</span></code> - dask arrays</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rasterio</span></code> reading/writing geoTIFF (.tiff) files</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rasterstats</span></code> for zonal statistics w/ a raster &amp; vector</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">xarray</span></code> dask arrays, netCDF (.nc) files</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rioxarray</span></code> for saving netCDF files as geoTIFFs</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">geowombat</span></code> dask arrays</p></li>
 </ul>
 <p>Analysis:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">whitebox</span></code> - WhiteboxTools is an advanced geospatial data analysis platform</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">scipy</span></code> - math / algorithms</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> - machine learning</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">scikit-image</span></code> - image (raster) processing</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pysal</span></code> - spatial analysis</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pointpats</span></code> - point pattern analysis</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">haversine</span></code> - lon-lat distance calculation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">whitebox</span></code> WhiteboxTools is an advanced geospatial data analysis platform</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scipy</span></code> math / algorithms</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> machine learning</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scikit-image</span></code> image (raster) processing</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pysal</span></code> spatial analysis</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pointpats</span></code> point pattern analysis</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">haversine</span></code> (longitude, latitude) distance calculation</p></li>
 </ul>
 <p>Data Visualization:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> - standard static figures</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">plotly</span></code> - interactive charts</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">seaborn</span></code> - interactive charts</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">branca</span></code> - color maps</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> standard static figures</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plotly</span></code> interactive charts</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">seaborn</span></code> interactive charts</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">branca</span></code> color maps</p></li>
 </ul>
 <p>Mapping:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">localtileserver</span></code> - loading basemap raster tiles</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ipyleaflet</span></code>  - Leaflet.js interactive web maps</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">leafmap</span></code> - interactive web mapping</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">folium</span></code> - web mapping</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">mapclassify</span></code> -  choropleth map classification schemes</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">localtileserver</span></code> loading basemap raster tiles</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ipyleaflet</span></code>  Leaflet.js interactive web maps</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">leafmap</span></code> interactive web mapping</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">folium</span></code> web mapping</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mapclassify</span></code> choropleth map classification schemes</p></li>
 </ul>
 <p>Data APIs:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pygris</span></code>: US Census ## ACS &amp; TIGER</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">overpy</span></code>, <code class="docutils literal notranslate"><span class="pre">osmnx</span></code>: OpenStreetMap</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">openrouteservice</span></code>: routes</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">py3dep</span></code>: US 3D Elevation Program (3DEP)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pygris</span></code> US Census ## ACS &amp; TIGER</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">overpy</span></code>, <code class="docutils literal notranslate"><span class="pre">osmnx</span></code> OpenStreetMap</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">openrouteservice</span></code> routes</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">py3dep</span></code> US 3D Elevation Program (3DEP)</p></li>
 </ul>
 <p>GPX/TCX activity parsing:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">tcxreader</span></code>: parses .tcx activity files</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">gpxpy</span></code>: parses .gpx activity files</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tcxreader</span></code> parses .tcx activity files</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gpxpy</span></code> parses .gpx activity files</p></li>
 </ul>
 <p>IMAGERY / EARTH OBSERVATION DATA CATALOGS:<br />
 Microsoft Stac Catalog:</p>
@@ -544,10 +544,10 @@ Microsoft Stac Catalog:</p>
 <li><p><a class="github reference external" href="https://github.com/planetlabs/planet-client-python">planetlabs/planet-client-python</a></p></li>
 <li><p><a class="reference external" href="https://github.com/planetlabs/notebooks/tree/master/jupyter-notebooks">Planet Labs Jupyter Notebooks</a></p></li>
 </ul>
-<p>Google Earth Engine:</p>
+<p>Google Earth Engine (GEE):</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">earthengine-api</span></code> - earth engine</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">geemap</span></code>- earth engine mapping helper</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">earthengine-api</span></code> GEE</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">geemap</span></code> GEE mapping helper</p></li>
 </ul>
 <section id="google-earth-engine-python-api">
 <h3>Google Earth Engine - Python API<a class="headerlink" href="#google-earth-engine-python-api" title="Link to this heading">#</a></h3>
