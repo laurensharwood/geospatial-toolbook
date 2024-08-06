@@ -1,0 +1,857 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Programming &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tlbook_7_programming';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Linux" href="tlbook_6_linux.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to Geospatial-ToolBook
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tlbook_1_intro.html">Geospatial ToolBook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tlbook_2_apps.html">Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tlbook_3_geodata.html">Geographic Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tlbook_4_database.html">Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tlbook_5_analysis.html">Geospatial Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tlbook_6_linux.html">Linux</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Programming</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/laurensharwood/geo-tlbx/tree/main/tlbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/laurensharwood/geo-tlbx/tree/main/tlbook/issues/new?title=Issue%20on%20page%20%2Ftlbook_7_programming.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/tlbook_7_programming.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Programming</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-packages-used-in-geo-tlbx-repository">Python packages used in geo-tlbx repository</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#google-earth-engine-python-api">Google Earth Engine - Python API</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-planet-basemaps-monthly-time-series-and-download-composite">Visualize Planet Basemaps monthly time series and download composite</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#virtual-environments">Virtual Environments</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#do-once-to-connect-virtual-environment-interpreter-to-ide">Do once to connect virtual environment interpreter to IDE</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter">Jupyter:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pycharm">PyCharm:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cron-scheduler">Cron Scheduler</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-control">Version Control</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git">Git</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="programming">
+<h1>Programming<a class="headerlink" href="#programming" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<section id="python-packages-used-in-geo-tlbx-repository">
+<h2>Python packages used in <a class="reference external" href="https://github.com/laurensharwood/geo-tlbx">geo-tlbx repository</a><a class="headerlink" href="#python-packages-used-in-geo-tlbx-repository" title="Link to this heading">#</a></h2>
+<p>General:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">numpy</span></code> - arrays</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pandas</span></code> - tables</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">datetime</span></code> - dates, times</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tqdm</span></code>- progress bars</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dask</span></code> -  for parallel computing / reading arrays / tables larger than memory</p></li>
+</ul>
+<p>Database Translation:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sqlalchemy</span></code> - ORM: generates SQL statements</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">psycopg2-binary</span></code> - driver: sends SQL statements to postgreSQL database</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sqlglot</span></code> -  SQL parser, transpiler, optimizer, &amp; engine  DuckDB, Spark / Databricks, Snowflake, BigQuery</p></li>
+</ul>
+<p>Vector:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pyproj</span></code> - projection information</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">shapely</span></code> - vector geometry</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">geopandas</span></code> - pandas table + shapely geometry + pyproj projection</p></li>
+</ul>
+<p>Read in spatial subset of file_name that’s within region_gdf bounds to improve file reading speed:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">bbox</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">region_gdf</span><span class="o">.</span><span class="n">total_bounds</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><u>Geopandas drivers</u>:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Driver</p></th>
+<th class="head"><p>Extension</p></th>
+<th class="head"><p>Name</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>GPKG</p></td>
+<td><p>.gpkg</p></td>
+<td><p>geopackage</p></td>
+</tr>
+<tr class="row-odd"><td><p>ESRI Shapefile</p></td>
+<td><p>.shp</p></td>
+<td><p>ESRI shapefile</p></td>
+</tr>
+<tr class="row-even"><td><p>OpenFileGDB</p></td>
+<td><p>.gdb</p></td>
+<td><p>ESRI file geodatabase</p></td>
+</tr>
+<tr class="row-odd"><td><p>GeoJSON</p></td>
+<td><p>.geojson</p></td>
+<td><p>geojson</p></td>
+</tr>
+<tr class="row-even"><td><p>SQLite</p></td>
+<td><p>.db, .sqlite</p></td>
+<td><p>sqlite database</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Append <code class="docutils literal notranslate"><span class="pre">gdf</span></code> as a layer named <code class="docutils literal notranslate"><span class="pre">new_fields</span></code> to an existing file, <code class="docutils literal notranslate"><span class="pre">out_file</span></code>, if the file is an ESRI file geodatabase, geopackage, or geojson:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="s2">&quot;out_file.gdb&quot;</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="s2">&quot;new_fields&quot;</span><span class="p">,</span> <span class="n">driver</span><span class="o">=</span><span class="s2">&quot;OpenFileGDB&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Create a <a class="reference external" href="https://shapely.readthedocs.io/en/stable/strtree.html#">STRtree</a> <b>spatial index</b> to improve query / set operation speed:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">features_sub</span> <span class="o">=</span> <span class="n">features_gdf</span><span class="p">[</span><span class="n">features_gdf</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">features_gdf</span><span class="o">.</span><span class="n">sindex</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">region_gdf</span><span class="o">.</span><span class="n">geometry</span><span class="p">,</span> <span class="n">predicate</span><span class="o">=</span><span class="s2">&quot;contains&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]))]</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://geopandas.org/en/stable/docs/reference/api/geopandas.GeoDataFrame.sjoin.html#geopandas.GeoDataFrame.sjoin">Spatial Joins</a></p>
+<p>Raster:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">rasterio</span></code> - for reading/writing .tiff (geoTIFF) files</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rasterstats</span></code> - for zonal statistics w/ a raster &amp; vector</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">xarray</span></code> - dask arrays, for .nc (netCDF) files</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rioxarray</span></code> - for saving netCDF files as geoTIFFs</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">geowombat</span></code> - dask arrays</p></li>
+</ul>
+<p>Analysis:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">whitebox</span></code> - WhiteboxTools is an advanced geospatial data analysis platform</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scipy</span></code> - math / algorithms</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> - machine learning</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scikit-image</span></code> - image (raster) processing</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pysal</span></code> - spatial analysis</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pointpats</span></code> - point pattern analysis</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">haversine</span></code> - lon-lat distance calculation</p></li>
+</ul>
+<p>Data Visualization:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> - standard static figures</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plotly</span></code> - interactive charts</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">seaborn</span></code> - interactive charts</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">branca</span></code> - color maps</p></li>
+</ul>
+<p>Mapping:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">localtileserver</span></code> - loading basemap raster tiles</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ipyleaflet</span></code>  - Leaflet.js interactive web maps</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">leafmap</span></code> - interactive web mapping</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">folium</span></code> - web mapping</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mapclassify</span></code> -  choropleth map classification schemes</p></li>
+</ul>
+<p>Data APIs:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pygris</span></code>: US Census ## ACS &amp; TIGER</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">overpy</span></code>, <code class="docutils literal notranslate"><span class="pre">osmnx</span></code>: OpenStreetMap</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">openrouteservice</span></code>: routes</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">py3dep</span></code>: US 3D Elevation Program (3DEP)</p></li>
+</ul>
+<p>GPX/TCX activity parsing:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">tcxreader</span></code>: parses .tcx activity files</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gpxpy</span></code>: parses .gpx activity files</p></li>
+</ul>
+<p>IMAGERY / EARTH OBSERVATION DATA CATALOGS:<br />
+Microsoft Stac Catalog:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">planetary-computer</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pystac</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pystac-client</span></code></p></li>
+</ul>
+<p>ESA - Sentinel:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sentinelhub</span></code></p></li>
+</ul>
+<p>Planet Labs:</p>
+<ul class="simple">
+<li><p><a class="github reference external" href="https://github.com/planetlabs/planet-client-python">planetlabs/planet-client-python</a></p></li>
+<li><p><a class="reference external" href="https://github.com/planetlabs/notebooks/tree/master/jupyter-notebooks">Planet Labs Jupyter Notebooks</a></p></li>
+</ul>
+<p>Google Earth Engine:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">earthengine-api</span></code> - earth engine</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">geemap</span></code>- earth engine mapping helper</p></li>
+</ul>
+<section id="google-earth-engine-python-api">
+<h3>Google Earth Engine - Python API<a class="headerlink" href="#google-earth-engine-python-api" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://developers.google.com/earth-engine/datasets">Earth Engine Data Catalog</a>+ <a class="reference external" href="https://gee-community-catalog.org">https://gee-community-catalog.org</a>   &amp; Cloud Computing</p>
+<ul class="simple">
+<li><p>quota - download rate limit at 2 at any given time</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ee</span>
+
+<span class="c1">## do NOT select read only scopes </span>
+<span class="n">ee</span><span class="o">.</span><span class="n">Authenticate</span><span class="p">()</span> 
+<span class="n">ee</span><span class="o">.</span><span class="n">Initialize</span><span class="p">()</span>
+</pre></div>
+</div>
+<section id="visualize-planet-basemaps-monthly-time-series-and-download-composite">
+<h4>Visualize Planet Basemaps monthly time series and download composite<a class="headerlink" href="#visualize-planet-basemaps-monthly-time-series-and-download-composite" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Create a Planet account under <a class="reference external" href="https://www.planet.com/nicfi/#sign-up">Sign Up For Level 1 User Access</a><br />
+<em>Note: Current Planet data users will need to sign up with a different email not associated with their Planet account.</em></p></li>
+<li><p>Follow <a class="reference external" href="https://developers.planet.com/docs/integrations/gee/nicfi/">setup instructions</a> to access <a class="reference external" href="https://developers.google.com/earth-engine/datasets/catalog/projects_planet-nicfi_assets_basemaps_americas">NICFI Planet Basemaps - Tropical Americas</a> in Google Earth Engine (GEE).<br />
+<em>Note: The email associated with your GEE account might differ from the email used for your Planet account.</em></p></li>
+</ol>
+<p>Jupyter IDE:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">jupyterlab</span></code> (*note to launch: &gt; jupyter lab)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">jupyter_contrib_nbextensions</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ipykernel</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ipywidgets</span></code></p></li>
+</ul>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="virtual-environments">
+<h2>Virtual Environments<a class="headerlink" href="#virtual-environments" title="Link to this heading">#</a></h2>
+<p>“A virtual environment is a Python environment such that the Python interpreter, libraries and scripts installed into it are isolated from those installed in other virtual environments, and (by default) any libraries installed in a “system” Python, i.e., one which is installed as part of your operating system”</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Virtual Environment Manager</p></th>
+<th class="head"><p>create envt</p></th>
+<th class="head"><p>activate envt</p></th>
+<th class="head"><p>install packages into envt</p></th>
+<th class="head"><p>deactivate envt</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Mac <a class="reference external" href="https://docs.python.org/3/library/venv.html">venv</a></p></td>
+<td><p>py -m venv .tlbx310</p></td>
+<td><p>source .tlbx310/bin/activate</p></td>
+<td><p>pip install {package}</p></td>
+<td><p>deactivate</p></td>
+</tr>
+<tr class="row-odd"><td><p>Linux <a class="reference external" href="https://docs.python.org/3/library/venv.html">venv</a></p></td>
+<td><p>python3 -m venv .tlbx310</p></td>
+<td><p>source .tlbx310/bin/activate</p></td>
+<td><p>pip install {package}</p></td>
+<td><p>deactivate</p></td>
+</tr>
+<tr class="row-even"><td><p>Windows <a class="reference external" href="https://docs.python.org/3/library/venv.html">venv</a></p></td>
+<td><p>python3 -m venv .tlbx310</p></td>
+<td><p>.tlbx310\Scripts\activate</p></td>
+<td><p>pip install {package}</p></td>
+<td><p>deactivate</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.anaconda.com/download/success">anaconda</a></p></td>
+<td><p>conda create -n .tlbx310 python=3.11</p></td>
+<td><p>conda activate</p></td>
+<td><p>conda install -c conda-forge {package}</p></td>
+<td><p>conda deactivate</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Move into projects directory w/ all virtual environments (envt):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="p">{</span><span class="n">your_venv_dir</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>For Anaconda only: do once after creating &amp; activating environment, BUT before installing packages</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
+<span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="nb">set</span> <span class="n">channel_priority</span> <span class="n">strict</span>
+</pre></div>
+</div>
+<section id="do-once-to-connect-virtual-environment-interpreter-to-ide">
+<h3>Do once to connect virtual environment interpreter to IDE<a class="headerlink" href="#do-once-to-connect-virtual-environment-interpreter-to-ide" title="Link to this heading">#</a></h3>
+<section id="jupyter">
+<h4>Jupyter:<a class="headerlink" href="#jupyter" title="Link to this heading">#</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">py</span> <span class="o">-</span><span class="n">m</span> <span class="n">ipykernel</span> <span class="n">install</span> <span class="o">--</span><span class="n">user</span> <span class="o">--</span><span class="n">name</span><span class="o">=.</span><span class="n">tlbx310</span>   
+</pre></div>
+</div>
+<p>From activated venv, in your venv project directory, launch jupyter lab:
+(.tlbx310) &gt; C:\Users\laure\projects&gt; jupyter lab</p>
+</section>
+<section id="pycharm">
+<h4>PyCharm:<a class="headerlink" href="#pycharm" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Settings &gt; Settings &gt; Project &gt; Python Interpreter &gt; + &gt; Add Local Interpreter &gt; Existing (venv directory)</p></li>
+</ul>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="cron-scheduler">
+<h2>Cron Scheduler<a class="headerlink" href="#cron-scheduler" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><b>create bash script</b> <code class="docutils literal notranslate"><span class="pre">get_garmin.sh</span></code> <b>to be called by cron</b>– which have the following lines to activate a virtual environment (venv) with necessary packages installed, then run the python script executable from that active venv:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="n">source</span> <span class="o">.</span><span class="n">tlbx310</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
+<span class="n">python</span> <span class="n">get_garmin</span><span class="o">.</span><span class="n">py</span>
+<span class="n">deactivate</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>enter the following commands in the terminal to ensure get_garmin.sh and get_garmin.py have <b>appropriate execute</b> permissions:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">get_garmin</span><span class="o">.</span><span class="n">py</span>
+<span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">get_garmin</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p><b>create task</b>: enter <code class="docutils literal notranslate"><span class="pre">crontab</span> <span class="pre">-e</span></code> in the terminal</p></li>
+</ol>
+<p>Add a line specifying how often to execute a script:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">min</span> <span class="n">hour</span> <span class="n">day</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">month</span> <span class="n">month</span> <span class="n">day</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">week</span> <span class="p">{</span><span class="n">command</span><span class="p">}</span>  
+</pre></div>
+</div>
+<p>ex) every day at 10:00am run get_garmin.sh &amp; don’t send that email  (<code class="docutils literal notranslate"><span class="pre">*</span></code> == all)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">00</span> <span class="mi">10</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">~/</span><span class="n">get_garmin</span><span class="o">.</span><span class="n">sh</span> <span class="o">&gt;/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span> <span class="mi">2</span><span class="o">&gt;&amp;</span><span class="mi">1</span>  
+</pre></div>
+</div>
+<p><u>to save</u>: ctrl+X (to escape editing session, then) Y (yes), enter</p>
+<ol class="arabic simple" start="4">
+<li><p><b>print active tasks</b> to ensure it was created: <code class="docutils literal notranslate"><span class="pre">crontab</span> <span class="pre">-l</span></code></p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="version-control">
+<h2>Version Control<a class="headerlink" href="#version-control" title="Link to this heading">#</a></h2>
+<section id="git">
+<h3>Git<a class="headerlink" href="#git" title="Link to this heading">#</a></h3>
+<p><img alt="github" src="_images/git.png" /></p>
+<p>Store your GitHub login credentials:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span>	
+<span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">name</span> <span class="o">*</span><span class="n">your</span><span class="o">-</span><span class="n">github</span><span class="o">-</span><span class="n">username</span><span class="o">*</span>
+<span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span> <span class="o">*</span><span class="n">your</span><span class="o">-</span><span class="n">github</span><span class="o">-</span><span class="n">email</span><span class="o">*</span>
+<span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="o">--</span><span class="nb">list</span>	
+</pre></div>
+</div>
+<p>Initialize local folder as remote repository:<br />
+In File Explorer, navigate into your local repository folder.<br />
+Right-click inside the directory &gt; select <b>Show more options</b> &gt; select <b>Open Git Bash here</b></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">init</span>
+<span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;message&quot;</span>
+<span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">origin</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">your_username</span><span class="o">/</span><span class="n">your_repo</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+<p>Push updates to remote repository:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="o">-</span><span class="n">u</span> <span class="n">origin</span> <span class="n">main</span>
+<span class="n">cd</span> <span class="n">your_repo</span>
+<span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
+<span class="c1">## git status</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;message&quot;</span>
+<span class="n">git</span> <span class="n">push</span>
+<span class="c1">## git push -u origin main	</span>
+<span class="c1">## git push --set-upstream origin main</span>
+</pre></div>
+</div>
+<p>Ignore &amp; delete local changes – take remote repository:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">reset</span> <span class="o">--</span><span class="n">hard</span> <span class="n">git</span> <span class="n">pull</span>
+<span class="n">git</span> <span class="n">pull</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="tlbook_6_linux.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Linux</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-packages-used-in-geo-tlbx-repository">Python packages used in geo-tlbx repository</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#google-earth-engine-python-api">Google Earth Engine - Python API</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-planet-basemaps-monthly-time-series-and-download-composite">Visualize Planet Basemaps monthly time series and download composite</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#virtual-environments">Virtual Environments</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#do-once-to-connect-virtual-environment-interpreter-to-ide">Do once to connect virtual environment interpreter to IDE</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter">Jupyter:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pycharm">PyCharm:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cron-scheduler">Cron Scheduler</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-control">Version Control</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git">Git</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

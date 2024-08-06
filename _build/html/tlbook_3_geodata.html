@@ -1,0 +1,846 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Geographic Data &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tlbook_3_geodata';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Databases" href="tlbook_4_database.html" />
+    <link rel="prev" title="Software" href="tlbook_2_apps.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to Geospatial-ToolBook
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tlbook_1_intro.html">Geospatial ToolBook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tlbook_2_apps.html">Software</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Geographic Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tlbook_4_database.html">Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tlbook_5_analysis.html">Geospatial Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tlbook_6_linux.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tlbook_7_programming.html">Programming</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/laurensharwood/geo-tlbx/tree/main/tlbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/laurensharwood/geo-tlbx/tree/main/tlbook/issues/new?title=Issue%20on%20page%20%2Ftlbook_3_geodata.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/tlbook_3_geodata.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Geographic Data</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coordinate-reference-system-crs">Coordinate Reference System (CRS)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-data-types-formats">Common Data Types &amp; Formats</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vectors">Vectors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rasters">Rasters</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-standards">GIS Standards:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-metadata-standards">GIS metadata standards:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata-creation-best-practices">Metadata creation best practices:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata-validation">Metadata validation:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publicly-available-data">Publicly available data:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#google-earth-engine-data-catalog-cloud-computing">Google Earth Engine: Data Catalog &amp; Cloud Computing</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data:</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ee-featurecollection">ee.FeatureCollection</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ee-image">ee.Image</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ee-imagecollection">ee.ImageCollection</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="geographic-data">
+<h1>Geographic Data<a class="headerlink" href="#geographic-data" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<section id="coordinate-reference-system-crs">
+<h2>Coordinate Reference System (CRS)<a class="headerlink" href="#coordinate-reference-system-crs" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p><b>Ellipsoid:</b> Shape of Earth’s surface is not perfect sphere, but squashed</p>
+<ul class="simple">
+<li><p><b>Geoid:</b> Equal gravitational potential model that estimates mean sea level to define Earth’s Ellipsoid</p></li>
+</ul>
+</li>
+<li><p><b>Datum:</b> Defines the two coordinate axis (Longitude: X, Latitude: Y) reference points for measuring any point on Earth’s curved surface</p>
+<ul class="simple">
+<li><p>ex) NAD 83</p></li>
+</ul>
+</li>
+<li><p><b>Geographic CRS (3D):</b> Latitude, Longitude for referencing location on Earth’s curved/ellipsoid surface. For global-scale projects. Distance is distorted.</p>
+<ul class="simple">
+<li><p>ex) Web Mercator</p></li>
+</ul>
+</li>
+<li><p><b>Projected CRS (2D):</b> Earth’s curved surface <em>projected</em> onto a 2D surface. Distortion occurs during projection, but
+the goal is to choose a projection method that limits your project area’s Easting &amp; Northing distances from the Datum in order to minimize the distortion type critical for your project.</p>
+<ul class="simple">
+<li><p>Types: Conformal projections preserve angular distortion, equidistant projections preserve distance, and equal area projections preserve area.</p></li>
+</ul>
+<ul class="simple">
+<li><p>ex) Due to its long shape (elongated North to South), California is divided into 6 State Plane (CASP) Zones. For each CASP Zone, a <em>Lambert conformal conic projection</em> is optimal do to the East-West elongation and mid-latitude location.</p></li>
+</ul>
+</li>
+</ol>
+<p><b><a class="reference external" href="https://projectionwizard.org">Projection Wizard</a>:</b>  Tool to find appropriate projection based on your project area</p>
+<p><b><a class="reference external" href="https://pygis.io/docs/d_understand_crs_codes.html#proj-4-string">PROJ.4 String</a>:</b>  Multiple parameters needed to describe a CRS.</p>
+<p><b>EPSG:</b> public registry of CRS info</p>
+<ul class="simple">
+<li><p>EPSG 4326 - <em>Unprojected/Geographic</em> - Used for GPS field survey devices &amp; raw survey data</p></li>
+<li><p>EPSG 3857 - <em>Projected</em> - Used for features published in web maps</p></li>
+</ul>
+<p><b>CRS Transformation:</b> Transforms geographic data as images(rasters) or coordinates(vectors) between two different CRS using <a class="reference external" href="https://rasterio.readthedocs.io/en/stable/topics/transforms.html">six parameters</a>.</p>
+</section>
+<hr class="docutils" />
+<section id="common-data-types-formats">
+<h2>Common Data Types &amp; Formats<a class="headerlink" href="#common-data-types-formats" title="Link to this heading">#</a></h2>
+<section id="vectors">
+<h3>Vectors<a class="headerlink" href="#vectors" title="Link to this heading">#</a></h3>
+<p>Vectors represent objects as features (point, line, or polygon shape) with tabular data containing attributes/fields values for each geometry.<br />
+<b>Feature class</b>: homogenous collection of features (points, lines, or polygons)</p>
+<ul class="simple">
+<li><p>ESRI Shapefile</p></li>
+<li><p>Database (SQLite, MS Access, PostgreSQL, ESRI file geodatabase)</p></li>
+<li><p><a class="reference external" href="https://courses.spatialthoughts.com/python-foundation.html#understanding-json-and-geojson">GeoJSON</a> (<a class="reference external" href="https://geojson.io">GeoJSON creator</a>)</p></li>
+<li><p>KML/KMZ (for Google Earth Pro)</p></li>
+<li><p><a class="reference external" href="https://geoparquet.org/">Geoparquet</a></p></li>
+</ul>
+<p><b>Networks:</b></p>
+<ul class="simple">
+<li><p>Set of connected objects in geographic space to answer questions about connections and flow.</p></li>
+<li><p>Contain objects (as nodes/points and connections/lines). May involve adjacency matrix calculation.</p></li>
+</ul>
+</section>
+<section id="rasters">
+<h3>Rasters<a class="headerlink" href="#rasters" title="Link to this heading">#</a></h3>
+<p>Rasters are grids with pixels with values that represent continuous fields (elevation, temperature, an aerial image)</p>
+<ul class="simple">
+<li><p>GeoTiff: .tiff, .tif</p></li>
+<li><p>netCDF (time-series)</p></li>
+<li><p>HDF5 (time-series)</p></li>
+<li><p>BIL, BIP</p></li>
+<li><p>COG</p></li>
+</ul>
+<p><b>Spatial Resolution:</b> Pixel size</p>
+<ul class="simple">
+<li><p>Amount of detail, precision, granularity</p></li>
+<li><p>Fine resolution = small pixel size</p></li>
+<li><p>Coarse resolution = large pixel size</p></li>
+</ul>
+<p><b>Light Detection and Ranging (lidar):</b> used to create elevation model rasters<br />
+Lidar processing tool: <a class="reference external" href="https://rapidlasso.de/">rapidlasso</a></p>
+<p>Lidar file formats:</p>
+<ul class="simple">
+<li><p>ASCII: raw lidar data</p></li>
+<li><p><a class="reference external" href="https://lastools.github.io/">LAS</a>: 3D point clouds with XYZ (lon-lat-ele) values</p></li>
+<li><p>LAZ (zipped LAS)</p></li>
+</ul>
+<p><b><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/help/data/cad/what-is-cad-data.htm">Computer Automated Design</a> (CAD):</b></p>
+<ul class="simple">
+<li><p>From CAD software (AutoCAD, Microstation)</p></li>
+<li><p>Files: .dwg, .dxf</p>
+<ul>
+<li><p><a class="reference external" href="https://gisgeography.com/dwg-to-shp/">Convert to shp</a></p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="gis-standards">
+<h2>GIS Standards:<a class="headerlink" href="#gis-standards" title="Link to this heading">#</a></h2>
+<p>Improve geographic information’s utility &amp; value by increasing its interoperability, reusability, reliability, and access.</p>
+<ul class="simple">
+<li><p>Example of <a class="reference external" href="https://storymaps.arcgis.com/stories/9767345c01fc4fd5a6b90e970b249dbd">City of Fremont CAD standards</a></p></li>
+</ul>
+<p>International Organization for Standardization (ISO) standards must be purchased. The American National Standards Institute (ANSI) serves as the US member agency to ISO and provides easier access to the standards and, generally, at a lower cost.</p>
+<p><u> Open Geospatial Consortium (OGC)</u> is a diverse array of international groups (govt, academia, private, etc.) using geospatial data, settling on standards for sharing &amp; integrating data.<br />
+OGC publishes the following documents: 1) implementation standards, 2) abstract specifications, 3) best practices, 4) engineering reports, 5) discussion papers, and 6) change requests.</p>
+<p>Standards:</p>
+<ul class="simple">
+<li><p>Data Encoding:</p>
+<ul>
+<li><p><a class="reference external" href="http://opengeospatial.github.io/e-learning/gml/text/main.html">Geography Markup Language (GML)</a></p></li>
+<li><p><a class="reference external" href="http://opengeospatial.github.io/e-learning/geopackage/text/introduction.html">Geopackage (.gpkg)</a></p></li>
+</ul>
+</li>
+<li><p>Data Access:</p>
+<ul>
+<li><p><a class="reference external" href="http://opengeospatial.github.io/e-learning/wfs/text/basic-main.html">Web Feature Service (WFS)</a></p></li>
+<li><p><a class="reference external" href="http://opengeospatial.github.io/e-learning/wcs/text/basic-main.html#introduction">Web Coverage Service (WCS)</a></p></li>
+</ul>
+</li>
+<li><p>Processing:</p>
+<ul>
+<li><p><a class="reference external" href="http://opengeospatial.github.io/e-learning/wps/text/basic-main.html">Web Processing Standards (WPS)</a></p></li>
+</ul>
+</li>
+<li><p>Visualization:</p>
+<ul>
+<li><p><a class="reference external" href="http://opengeospatial.github.io/e-learning/wms/text/basic-main.html">Web Map Service (WMS)</a></p></li>
+<li><p><a class="reference external" href="http://opengeospatial.github.io/e-learning/wmts/text/main.html#introduction">Web Map Tile Service (WMTS)</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="http://opengeospatial.github.io/e-learning/metadata/text/specifications.html">Metadata and Catalogue Service</a>
+</br></p></li>
+</ul>
+<p><u>Federal Geographic Data Committee (FGDC)</u> is a U.S. interagency group with the same mission</p>
+<ul class="simple">
+<li><p>FGDC <a class="reference external" href="https://www.fgdc.gov/standards/list">standards list</a> includes standards from FGDC, along with OGC and ISO</p></li>
+</ul>
+<section id="gis-metadata-standards">
+<h3>GIS metadata standards:<a class="headerlink" href="#gis-metadata-standards" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>ISO 19115: Geographic information — Metadata</p></li>
+<li><p>ISO 19139: Geographic information — Metadata — XML schema</p></li>
+<li><p><a class="reference external" href="https://www.fgdc.gov/metadata/csdgm-standard">FGDC Content Standard for Digital Geospatial Metadata (CSDGM)</a> to Create System-level Metadata Records</p></li>
+</ul>
+</section>
+<section id="metadata-creation-best-practices">
+<h3><a class="reference external" href="https://www.usgs.gov/data-management/metadata-creation">Metadata creation best practices</a>:<a class="headerlink" href="#metadata-creation-best-practices" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Gather all information together &amp; reuse information that is already developed, e.g. abstract, purpose, date from grant or funding proposals</p></li>
+<li><p>Choose a descriptive title for your data that incorporates who, what, where, when, and scale.</p></li>
+<li><p>Choose keywords wisely – consider all possible interpretations of your word choices.</p></li>
+<li><p>Include as many details as you can in the metadata record for future users of the data.</p></li>
+<li><p>Update the metadata date (date stamp) so that metadata repositories will know which version of the record is most recent.</p></li>
+<li><p>DOI should go in the primary <onlink> in the Citation Information section and should be a URL.</p></li>
+</ul>
+</section>
+<section id="metadata-validation">
+<h3>Metadata validation:<a class="headerlink" href="#metadata-validation" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Compares the metadata standard to the XML metadata record to ensure it conforms to the structure of the standard, such that all of the required elements are filled in.</p></li>
+<li><p>USGS best practices for <a class="reference external" href="https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/atoms/files/CheckingMetadataWithData_508-compliant.pdf">Checking Metadata with Data</a> with FGDC-CSDGM metadata</p></li>
+<li><p><a class="reference external" href="https://geology.usgs.gov/tools/metadata/tools/doc/mp.html">USGS Metadata Parser (MP)</a></p></li>
+<li><p><a class="reference external" href="https://code.usgs.gov/usgs/fort-pymdwizard">Metadata Wizard tool</a></p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="publicly-available-data">
+<h2>Publicly available data:<a class="headerlink" href="#publicly-available-data" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://developers.google.com/earth-engine/datasets/catalog">Google Earth Engine</a> + <a class="reference external" href="https://gee-community-catalog.org">https://gee-community-catalog.org</a></p></li>
+<li><p><a class="reference external" href="https://planetarycomputer.microsoft.com/catalog">Microsoft Planetary Computer</a></p></li>
+<li><p><a class="reference external" href="https://developers.planet.com/docs/basemaps/">Planet Labs Basemaps</a></p></li>
+<li><p><a class="reference external" href="https://spatialdata.dhsprogram.com/home/">USAID Spatial Data Repository</a></p></li>
+<li><p><a class="reference external" href="https://catalog.data.gov/">US Govt</a></p></li>
+<li><p><a class="reference external" href="https://data.usgs.gov/datacatalog/search">USGS</a></p></li>
+<li><p><a class="reference external" href="https://data-usfs.hub.arcgis.com">USFS</a></p></li>
+<li><p><a class="reference external" href="https://gis.data.ca.gov/">California</a> &amp; <a class="reference external" href="https://wildlife.ca.gov/Data/GIS/Vegetation-Data">CA vegetation</a></p></li>
+</ul>
+<section id="google-earth-engine-data-catalog-cloud-computing">
+<h3>Google Earth Engine: Data Catalog &amp; Cloud Computing<a class="headerlink" href="#google-earth-engine-data-catalog-cloud-computing" title="Link to this heading">#</a></h3>
+<section id="data">
+<h4>Data:<a class="headerlink" href="#data" title="Link to this heading">#</a></h4>
+<section id="ee-featurecollection">
+<h5>ee.FeatureCollection<a class="headerlink" href="#ee-featurecollection" title="Link to this heading">#</a></h5>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>category</p></th>
+<th class="head"><p>ee.FeatureCollection</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Google buildings</p></td>
+<td><p>“GOOGLE/Research/open-buildings/v3/polygons”</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="ee-image">
+<h5>ee.Image<a class="headerlink" href="#ee-image" title="Link to this heading">#</a></h5>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>category</p></th>
+<th class="head"><p>ee.Image</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>elevation</p></td>
+<td><p>ee.Image(“NASA/NASADEM_HGT/001”).select([‘elevation’])</p></td>
+</tr>
+<tr class="row-odd"><td><p>elevation</p></td>
+<td><p>ee.Image(“USGS/SRTMGL1_003”).select([‘elevation’])</p></td>
+</tr>
+<tr class="row-even"><td><p>landcover</p></td>
+<td><p>“projects/mapbiomas-public/assets/paraguay/collection1/mapbiomas_paraguay_collection1_integration_v1”</p></td>
+</tr>
+<tr class="row-odd"><td><p>soil</p></td>
+<td><p>“ISDASOIL/Africa/v1/fcc”</p></td>
+</tr>
+<tr class="row-even"><td><p>soil</p></td>
+<td><p>“ISDASOIL/Africa/v1/cation_exchange_capacity”</p></td>
+</tr>
+<tr class="row-odd"><td><p>soil</p></td>
+<td><p>“ISDASOIL/Africa/v1/cation_exchange_capacity”</p></td>
+</tr>
+<tr class="row-even"><td><p>soil</p></td>
+<td><p>“ISDASOIL/Africa/v1/clay_content”</p></td>
+</tr>
+<tr class="row-odd"><td><p>soil</p></td>
+<td><p>“ISDASOIL/Africa/v1/carbon_organic”</p></td>
+</tr>
+<tr class="row-even"><td><p>soil</p></td>
+<td><p>“ISDASOIL/Africa/v1/bedrock_depth”</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="ee-imagecollection">
+<h5>ee.ImageCollection<a class="headerlink" href="#ee-imagecollection" title="Link to this heading">#</a></h5>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>name</p></th>
+<th class="head"><p>ee.ImageCollection</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>US NLCD</p></td>
+<td><p>ee.ImageCollection(“USGS/NLCD_RELEASES/2021_REL/NLCD”).select(“landcover”)</p></td>
+</tr>
+<tr class="row-odd"><td><p>precip</p></td>
+<td><p>“UCSB-CHG/CHIRPS/DAILY”</p></td>
+</tr>
+<tr class="row-even"><td><p>Sentinel-1</p></td>
+<td><p>“COPERNICUS/S1_GRD”</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sentinel-2 harmonized surface reflectance</p></td>
+<td><p>“COPERNICUS/S2_SR_HARMONIZED”</p></td>
+</tr>
+<tr class="row-even"><td><p>Sentinel-2 cloud probability</p></td>
+<td><p>“COPERNICUS/S2_CLOUD_PROBABILITY”</p></td>
+</tr>
+<tr class="row-odd"><td><p>MODIS LST</p></td>
+<td><p>ee.ImageCollection(‘MODIS/006/MOD11A1’).select([‘LST_Day_1km’, ‘LST_Night_1km’, ‘QC_Day’, ‘QC_Night’])</p></td>
+</tr>
+<tr class="row-even"><td><p>Planet monthly basemaps</p></td>
+<td><p>“projects/planet-nicfi/assets/basemaps/americas”</p></td>
+</tr>
+<tr class="row-odd"><td><p>Planet monthly basemaps</p></td>
+<td><p>“projects/planet-nicfi/assets/basemaps/africa”</p></td>
+</tr>
+<tr class="row-even"><td><p>Planet monthly basemaps</p></td>
+<td><p>“projects/planet-nicfi/assets/basemaps/asia”</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="tlbook_2_apps.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Software</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="tlbook_4_database.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Databases</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coordinate-reference-system-crs">Coordinate Reference System (CRS)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-data-types-formats">Common Data Types &amp; Formats</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vectors">Vectors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rasters">Rasters</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-standards">GIS Standards:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-metadata-standards">GIS metadata standards:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata-creation-best-practices">Metadata creation best practices:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata-validation">Metadata validation:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publicly-available-data">Publicly available data:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#google-earth-engine-data-catalog-cloud-computing">Google Earth Engine: Data Catalog &amp; Cloud Computing</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data:</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ee-featurecollection">ee.FeatureCollection</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ee-image">ee.Image</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ee-imagecollection">ee.ImageCollection</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

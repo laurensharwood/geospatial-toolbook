@@ -1,0 +1,798 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Software &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tlbook_2_apps';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Geographic Data" href="tlbook_3_geodata.html" />
+    <link rel="prev" title="Geospatial ToolBook" href="tlbook_1_intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to Geospatial-ToolBook
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tlbook_1_intro.html">Geospatial ToolBook</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tlbook_3_geodata.html">Geographic Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tlbook_4_database.html">Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tlbook_5_analysis.html">Geospatial Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tlbook_6_linux.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tlbook_7_programming.html">Programming</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/laurensharwood/geo-tlbx/tree/main/tlbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/laurensharwood/geo-tlbx/tree/main/tlbook/issues/new?title=Issue%20on%20page%20%2Ftlbook_2_apps.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/tlbook_2_apps.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Software</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-notes">Install notes:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux-windows-path-variable">Linux &amp; Windows PATH variable</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qgis">QGIS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-basemaps">Add basemaps:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-open-source-tool-plugins">Add open-source tool plugins:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esri-products">ESRI Products</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arcgis-pro">1) ArcGIS Pro</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arcgis-enterprise-software-components">2) ArcGIS Enterprise  Software Components:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arcgis-online-agol-components">3) ArcGIS Online (AGOL) Components:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data-management">Data Management</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data-analysis">Data Analysis</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#content-creation">Content Creation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#content-sharing">Content Sharing:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#license-management-credits">License Management &amp; Credits</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="software">
+<h1>Software<a class="headerlink" href="#software" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<p><img alt="Apps" src="_images/app_icons.png" /></p>
+<p>Mapping:</p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <a class="reference external" href="https://qgis.org/en/site/forusers/download.html">QGIS</a> (+ OSGeo4W/gdal, PostGIS/postgreSQL)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <a class="reference external" href="https://support.google.com/earth/answer/21955?hl=en">Google Earth Pro</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <a class="reference external" href="https://geoserver.org/download/">Geoserver</a> (requires <a class="reference external" href="https://adoptium.net/">JDK</a> )</p></li>
+</ul>
+<p>Relational Database Management System (RDBMS): <em>NOTE <a class="reference external" href="https://www.datacamp.com/blog/sql-server-postgresql-mysql-whats-the-difference-where-do-i-start?utm_source=google&amp;amp;utm_medium=paid_search&amp;amp;utm_campaignid=19589720830&amp;amp;utm_adgroupid=152984016694&amp;amp;utm_device=c&amp;amp;utm_keyword=&amp;amp;utm_matchtype=&amp;amp;utm_network=g&amp;amp;utm_adpostion=&amp;amp;utm_creative=684592141394&amp;amp;utm_targetid=dsa-2222697809758&amp;amp;utm_loc_interest_ms=&amp;amp;utm_loc_physical_ms=9031757&amp;amp;utm_content=DSA~blog~SQL&amp;amp;utm_campaign=230119_1-sea~dsa~tofu_2-b2c_3-us_4-prc_5-na_6-na_7-le_8-pdsh-go_9-nb-e_10-na_11-na&amp;amp;gad_source=1&amp;amp;gclid=Cj0KCQjws560BhCuARIsAHMqE0FYrjbIuukzGe7GNZ6eeFyRIdojfvbJMp5LreGIjlWsex3WJJ9k5aMaAvSLEALw_wcB">different SQL syntax</a></em></p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <a class="reference external" href="https://www.postgresql.org/download/">postgreSQL</a> (w/ postGIS plugin to connect to QGIS)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <a class="reference external" href="https://dev.mysql.com/downloads/mysql/">MySQL</a> <em>NOTE: Select your OS</em></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <a class="reference external" href="https://www.microsoft.com/en-us/sql-server/sql-server-downloads">SQL Server</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> SQLite (sqlite3 pre-installed with Python)</p></li>
+</ul>
+<p>Scripting:</p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <a class="reference external" href="https://www.python.org/downloads/">Python</a></p>
+<ul>
+<li><p><em>Personal preference: For large-scale data processing &amp; analysis</em></p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <a class="reference external" href="https://rstudio-education.github.io/hopr/starting.html">R</a></p>
+<ul>
+<li><p><em>Personal preference: For easier small-scale statistics/tabular analysis &amp; data visualization</em></p></li>
+</ul>
+</li>
+</ul>
+<p>Virtual Environment:</p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> venv (pre-installed with Python)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <a class="reference external" href="https://www.anaconda.com/download/success">Anaconda</a></p>
+<ul>
+<li><p><em>Pro: easy GDAL install</em></p></li>
+<li><p><em>Con: slower to install packages, though <a class="reference external" href="https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html">Micromamba</a> is a lightweight alternative</em></p></li>
+</ul>
+</li>
+</ul>
+<p>IDE:</p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <a class="reference external" href="https://www.jetbrains.com/pycharm/download/">PyCharm</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <a class="reference external" href="https://www.spyder-ide.org/">Spyder</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Jupyter Lab (install from activated virtual environment with Python)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <a class="reference external" href="https://posit.co/downloads/">RStudio</a></p></li>
+</ul>
+<p>Version Control:</p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <a class="reference external" href="https://git-scm.com/downloads">Git</a></p></li>
+</ul>
+<section id="install-notes">
+<h2>Install notes:<a class="headerlink" href="#install-notes" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><em>When installing &amp; setting up application, choose the custom setup (but probably use defaults) to see where files are placed, what is installed, etc.</em></p></li>
+<li><p><em>Remember to delete app_installer.exe file from Downloads folder after install is complete</em></p></li>
+</ul>
+<section id="linux-windows-path-variable">
+<h3>Linux &amp; Windows PATH variable<a class="headerlink" href="#linux-windows-path-variable" title="Link to this heading">#</a></h3>
+<p>PATH environment variable is a list of folders where the terminal looks to run a program.</p>
+<ul class="simple">
+<li><p>when installing an application, or {app} such as python, anaconda (NOT RECOMMENDED), or Git, select ‘Add {app}.exe to PATH’ to add the python install location to your user’s</p></li>
+<li><p>otherwise, manually add the application to path by adding that program’s install location to the PATH variable:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="n">export</span> <span class="n">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">{path_to_python}</span><span class="s2">:$PATH&quot;</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">profile</span>
+</pre></div>
+</div>
+<p>Mac:<br />
+i) open the terminal and enter the following command on a Mac: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">nano</span> <span class="pre">/etc/paths</span></code> (enter user password when prompted)<br />
+ii) in the last row of the file enter your app’s install location, ex: /Library/PostgreSQL/16/bin</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="qgis">
+<h2>QGIS<a class="headerlink" href="#qgis" title="Link to this heading">#</a></h2>
+<section id="add-basemaps">
+<h3>Add basemaps:<a class="headerlink" href="#add-basemaps" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>In the <b>Browser</b> pane: under <b>XYZ Tiles</b>, right-click and select <b>New Connection</b> <img alt="newconnection" src="_images/basemap1.png" /></p></li>
+<li><p>Enter the Name and URL from a row in the table below into the <b>XYZ Connection</b> popup window.</p></li>
+</ol>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>URL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ESRI World Imagery</p></td>
+<td><p><a class="reference external" href="https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/tile/%7Bz%7D/%7By%7D/%7Bx%7D">https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bing Aerial</p></td>
+<td><p><a class="reference external" href="http://ecn.t3.tiles.virtualearth.net/tiles/a%7Bq%7D.jpeg?g=1">http://ecn.t3.tiles.virtualearth.net/tiles/a{q}.jpeg?g=1</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Google Satellite</p></td>
+<td><p><a class="reference external" href="https://mt1.google.com/vt/lyrs=s&amp;amp;x=%7Bx%7D&amp;amp;y=%7By%7D&amp;amp;z=%7Bz%7D">https://mt1.google.com/vt/lyrs=s&amp;x={x}&amp;y={y}&amp;z={z}</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Google Hybrid</p></td>
+<td><p><a class="reference external" href="https://mt1.google.com/vt/lyrs=y&amp;amp;x=%7Bx%7D&amp;amp;y=%7By%7D&amp;amp;z=%7Bz%7D">https://mt1.google.com/vt/lyrs=y&amp;x={x}&amp;y={y}&amp;z={z}</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Open Topo</p></td>
+<td><p><a class="reference external" href="https://tile.opentopomap.org/%7Bz%7D/%7Bx%7D/%7By%7D.png">https://tile.opentopomap.org/{z}/{x}/{y}.png</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>To view, drag the new connection (has a grid symbol &amp; located under <b>XYZ Tiles</b>) to the Map pane.</p></li>
+</ol>
+</section>
+<section id="add-open-source-tool-plugins">
+<h3>Add open-source tool plugins:<a class="headerlink" href="#add-open-source-tool-plugins" title="Link to this heading">#</a></h3>
+<p><b>Plugins</b> dropdown &gt; <b>Manage and Install Plugins</b> &gt; search for your plugin</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="esri-products">
+<h2><a class="reference external" href="https://www.esri.com/en-us/arcgis/products/index">ESRI Products</a><a class="headerlink" href="#esri-products" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://developers.arcgis.com/">ESRI Developer</a></p>
+<section id="arcgis-pro">
+<h3>1) <a class="reference external" href="https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview">ArcGIS Pro</a><a class="headerlink" href="#arcgis-pro" title="Link to this heading">#</a></h3>
+</section>
+<section id="arcgis-enterprise-software-components">
+<h3>2) <a class="reference external" href="https://www.esri.com/en-us/arcgis/products/arcgis-enterprise/overview">ArcGIS Enterprise</a>  Software Components:<a class="headerlink" href="#arcgis-enterprise-software-components" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>ArcGIS Server</p></li>
+<li><p>ArcGIS Enterprise portal</p></li>
+<li><p>ArcGIS Data Store</p></li>
+<li><p>ArcGIS Web Adaptor</p></li>
+</ol>
+</section>
+<section id="arcgis-online-agol-components">
+<h3>3) <a class="reference external" href="https://www.esri.com/en-us/arcgis/products/arcgis-online/overview">ArcGIS Online</a> (AGOL) Components:<a class="headerlink" href="#arcgis-online-agol-components" title="Link to this heading">#</a></h3>
+<section id="data-management">
+<h4><a class="reference external" href="https://doc.arcgis.com/en/arcgis-online/manage-data/data-in-online.htm">Data Management</a><a class="headerlink" href="#data-management" title="Link to this heading">#</a></h4>
+</section>
+<section id="data-analysis">
+<h4><a class="reference external" href="https://doc.arcgis.com/en/arcgis-online/analyze/perform-analysis-mv.htm">Data Analysis</a><a class="headerlink" href="#data-analysis" title="Link to this heading">#</a></h4>
+</section>
+<section id="content-creation">
+<h4><a class="reference external" href="https://doc.arcgis.com/en/arcgis-online/create-maps/create-maps-and-apps.htm">Content Creation</a><a class="headerlink" href="#content-creation" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><b>Web Maps</b></p>
+<ol class="arabic simple">
+<li><p>create map: <a class="reference external" href="https://doc.arcgis.com/en/arcgis-online/create-maps/choose-basemap-mv.htm">choose basemap</a>, <a class="reference external" href="https://doc.arcgis.com/en/arcgis-online/create-maps/add-layers-mv.htm">add layers</a>, <a class="reference external" href="https://doc.arcgis.com/en/arcgis-online/create-maps/apply-styles-mv.htm">apply styles</a>, <a class="reference external" href="https://doc.arcgis.com/en/arcgis-online/create-maps/configure-pop-ups-mv.htm">configure popups</a></p></li>
+<li><p><a class="reference external" href="https://doc.arcgis.com/en/arcgis-online/create-maps/set-map-properties-mv.htm">set map properties</a>: <a class="reference external" href="https://doc.arcgis.com/en/arcgis-online/create-maps/bookmark-mv.htm">add bookmark</a>, <a class="reference external" href="https://doc.arcgis.com/en/arcgis-online/create-maps/configure-feature-search.htm">configure feature search</a>, <a class="reference external" href="https://doc.arcgis.com/en/arcgis-online/create-maps/disable-editing-mv.htm">disable editing</a>, tags, description, metadata, etc.</p></li>
+<li><p><a class="reference external" href="https://doc.arcgis.com/en/arcgis-online/create-maps/set-layer-properties.htm">set layer properties</a></p></li>
+<li><p><a class="reference external" href="https://doc.arcgis.com/en/arcgis-online/create-maps/save-maps-mv.htm">save map</a></p></li>
+<li><p><a class="reference external" href="https://doc.arcgis.com/en/arcgis-online/share-maps/share-maps-mv.htm">share map</a></p></li>
+</ol>
+</li>
+<li><p><b>Scenes</b> can be created from AGOL <a class="reference external" href="https://www.arcgis.com/home/webscene/viewer.html">Scene Viewer</a> or ArcGIS Pro:</p>
+<ol class="arabic simple">
+<li><p>choose <a class="reference external" href="https://doc.arcgis.com/en/arcgis-online/create-maps/choose-global-local-scene.htm">global or local</a></p></li>
+<li><p><a class="reference external" href="https://doc.arcgis.com/en/arcgis-online/create-maps/add-layers-to-scene.htm">add layers</a></p></li>
+<li><p><a class="reference external" href="https://doc.arcgis.com/en/arcgis-online/create-maps/set-scene-properties.htm">set properties</a></p></li>
+<li><p><a class="reference external" href="https://doc.arcgis.com/en/arcgis-online/create-maps/configure-feature-search-scene.htm">configure feature search</a></p></li>
+<li><p><a class="reference external" href="https://doc.arcgis.com/en/arcgis-online/create-maps/save-scene.htm">save scene</a></p></li>
+<li><p><a class="reference external" href="https://doc.arcgis.com/en/arcgis-online/share-maps/share-scenes.htm">share scene</a></p></li>
+</ol>
+</li>
+<li><p><b>Web Apps</b> can be created from <a class="reference external" href="https://doc.arcgis.com/en/arcgis-online/create-maps/create-map-apps.htm">maps</a>, <a class="reference external" href="https://doc.arcgis.com/en/arcgis-online/create-maps/create-app-in-a-scene.htm">scenes</a>, or <a class="reference external" href="https://doc.arcgis.com/en/arcgis-online/create-maps/create-gallery-apps.htm">groups</a> and need to be <a class="reference external" href="https://doc.arcgis.com/en/arcgis-online/share-maps/share-apps.htm">shared</a>:</p>
+<ul>
+<li><p><b><a class="reference external" href="https://www.esri.com/en-us/arcgis/products/arcgis-dashboards/resources">Dashboards</a></b> - <a class="reference external" href="https://doc.arcgis.com/en/dashboards/latest/reference/create-web-maps-for-dashboards.htm">best practices</a></p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://doc.arcgis.com/en/dashboards/latest/create-and-share/actions.htm">add actions</a>, <a class="reference external" href="https://doc.arcgis.com/en/dashboards/latest/create-and-share/selectors.htm">selectors</a>/triggers</p></li>
+<li><p><a class="reference external" href="https://doc.arcgis.com/en/dashboards/latest/create-and-share/dashboard-settings.htm">design view settings</a></p></li>
+<li><p><a class="reference external" href="https://doc.arcgis.com/en/dashboards/latest/create-and-share/dashboard-urls.htm">share</a></p></li>
+</ol>
+</li>
+<li><p><b><a class="reference external" href="https://www.esri.com/en-us/arcgis/products/arcgis-instant-apps/resources">Instant Apps</a></b></p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://doc.arcgis.com/en/instant-apps/latest/create-apps/app-templates-overview.htm">choose template</a></p></li>
+<li><p><a class="reference external" href="https://doc.arcgis.com/en/instant-apps/latest/customize/configuration-overview.htm">configure</a></p></li>
+<li><p><a class="reference external" href="https://doc.arcgis.com/en/instant-apps/latest/customize/publish-draft-updates.htm">publish</a></p></li>
+</ol>
+</li>
+<li><p><b><a class="reference external" href="https://www.esri.com/en-us/arcgis/products/arcgis-storymaps/resources">StoryMaps</a></b></p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://doc.arcgis.com/en/arcgis-storymaps/author-and-share/add-narrative-text.htm">create</a>: add narative text, media, maps, slideshows, tours, etc.</p></li>
+<li><p><a class="reference external" href="https://doc.arcgis.com/en/arcgis-storymaps/author-and-share/create-a-theme.htm">design</a>: create theme, change story cover, add story navigation, credits, etc.</p></li>
+<li><p><a class="reference external" href="https://doc.arcgis.com/en/arcgis-storymaps/author-and-share/publish-a-story.htm">publish</a></p></li>
+</ol>
+</li>
+<li><p><b><a class="reference external" href="https://doc.arcgis.com/en/experience-builder/latest/get-started/what-is-arcgis-experience-builder.htm">Experience Builder</a></b> - <a class="reference external" href="https://doc.arcgis.com/en/experience-builder/latest/get-started/faq.htm">FAQs</a></p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://experience.arcgis.com/page/landing">sign-in</a></p></li>
+<li><p><a class="reference external" href="https://doc.arcgis.com/en/experience-builder/latest/get-started/create-your-first-web-experience.htm">create experience</a>: choose theme, set data source, refine layout, <a class="reference external" href="https://doc.arcgis.com/en/experience-builder/latest/configure-widgets/widgets-overview.htm">configure widgets</a>, <a class="reference external" href="https://doc.arcgis.com/en/experience-builder/latest/build-apps/add-a-page.htm">add page</a></p></li>
+<li><p><a class="reference external" href="https://doc.arcgis.com/en/experience-builder/latest/build-apps/save-preview-publish.htm">save, preview &amp; publish</a></p></li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p><b><a class="reference external" href="https://doc.arcgis.com/en/arcgis-online/create-maps/create-a-notebook.htm">Notebooks</a></b> can be <a class="reference external" href="https://doc.arcgis.com/en/arcgis-online/create-maps/create-a-notebook.htm">created</a> or uploaded from your computer as an <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://doc.arcgis.com/en/arcgis-online/create-maps/specify-the-runtime-of-a-notebook.htm">specify runtime</a></p></li>
+<li><p>features: <a class="reference external" href="https://doc.arcgis.com/en/arcgis-online/create-maps/prepare-a-notebook-for-automated-execution.htm">schedule tasks</a>, <a class="reference external" href="https://doc.arcgis.com/en/arcgis-online/create-maps/use-python-code-snippets.htm">add python code snippets</a>, <a class="reference external" href="https://doc.arcgis.com/en/arcgis-online/create-maps/publish-a-notebook-as-a-web-tool.htm">publish as a web tool</a></p></li>
+<li><p><a class="reference external" href="https://doc.arcgis.com/en/arcgis-online/share-maps/share-a-notebook.htm">share notebook</a></p></li>
+</ol>
+</li>
+</ul>
+</section>
+<section id="content-sharing">
+<h4><a class="reference external" href="https://doc.arcgis.com/en/arcgis-online/share-maps/share-maps-apps.htm">Content Sharing</a>:<a class="headerlink" href="#content-sharing" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Choose content sharing level (with your group, organization, or everyone).</p></li>
+<li><p>To <a class="reference external" href="https://doc.arcgis.com/en/arcgis-online/share-maps/share-items.htm">share items</a>, a user must have appropriate permissions to share content.</p></li>
+<li><p>Feature layers and content must be made public to share with public.</p>
+<ul>
+<li><p>Ex: When you create an app using ArcGIS Configurable Apps, you can authorize its subscriber content in the configuration pane by confirming the layers to allow for public use.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="license-management-credits">
+<h3>License Management &amp; <a class="reference external" href="https://doc.arcgis.com/en/arcgis-online/administer/credits.htm">Credits</a><a class="headerlink" href="#license-management-credits" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://desktop.arcgis.com/en/license-manager/latest/welcome.htm">Manage ArcGIS Pro Licenses</a></p>
+<ul class="simple">
+<li><p>ArcGIS Pro <a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/get-started/licensing-arcgis-pro.htm">license types</a>: named user (default),  single-use, <a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/get-started/concurrent-use-licenses.htm">concurrent use</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://desktop.arcgis.com/en/license-manager/latest/introduction-to-license-manager-with-arcgis-enterprise-portal.htm">ArcGIS Enterprise</a> is licensed per user and by system capacity. Users are licensed based on user types, providing secure access to information and content creation capabilities.</p>
+<ul class="simple">
+<li><p>ArcGIS Server can be licensed in a variety of roles, depending on the capabilities you want to enable for your deployment. Server licensing roles define the capabilities of each ArcGIS Enterprise server machine or site.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://doc.arcgis.com/en/arcgis-online/administer/manage-licenses.htm">ArcGIS Online</a></p></li>
+</ol>
+<p>ESRI products are licensed based on user types. What tasks each member in an organization is allowed to perform on ESRI products depend on a combination of the following interrelated factors:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://doc.arcgis.com/en/arcgis-online/administer/user-types-orgs.htm">User types</a> determine the number of credits and privileges that can be granted to the member through a default role or custom role. User types include the following: Viewer, Contributor, Mobile Worker, Creator, Professional</p></li>
+<li><p><a class="reference external" href="https://doc.arcgis.com/en/arcgis-online/administer/member-roles.htm">Roles</a> define the set of privileges assigned to a member. Default roles include the following: Viewer, Data Editor, User, Publisher, Facilitator, Administrator</p></li>
+<li><p><a class="reference external" href="https://doc.arcgis.com/en/arcgis-online/administer/privileges-for-roles-orgs.htm">Privileges</a> allow members to perform various tasks in an organization, and are defined by their role. Organization administrator can change privileges of custom roles, not default roles.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="tlbook_1_intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Geospatial ToolBook</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="tlbook_3_geodata.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Geographic Data</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-notes">Install notes:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux-windows-path-variable">Linux &amp; Windows PATH variable</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qgis">QGIS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-basemaps">Add basemaps:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-open-source-tool-plugins">Add open-source tool plugins:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esri-products">ESRI Products</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arcgis-pro">1) ArcGIS Pro</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arcgis-enterprise-software-components">2) ArcGIS Enterprise  Software Components:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arcgis-online-agol-components">3) ArcGIS Online (AGOL) Components:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data-management">Data Management</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data-analysis">Data Analysis</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#content-creation">Content Creation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#content-sharing">Content Sharing:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#license-management-credits">License Management &amp; Credits</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
