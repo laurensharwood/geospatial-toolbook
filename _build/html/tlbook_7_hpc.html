@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>5. Geospatial Analysis &#8212; My sample book</title>
+    <title>7. High Performance Computing &#8212; My sample book</title>
   
   
   
@@ -57,11 +57,10 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'tlbook_5_analysis';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tlbook_7_hpc';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="6.Programming" href="tlbook_6_programming.html" />
-    <link rel="prev" title="4. Databases" href="tlbook_4_database.html" />
+    <link rel="prev" title="6.Programming" href="tlbook_6_programming.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -184,9 +183,9 @@
 <li class="toctree-l1"><a class="reference internal" href="tlbook_2_apps.html">2. Software</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tlbook_3_geodata.html">3. Geographic Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tlbook_4_database.html">4. Databases</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Geospatial Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tlbook_5_analysis.html">5. Geospatial Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tlbook_6_programming.html">6.Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tlbook_7_hpc.html">6. High Performance Computing</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">7. High Performance Computing</a></li>
 </ul>
 
     </div>
@@ -258,7 +257,7 @@
       
       
       
-      <li><a href="https://github.com/laurensharwood/geo-tlbx/tree/main/tlbook/issues/new?title=Issue%20on%20page%20%2Ftlbook_5_analysis.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/laurensharwood/geo-tlbx/tree/main/tlbook/issues/new?title=Issue%20on%20page%20%2Ftlbook_7_hpc.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -288,7 +287,7 @@
       
       
       
-      <li><a href="_sources/tlbook_5_analysis.md" target="_blank"
+      <li><a href="_sources/tlbook_7_hpc.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -372,7 +371,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>5. Geospatial Analysis</h1>
+    <h1>7. High Performance Computing</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -382,18 +381,17 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#st-law-of-geography">1st ‘Law’ of Geography</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spatial-autocorrelation">Spatial Autocorrelation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topological-relations">Topological Relations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-operations">Set Operations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#point-pattern-analysis">Point Pattern Analysis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buffer">Buffer</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolation">Interpolation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#global-statistics">Global statistics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#focal-neighborhood-statistics">Focal / Neighborhood statistics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptive-analytics">Descriptive Analytics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#predictive-analytics">Predictive Analytics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perscriptive-analytics">Perscriptive Analytics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#high-performance-computing-hpc-cluster-login">High Performance Computing (HPC) Cluster Login</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-linux-on-windows">Install Linux on Windows:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-pip-general-package-installer-and-venv-virtual-environment-manager-in-ubuntu">Download pip (general package installer) and venv (virtual environment manager) in Ubuntu</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commands">Commands</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tips">Tips:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slurm-workload-manager">SLURM Workload Manager</a></li>
 </ul>
             </nav>
         </div>
@@ -405,110 +403,126 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="geospatial-analysis">
-<h1>5. Geospatial Analysis<a class="headerlink" href="#geospatial-analysis" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="high-performance-computing">
+<h1>7. High Performance Computing<a class="headerlink" href="#high-performance-computing" title="Link to this heading">#</a></h1>
+<section id="high-performance-computing-hpc-cluster-login">
+<h2>High Performance Computing (HPC) Cluster Login<a class="headerlink" href="#high-performance-computing-hpc-cluster-login" title="Link to this heading">#</a></h2>
+<p>on Mac, open Terminal:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## ex) ssh janedoe@ssh.eri.ucsb.edu  </span>
+<span class="n">ssh</span> <span class="p">{</span><span class="n">your_username</span><span class="p">}</span><span class="nd">@ssh</span><span class="o">.</span><span class="p">{</span><span class="n">host</span><span class="p">}</span>
+<span class="p">{</span><span class="n">your_pwd</span><span class="p">}</span>   
+<span class="c1">## ex) ssh janedoe@bellows.eri.ucsb.edu  </span>
+<span class="n">ssh</span> <span class="p">{</span><span class="n">your_username</span><span class="p">}</span><span class="o">@</span><span class="p">{</span><span class="n">hpc_machine</span><span class="p">}</span><span class="o">.</span><span class="p">{</span><span class="n">host</span><span class="p">}</span>
+<span class="p">{</span><span class="n">your_pwd</span><span class="p">}</span>   
+</pre></div>
+</div>
+<p>Windows Applications:</p>
+<ul class="simple">
+<li><p>Putty</p></li>
+<li><p>MobaXterm (nice GUI)</p></li>
+</ul>
+</section>
+<section id="install-linux-on-windows">
+<h2><a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install">Install Linux on Windows</a>:<a class="headerlink" href="#install-linux-on-windows" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Launch PowerShell, enter <code class="docutils literal notranslate"> <span class="pre">wsl</span> <span class="pre">--install</span></code>, download and double-click <a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package">update installer</a> to run, restart computer</p></li>
+</ul>
+<section id="download-pip-general-package-installer-and-venv-virtual-environment-manager-in-ubuntu">
+<h3>Download pip (general package installer) and venv (virtual environment manager) in Ubuntu<a class="headerlink" href="#download-pip-general-package-installer-and-venv-virtual-environment-manager-in-ubuntu" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Launch Ubuntu in Start Menu:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">update</span> <span class="o">&amp;&amp;</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="n">upgrade</span> <span class="o">-</span><span class="n">y</span> <span class="c1">## system updates </span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">python3</span><span class="o">-</span><span class="n">pip</span> <span class="o">-</span><span class="n">y</span> <span class="c1">## install pip </span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">python3</span><span class="o">-</span><span class="n">venv</span> <span class="o">-</span><span class="n">y</span> <span class="c1">## install venv </span>
+
+</pre></div>
+</div>
+<p><a class="reference external" href="https://techcommunity.microsoft.com/t5/educator-developer-blog/step-by-step-how-to-create-a-windows-11-vm-on-hyper-v-via/ba-p/3754100">Create Virtual Machine (VM) on Windows</a></p>
+</section>
+</section>
+<section id="commands">
+<h2>Commands<a class="headerlink" href="#commands" title="Link to this heading">#</a></h2>
+<section id="tips">
+<h3>Tips:<a class="headerlink" href="#tips" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>pressing tab following a command (<code class="docutils literal notranslate"><span class="pre">cd</span></code> , <code class="docutils literal notranslate"><span class="pre">ls</span></code>, <code class="docutils literal notranslate"><span class="pre">vim</span></code>) will list all possible files/folders and autofill if there’s only one match</p></li>
+<li><p>run <code class="docutils literal notranslate"><span class="pre">pwd</span></code> to print working directory and easily copy+paste path later</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">|</span></code>   : pipe that takes first command’s output and feeds it into the command after the pipe<br />
+<code class="docutils literal notranslate"><span class="pre">*</span></code> : wildcard matching any character<br />
+<code class="docutils literal notranslate"><span class="pre">-r</span></code> : recursively search subdirectories</p>
+</section>
+<section id="examples">
+<h3>Examples:<a class="headerlink" href="#examples" title="Link to this heading">#</a></h3>
+<p><b>list</b> <code class="docutils literal notranslate"><span class="pre">-l</span></code> long list, sorted by last modified time <code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">t</span></code>, reversed <code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">r</span></code> –  such that last edited file is printed in the terminal last:</p>
+<blockquote>
+<div><p>ls -ltr</p>
+</div></blockquote>
+<p><b>list</b> two last modified files:</p>
+<blockquote>
+<div><p>ls -ltr | tail -2</p>
+</div></blockquote>
+<p><b>size</b> of current directory:</p>
+<blockquote>
+<div><p>du -sh .</p>
+</div></blockquote>
+<p><b>files sorted based on size</b>:</p>
+<blockquote>
+<div><p>du -sh – * | sort -rh</p>
+</div></blockquote>
+<p><b>count</b> number of files in current directory:</p>
+<blockquote>
+<div><p>ls | wc -l</p>
+</div></blockquote>
+<p><b>count</b> number of files in directory (that start with 004):</p>
+<blockquote>
+<div><p>ls -dq 004* | wc -l</p>
+</div></blockquote>
+<p><b>move </b> files that contain ‘filterstring’ (in current dir) and move them into out_dir:</p>
+<blockquote>
+<div><p>mv * filterstring * out_dir</p>
+</div></blockquote>
+<p><b>zip</b> files in folder</p>
+<blockquote>
+<div><p>zip -r out_file.zip in_dir*</p>
+</div></blockquote>
+<p><b>delete</b> files in current directory that start with S1_:</p>
+<blockquote>
+<div><p>find . -type f -name ‘S1_*’ -delete<br />
+find . -name gee -exec ls {} ;
+find . -name gee -exec rm -rf {} ;</p>
+</div></blockquote>
+<p><b>delete</b> files <i>recursively</i> in current directory that start with L3A_LC):</p>
+<blockquote>
+<div><p>find . -name “L3A_LC*” -type f -exec rm -r {} +</p>
+</div></blockquote>
+<p><b>delete</b> folders in current directory that match string (contain the string ‘landsat’):</p>
+<blockquote>
+<div><p>find . -name “<em>landsat</em>” -type d -exec rm -r {} +</p>
+</div></blockquote>
+</section>
+</section>
 <hr class="docutils" />
-<section id="st-law-of-geography">
-<h2>1st ‘Law’ of Geography<a class="headerlink" href="#st-law-of-geography" title="Link to this heading">#</a></h2>
-<p>“everything is related to everything else, but near things are more related than distant things.” - Walder Tobler</p>
-<ul class="simple">
-<li><p><em>not a scientific law, more of a starting point for thinking about why things are happening where</em></p></li>
-</ul>
-</section>
-<section id="spatial-autocorrelation">
-<h2>Spatial Autocorrelation<a class="headerlink" href="#spatial-autocorrelation" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Moran’s I - measure of spatial autocorrelation</p></li>
-</ul>
-</section>
-<section id="topological-relations">
-<h2>Topological Relations<a class="headerlink" href="#topological-relations" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>disjoint  / intersects</p></li>
-<li><p>is equal to</p></li>
-<li><p>contains / within</p></li>
-<li><p>overlap with
-<img alt="toporelations" src="_images/toporelations.png" /></p></li>
-</ul>
-</section>
-<section id="set-operations">
-<h2>Set Operations<a class="headerlink" href="#set-operations" title="Link to this heading">#</a></h2>
-<p><img alt="setoperations" src="_images/setoperations.png" /></p>
-</section>
-<section id="point-pattern-analysis">
-<h2>Point Pattern Analysis<a class="headerlink" href="#point-pattern-analysis" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Avg Nearest Neighbor</p></li>
-<li><p>Convex hull/envelope from common points</p></li>
-<li><p>Ripley’s K - test for significant clustering</p></li>
-<li><p>Getis Ord D - hot/cold spot</p></li>
-</ul>
-</section>
-<section id="buffer">
-<h2>Buffer<a class="headerlink" href="#buffer" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>points, lines, or polygon vectors. Add or subtract buffer distance area</p></li>
-</ul>
-</section>
-<section id="interpolation">
-<h2>Interpolation<a class="headerlink" href="#interpolation" title="Link to this heading">#</a></h2>
-<p>Estimate a value at a location based on surrounding locations (time or space)</p>
-<ul class="simple">
-<li><p>nearest neighbor, bilinear, cubic resampling methods for reprojecting rasters (NN basic/fastest -&gt; cubic most intensive)</p></li>
-<li><p>IDW - further away, less weight given</p></li>
-<li><p>Kriging - first derivative describes the rate that values change over a distance, or the effect of distance on the attribute</p></li>
-</ul>
-</section>
-<section id="global-statistics">
-<h2>Global statistics<a class="headerlink" href="#global-statistics" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Band (<code class="docutils literal notranslate"><span class="pre">b</span></code>) algebra: <code class="docutils literal notranslate"><span class="pre">b1</span> <span class="pre">+</span> <span class="pre">b2</span></code></p></li>
-<li><p>Threshold/mask</p></li>
-</ul>
-</section>
-<section id="focal-neighborhood-statistics">
-<h2>Focal / Neighborhood statistics<a class="headerlink" href="#focal-neighborhood-statistics" title="Link to this heading">#</a></h2>
-<p>Require user-input kernel size/radius/distance for the moving window calculation</p>
-<ul class="simple">
-<li><p>Low-pass filter - smooths surface</p></li>
-<li><p>High-pass filter - edge-enhancement / sharpening</p></li>
-<li><p>Spatial Lags</p></li>
-</ul>
-</section>
-<section id="descriptive-analytics">
-<h2>Descriptive Analytics<a class="headerlink" href="#descriptive-analytics" title="Link to this heading">#</a></h2>
-</section>
-<section id="predictive-analytics">
-<h2>Predictive Analytics<a class="headerlink" href="#predictive-analytics" title="Link to this heading">#</a></h2>
-<p>Predicts future or past based value based on historical (often time-series) data</p>
-<ul class="simple">
-<li><p>OLS</p></li>
-<li><p>GWR</p></li>
-<li><p>Clustering - DBSCAN, K-means, PCA</p></li>
-<li><p>RF, SVM - image classification</p></li>
-<li><p>NN - image segmentation</p></li>
-</ul>
-</section>
-<section id="perscriptive-analytics">
-<h2>Perscriptive Analytics<a class="headerlink" href="#perscriptive-analytics" title="Link to this heading">#</a></h2>
-<p>Suggests decision options for how to take advantage of a future opportunity or mitigate a future risk, and shows the implication of each decision option.</p>
-<ul class="simple">
-<li><p>site suitability analysis (SSA)</p></li>
-<li><p>vehicle routing:</p>
-<ul>
-<li><p><a class="reference external" href="https://developers.arcgis.com/python/guide/part1-introduction-to-network-analysis/">https://developers.arcgis.com/python/guide/part1-introduction-to-network-analysis/</a></p></li>
-<li><p>service area - travel times to customer. ex-to decide where to put fire station. regular buffer, cost over surface (elevation/slope), network (street travel time)</p></li>
-<li><p>find closest facility for incidents</p></li>
-<li><p>An <a class="reference external" href="https://developers.arcgis.com/python/guide/part5-generate-od-cost-matrix/">origin-destination (OD) cost matrix</a> from multiple origins to multiple destinations, is a table that contains the cost, such as the travel time or travel distance, from each origin to each destination</p></li>
-<li><p>location allocation - be far from competition but near customers</p></li>
-<li><p><a class="reference external" href="https://developers.arcgis.com/python/guide/part7-vehicle-routing-problem/">vehicle routing problem</a> goal is to best service the orders and minimize the overall operating cost for the fleet of vehicles</p>
-<ul>
-<li><p>starts with OD cost matrix, iterates adds real-world heuristics</p></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+<section id="slurm-workload-manager">
+<h2>SLURM Workload Manager<a class="headerlink" href="#slurm-workload-manager" title="Link to this heading">#</a></h2>
+<p>SLURM handles which bash scripts, tasks, or jobs submitted by all users connected to a HPC cluster get sent to which nodes, and when.</p>
+<p>These bash scripts must be located in a user’s <code class="docutils literal notranslate"><span class="pre">~/code/bash</span></code> directory, and they may contain lines to activate virtual environments and run python scripts.</p>
+<p>Submit a bash script to SLURM:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">code</span><span class="o">/</span><span class="n">bash</span> 
+<span class="n">sbatch</span> <span class="p">{</span><span class="n">bash_script_name</span><span class="p">}</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>Check on bash script progress:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">squeue</span> <span class="c1">## to make sure it&#39;s running, see how busy the cluster is    </span>
+<span class="n">ls</span> <span class="o">-</span><span class="n">ltr</span> <span class="c1">## to    </span>
+<span class="n">cat</span> <span class="p">{</span><span class="n">bottom_file</span><span class="o">.</span><span class="n">err</span><span class="p">}</span> 
+</pre></div>
+</div>
+<p>from ~/code/bash, prints the last file to be created printed at the bottom.<br />
+copy filename, bottom_file.err<br />
+cat command prints the contents of the file, bottom_file.err, in the terminal</p>
+<hr class="docutils" />
 </section>
 </section>
 
@@ -543,22 +557,13 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="tlbook_4_database.html"
+       href="tlbook_6_programming.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">4. Databases</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="tlbook_6_programming.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">6.Programming</p>
       </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -576,18 +581,17 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#st-law-of-geography">1st ‘Law’ of Geography</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spatial-autocorrelation">Spatial Autocorrelation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topological-relations">Topological Relations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-operations">Set Operations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#point-pattern-analysis">Point Pattern Analysis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buffer">Buffer</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolation">Interpolation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#global-statistics">Global statistics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#focal-neighborhood-statistics">Focal / Neighborhood statistics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptive-analytics">Descriptive Analytics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#predictive-analytics">Predictive Analytics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perscriptive-analytics">Perscriptive Analytics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#high-performance-computing-hpc-cluster-login">High Performance Computing (HPC) Cluster Login</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-linux-on-windows">Install Linux on Windows:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-pip-general-package-installer-and-venv-virtual-environment-manager-in-ubuntu">Download pip (general package installer) and venv (virtual environment manager) in Ubuntu</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commands">Commands</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tips">Tips:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slurm-workload-manager">SLURM Workload Manager</a></li>
 </ul>
   </nav></div>
 

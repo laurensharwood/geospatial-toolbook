@@ -9,5 +9,5 @@ chapters:
 - file: tlbook_3_geodata
 - file: tlbook_4_database
 - file: tlbook_5_analysis
-- file: tlbook_6_linux
-- file: tlbook_7_programming
+- file: tlbook_6_programming
+- file: tlbook_7_hpc

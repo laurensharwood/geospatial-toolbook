@@ -1,4 +1,4 @@
-# Linux   
+# 7. High Performance Computing   
 ## High Performance Computing (HPC) Cluster Login   
 
 on Mac, open Terminal:
