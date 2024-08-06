@@ -249,10 +249,18 @@ git push
 ## git push --set-upstream origin main
 ~~~
 
+
 Ignore & delete local changes -- take remote repository:     
 ~~~
 git reset --hard git pull
 git pull
 ~~~
+
+
+Ignore remote changes -- take local repository:       
+~~~
+git push origin main --force
+~~~
+
 
 
