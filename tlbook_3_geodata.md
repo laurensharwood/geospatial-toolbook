@@ -19,11 +19,11 @@ the goal is to choose a projection method that limits your project area's Eastin
 
 <b>[Projection Wizard](https://projectionwizard.org):</b>  Tool to find appropriate projection based on your project area
 
-<b>[PROJ.4 String](https://pygis.io/docs/d_understand_crs_codes.html#proj-4-string):</b>  Multiple parameters needed to describe a CRS. 
-
 <b>EPSG:</b> public registry of CRS info  
 * EPSG 4326 - *Unprojected/Geographic* - Used for GPS field survey devices & raw survey data   
 * EPSG 3857 - *Projected* - Used for features published in web maps   
+
+<b>[PROJ.4 String](https://pygis.io/docs/d_understand_crs_codes.html#proj-4-string):</b>  Multiple parameters needed to describe a CRS. 
 
 <b>CRS Transformation:</b> Transforms geographic data as images(rasters) or coordinates(vectors) between two different CRS using [six parameters](https://rasterio.readthedocs.io/en/stable/topics/transforms.html).  
 
@@ -46,30 +46,36 @@ Vectors represent objects as features (point, line, or polygon shape) with tabul
 * Contain objects (as nodes/points and connections/lines). May involve adjacency matrix calculation.  
 
 ### Rasters
-Rasters are grids with pixels with values that represent continuous fields (elevation, temperature, an aerial image) 
-  * GeoTiff: .tiff, .tif
-  * netCDF (time-series)
-  * HDF5 (time-series)
-  * BIL, BIP
-  * COG
+Rasters are grids with pixels with values that represent continuous fields (elevation, temperature, an aerial image)   
+  * Tagged Image File Format (.tiff or .tif) - standard image format   
+  * [GeoTIFF](https://ogc.org/standard/geotiff/) - tiff with metadata for geographic information   
+  * Band sequential (BSQ) - optimal for accessing any part of a single band (spatial)   
+  * Band interleaved by pixel (BIP) - optimal for accessing multiple bands (spectral)   
+  * Band interleaved by line (BIL) - compromise allowing for easy access of spectral and spatial information    
+  * netCDF - multidimensional rasters, often time-series  
+  * Hierarchical Data Format v5 ( [HDF5](https://www.ogc.org/standard/HDF5/) ) - supports large, heterogeneous data. uses a 'file directory' structure  
+  * Cloud Optimized Geotiff ( [COG](https://www.cogeo.org/) ) - GeoTiff hosted on a HTTP file server  
 
 <b>Spatial Resolution:</b> Pixel size 
 - Amount of detail, precision, granularity
 - Fine resolution = small pixel size
 - Coarse resolution = large pixel size
 
-<b>Light Detection and Ranging (lidar):</b> used to create elevation model rasters      
-Lidar processing tool: [rapidlasso](https://rapidlasso.de/)  
-
 Lidar file formats:  
   * ASCII: raw lidar data   
-  * [LAS](https://lastools.github.io/): 3D point clouds with XYZ (lon-lat-ele) values    
+  * [LAS](https://www.ogc.org/standard/LAS/): 3D point clouds with XYZ (lon-lat-ele) values    
   * LAZ (zipped LAS)   
+
+<b>Light Detection and Ranging (lidar):</b> used to create elevation model rasters      
+Lidar processing tool: [rapidlasso](https://rapidlasso.de/)  
 
 <b>[Computer Automated Design](https://pro.arcgis.com/en/pro-app/latest/help/data/cad/what-is-cad-data.htm) (CAD):</b> 
   * From CAD software (AutoCAD, Microstation)
   * Files: .dwg, .dxf
-    * [Convert to shp](https://gisgeography.com/dwg-to-shp/)
+    * [DWG to shp](https://gisgeography.com/dwg-to-shp/)
+    * [DXF to shp QGIS Plugin](https://docs.qgis.org/2.18/en/docs/user_manual/plugins/plugins_dxf2shape_converter.html) 
+
+Data Converter: https://www.gisconvert.com/   
 
 
 ---

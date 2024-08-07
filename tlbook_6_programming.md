@@ -12,8 +12,8 @@ General:
 - ```dask``` parallel computing / reading arrays / tables larger than memory  
 
 Database Translation:  
-- ```sqlalchemy``` ORM: generates SQL statements
-- ```psycopg2-binary``` driver: sends SQL statements to postgreSQL database
+- ```sqlalchemy``` ORM generates SQL statements
+- ```psycopg2-binary``` driver sends SQL statements to postgreSQL database
 - ```sqlglot``` SQL parser, transpiler, optimizer, & engine  DuckDB, Spark / Databricks, Snowflake, BigQuery
 
 
@@ -22,7 +22,7 @@ Vector:
 - ```shapely``` vector geometry 
 - ```geopandas``` pandas table + shapely geometry + pyproj projection
 
-Read in spatial subset of file_name that's within region_gdf bounds to improve file reading speed: 
+Read in spatial subset of ```file_name``` that's within the ```region_gdf``` boundary to improve file reading speed: 
 ~~~
 gdf = gpd.read_file(file_name, bbox = tuple(region_gdf.total_bounds))
 ~~~
@@ -53,29 +53,29 @@ features_sub = features_gdf[features_gdf.index.isin(list(features_gdf.sindex.que
 
 
 Raster:
-- ```rasterio``` reading/writing geoTIFF (.tiff) files
-- ```rasterstats``` for zonal statistics w/ a raster & vector
+- ```rasterio``` read/write geoTIFF (.tiff) files
+- ```rasterstats``` zonal statistics w/ a raster & vector
 - ```xarray``` dask arrays, netCDF (.nc) files
-- ```rioxarray``` for saving netCDF files as geoTIFFs
+- ```rioxarray``` saving netCDF files as geoTIFFs
 - ```geowombat``` dask arrays
 
 Analysis:
-- ```whitebox``` WhiteboxTools is an advanced geospatial data analysis platform
+- ```whitebox``` WhiteboxTools perform advanced geospatial data analysis   
 - ```scipy``` math / algorithms 
 - ```scikit-learn``` machine learning
 - ```scikit-image``` image (raster) processing
 - ```pysal``` spatial analysis
 - ```pointpats``` point pattern analysis  
-- ```haversine``` (longitude, latitude) distance calculation
+- ```haversine``` longitude, latitude distance calculation
 
 Data Visualization:  
-- ```matplotlib``` standard static figures
-- ```plotly``` interactive charts 
+- ```matplotlib``` static figures
+- ```plotly``` interactive charts   
 - ```seaborn``` interactive charts   
 - ```branca``` color maps
 
 Mapping:  
-- ```localtileserver``` loading basemap raster tiles 
+- ```localtileserver``` basemap raster tiles 
 - ```ipyleaflet```  Leaflet.js interactive web maps 
 - ```leafmap``` interactive web mapping
 - ```folium``` web mapping
@@ -148,9 +148,9 @@ Jupyter IDE:
 | Windows [venv](https://docs.python.org/3/library/venv.html) | python3 -m venv .tlbx310             | .tlbx310\Scripts\activate    | pip install {package}                  | deactivate|   
 | [anaconda](https://www.anaconda.com/download/success)          | conda create -n .tlbx310 python=3.11 | conda activate                  | conda install -c conda-forge {package} | conda deactivate |
 
-Move into projects directory w/ all virtual environments (envt):  
+Move into projects directory, ```your_venv_dir```, w/ all virtual environments (venv):  
 ~~~
-cd {your_venv_dir}
+cd your_venv_dir
 ~~~
 
 For Anaconda only: do once after creating & activating environment, BUT before installing packages 
@@ -167,7 +167,9 @@ py -m ipykernel install --user --name=.tlbx310
 ~~~
 
 From activated venv, in your venv project directory, launch jupyter lab:
+~~~
 (.tlbx310) > C:\Users\laure\projects> jupyter lab
+~~~
 
 
 #### PyCharm:  
