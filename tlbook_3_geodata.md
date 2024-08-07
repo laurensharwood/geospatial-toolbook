@@ -1,15 +1,13 @@
 # 3. Geographic Data
 
 
-
-
 ---
 
 ## Coordinate Reference System (CRS)
 1. <b>Ellipsoid:</b> Shape of Earth's surface is not perfect sphere, but squashed
-   * <b>Geoid:</b> Equal gravitational potential model that estimates mean sea level to define Earth's Ellipsoid 
-2. <b>Datum:</b> Defines the two coordinate axis (Longitude: X, Latitude: Y) reference points for measuring any point on Earth's curved surface
-   * ex) NAD 83
+   * <b>Geoid:</b> More accurate representation of Earth's ellipsoid, considers gravitational potential to estimate mean sea level
+2. <b>Datum:</b> Defines the coordinate axis fixed reference points for measuring any point on Earth's curved surface
+   * ex) The North American Datum (NAD 83) is a horizontal datum and NAVD 88 is a vertical datum    
 4. <b>Geographic CRS (3D):</b> Latitude, Longitude for referencing location on Earth's curved/ellipsoid surface. For global-scale projects. Distance is distorted.
    * ex) Web Mercator
 4. <b>Projected CRS (2D):</b> Earth's curved surface *projected* onto a 2D surface. Distortion occurs during projection, but 
@@ -61,12 +59,13 @@ Rasters are grids with pixels with values that represent continuous fields (elev
 - Fine resolution = small pixel size
 - Coarse resolution = large pixel size
 
+<b>Light Detection and Ranging (lidar):</b> used to create elevation model rasters      
+
 Lidar file formats:  
   * ASCII: raw lidar data   
   * [LAS](https://www.ogc.org/standard/LAS/): 3D point clouds with XYZ (lon-lat-ele) values    
   * LAZ (zipped LAS)   
 
-<b>Light Detection and Ranging (lidar):</b> used to create elevation model rasters      
 Lidar processing tool: [rapidlasso](https://rapidlasso.de/)  
 
 <b>[Computer Automated Design](https://pro.arcgis.com/en/pro-app/latest/help/data/cad/what-is-cad-data.htm) (CAD):</b> 
@@ -75,7 +74,7 @@ Lidar processing tool: [rapidlasso](https://rapidlasso.de/)
     * [DWG to shp](https://gisgeography.com/dwg-to-shp/)
     * [DXF to shp QGIS Plugin](https://docs.qgis.org/2.18/en/docs/user_manual/plugins/plugins_dxf2shape_converter.html) 
 
-Data Converter: https://www.gisconvert.com/   
+<b>Data Converter</b>: https://www.gisconvert.com/   
 
 
 ---
