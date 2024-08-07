@@ -539,13 +539,13 @@ The process of breaking down tables in a database &amp; managing the relationshi
 <h3>Common clauses<a class="headerlink" href="#common-clauses" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">SELECT</span></code> is the clause we use every time we want to query information from a database.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">AS</span></code> renames a column or table.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">DISTINCT</span></code> return unique values.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">WHERE</span></code> is a popular command that lets you filter the results of the query based on conditions that you specify.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">LIKE</span></code> and <code class="docutils literal notranslate"><span class="pre">BETWEEN</span></code> are special operators.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">AND</span></code> and <code class="docutils literal notranslate"><span class="pre">OR</span></code> combines multiple conditions.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code> sorts the result.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">LIMIT</span></code> specifies the maximum number of rows that the query will return.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AS</span></code> renames a column or table</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DISTINCT</span></code> return unique values</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">WHERE</span></code> is a popular command that lets you filter the results of the query based on conditions that you specify</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LIKE</span></code> and <code class="docutils literal notranslate"><span class="pre">BETWEEN</span></code> are special operators</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AND</span></code> and <code class="docutils literal notranslate"><span class="pre">OR</span></code> combines multiple conditions</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code> sorts the result</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LIMIT</span></code> specifies the maximum number of rows that the query will return</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">COUNT()</span></code>: count the number of rows</p></li>
 <li></li>
 </ul>
@@ -568,8 +568,8 @@ The process of breaking down tables in a database &amp; managing the relationshi
 <h3>Aggregate<a class="headerlink" href="#aggregate" title="Link to this heading">#</a></h3>
 <p>Aggregate functions combine multiple rows together to form a single value of more meaningful information.</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code> is a clause used with aggregate functions to combine data from one or more columns.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">HAVING</span></code> limit the results of a query based on an aggregate property.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code> clause used with aggregate functions to combine data from one or more columns</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HAVING</span></code> limits the results of a query based on an aggregate property</p></li>
 </ul>
 </section>
 <section id="data-manipulation">
@@ -634,15 +634,15 @@ returns all rows from both tables</p>
 <hr class="docutils" />
 <section id="transformation">
 <h2>Transformation<a class="headerlink" href="#transformation" title="Link to this heading">#</a></h2>
-<p>Refers to transfering / converting geospatial data between Python objects, ESRI <a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/help/data/geodatabases/overview/the-architecture-of-a-geodatabase.htm#GUID-739D940C-FD50-4F6F-8600-EBE39B00189A">geodatabases</a>, and other RDBMS such as <a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/help/data/geodatabases/manage-sql-server/overview-geodatabases-sqlserver.htm">SQL Server</a>.</p>
+<p>Refers to transferring / converting geospatial data between Python objects, ESRI <a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/help/data/geodatabases/overview/the-architecture-of-a-geodatabase.htm#GUID-739D940C-FD50-4F6F-8600-EBE39B00189A">geodatabases</a>, and other RDBMS such as <a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/help/data/geodatabases/manage-sql-server/overview-geodatabases-sqlserver.htm">SQL Server</a>.</p>
 <section id="store-postgresql-credentials-in-linux">
 <h3>Store postgreSQL credentials in Linux:<a class="headerlink" href="#store-postgresql-credentials-in-linux" title="Link to this heading">#</a></h3>
 <blockquote>
 <div><p>export POSTUSR={your-postgres-username}<br />
 export POSTPWD={your-postgres-pwd}</p>
 </div></blockquote>
-<p>If postgreSQL was added to PATH, open a terminal.<br />
-If not, go to the directory where PostgreSQL is installed then into the bin directory, then open a terminal.</p>
+<p>If postgreSQL was added to PATH: open a terminal<br />
+If not: in File Explorer, navigate into the directory where PostgreSQL is installed, then into the bin directory, then open a terminal.</p>
 </section>
 <section id="trust-ignore-password-step-in-windows">
 <h3>Trust (ignore password step) in Windows:<a class="headerlink" href="#trust-ignore-password-step-in-windows" title="Link to this heading">#</a></h3>
@@ -650,14 +650,15 @@ If not, go to the directory where PostgreSQL is installed then into the bin dire
 </section>
 <section id="connect-to-database-from-psql">
 <h3>Connect to database from psql<a class="headerlink" href="#connect-to-database-from-psql" title="Link to this heading">#</a></h3>
-<p>i) Find in install location once then pin to start/taskbar: Entering nothing submits text within brackets–<br />
-Server [localhost], Database [db_name], Port[5432], Username[postgres], Password for user</p>
+<p>i) Find in install location once then pin to start/taskbar:<br />
+Server [localhost], Database [db_name], Port[5432], Username[postgres], Password for user
+Note: Entering nothing submits text within brackets</p>
 </section>
 <section id="from-psql-create-postgresql-database">
 <h3>From psql, create postgreSQL database<a class="headerlink" href="#from-psql-create-postgresql-database" title="Link to this heading">#</a></h3>
-<p>Execute the following command to create a database, then enter user password when prompted:</p>
+<p>Execute the following command to create a database called <code class="docutils literal notranslate"><span class="pre">db_name</span></code>, then enter user password when prompted:</p>
 <blockquote>
-<div><p>createdb -h localhost -p 5432 -U postgres {db_name}</p>
+<div><p>createdb -h localhost -p 5432 -U postgres db_name</p>
 </div></blockquote>
 <p>print databases in postgres db server:</p>
 <blockquote>
@@ -733,7 +734,7 @@ Server [localhost], Database [db_name], Port[5432], Username[postgres], Password
 <blockquote>
 <div><p>ogr2ogr -f PostgreSQL “PG:user=your_username password=your_pwd dbname=your_dbname” out_filename.gpkg</p>
 </div></blockquote>
-<p>.gpx -&gt; .gpkg:</p>
+<p>.gpx -&gt; .gpkg (for all .gpx files in current directory):</p>
 <blockquote>
 <div><p>for /R %f in (*.gpx) do ogr2ogr -f “GPKG” out_filename.gpkg “%f”</p>
 </div></blockquote>

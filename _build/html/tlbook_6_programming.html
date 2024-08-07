@@ -428,8 +428,8 @@ document.write(`
 </ul>
 <p>Database Translation:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">sqlalchemy</span></code> ORM: generates SQL statements</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">psycopg2-binary</span></code> driver: sends SQL statements to postgreSQL database</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sqlalchemy</span></code> ORM generates SQL statements</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">psycopg2-binary</span></code> driver sends SQL statements to postgreSQL database</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">sqlglot</span></code> SQL parser, transpiler, optimizer, &amp; engine  DuckDB, Spark / Databricks, Snowflake, BigQuery</p></li>
 </ul>
 <p>Vector:</p>
@@ -438,7 +438,7 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">shapely</span></code> vector geometry</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">geopandas</span></code> pandas table + shapely geometry + pyproj projection</p></li>
 </ul>
-<p>Read in spatial subset of file_name that’s within region_gdf bounds to improve file reading speed:</p>
+<p>Read in spatial subset of <code class="docutils literal notranslate"><span class="pre">file_name</span></code> that’s within the <code class="docutils literal notranslate"><span class="pre">region_gdf</span></code> boundary to improve file reading speed:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">bbox</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">region_gdf</span><span class="o">.</span><span class="n">total_bounds</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -485,32 +485,32 @@ document.write(`
 <p><a class="reference external" href="https://geopandas.org/en/stable/docs/reference/api/geopandas.GeoDataFrame.sjoin.html#geopandas.GeoDataFrame.sjoin">Spatial Joins</a></p>
 <p>Raster:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">rasterio</span></code> reading/writing geoTIFF (.tiff) files</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">rasterstats</span></code> for zonal statistics w/ a raster &amp; vector</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rasterio</span></code> read/write geoTIFF (.tiff) files</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rasterstats</span></code> zonal statistics w/ a raster &amp; vector</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">xarray</span></code> dask arrays, netCDF (.nc) files</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">rioxarray</span></code> for saving netCDF files as geoTIFFs</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rioxarray</span></code> saving netCDF files as geoTIFFs</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">geowombat</span></code> dask arrays</p></li>
 </ul>
 <p>Analysis:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">whitebox</span></code> WhiteboxTools is an advanced geospatial data analysis platform</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">whitebox</span></code> WhiteboxTools perform advanced geospatial data analysis</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">scipy</span></code> math / algorithms</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> machine learning</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">scikit-image</span></code> image (raster) processing</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">pysal</span></code> spatial analysis</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">pointpats</span></code> point pattern analysis</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">haversine</span></code> (longitude, latitude) distance calculation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">haversine</span></code> longitude, latitude distance calculation</p></li>
 </ul>
 <p>Data Visualization:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> standard static figures</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> static figures</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">plotly</span></code> interactive charts</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">seaborn</span></code> interactive charts</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">branca</span></code> color maps</p></li>
 </ul>
 <p>Mapping:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">localtileserver</span></code> loading basemap raster tiles</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">localtileserver</span></code> basemap raster tiles</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ipyleaflet</span></code>  Leaflet.js interactive web maps</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">leafmap</span></code> interactive web mapping</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">folium</span></code> web mapping</p></li>
@@ -621,8 +621,8 @@ Microsoft Stac Catalog:</p>
 </tbody>
 </table>
 </div>
-<p>Move into projects directory w/ all virtual environments (envt):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="p">{</span><span class="n">your_venv_dir</span><span class="p">}</span>
+<p>Move into projects directory, <code class="docutils literal notranslate"><span class="pre">your_venv_dir</span></code>, w/ all virtual environments (venv):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">your_venv_dir</span>
 </pre></div>
 </div>
 <p>For Anaconda only: do once after creating &amp; activating environment, BUT before installing packages</p>
@@ -637,8 +637,10 @@ Microsoft Stac Catalog:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">py</span> <span class="o">-</span><span class="n">m</span> <span class="n">ipykernel</span> <span class="n">install</span> <span class="o">--</span><span class="n">user</span> <span class="o">--</span><span class="n">name</span><span class="o">=.</span><span class="n">tlbx310</span>   
 </pre></div>
 </div>
-<p>From activated venv, in your venv project directory, launch jupyter lab:
-(.tlbx310) &gt; C:\Users\laure\projects&gt; jupyter lab</p>
+<p>From activated venv, in your venv project directory, launch jupyter lab:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">.</span><span class="n">tlbx310</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">laure</span>\<span class="n">projects</span><span class="o">&gt;</span> <span class="n">jupyter</span> <span class="n">lab</span>
+</pre></div>
+</div>
 </section>
 <section id="pycharm">
 <h4>PyCharm:<a class="headerlink" href="#pycharm" title="Link to this heading">#</a></h4>

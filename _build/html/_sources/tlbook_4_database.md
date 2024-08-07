@@ -106,13 +106,13 @@ add a constraint to an existing table:
 
 ### Common clauses 
 - ```SELECT``` is the clause we use every time we want to query information from a database.
-- ```AS``` renames a column or table.
-- ```DISTINCT``` return unique values.
-- ```WHERE``` is a popular command that lets you filter the results of the query based on conditions that you specify.
-- ```LIKE``` and ```BETWEEN``` are special operators.
-- ```AND``` and ```OR``` combines multiple conditions.
-- ```ORDER BY``` sorts the result.
-- ```LIMIT``` specifies the maximum number of rows that the query will return.
+- ```AS``` renames a column or table
+- ```DISTINCT``` return unique values
+- ```WHERE``` is a popular command that lets you filter the results of the query based on conditions that you specify
+- ```LIKE``` and ```BETWEEN``` are special operators
+- ```AND``` and ```OR``` combines multiple conditions
+- ```ORDER BY``` sorts the result
+- ```LIMIT``` specifies the maximum number of rows that the query will return
 - ```COUNT()```: count the number of rows
 - 
 > SELECT COUNT(*) FROM information_schema.columns WHERE table_schema = 'public' AND table_name = 'table_name';
@@ -127,8 +127,8 @@ add a constraint to an existing table:
 
 ### Aggregate 
 Aggregate functions combine multiple rows together to form a single value of more meaningful information.
-- ```GROUP BY``` is a clause used with aggregate functions to combine data from one or more columns.
-- ```HAVING``` limit the results of a query based on an aggregate property.
+- ```GROUP BY``` clause used with aggregate functions to combine data from one or more columns   
+- ```HAVING``` limits the results of a query based on an aggregate property
 
 ### Data manipulation
 
@@ -188,7 +188,7 @@ SQL Server:
 
 ## Transformation
 
-Refers to transfering / converting geospatial data between Python objects, ESRI [geodatabases](https://pro.arcgis.com/en/pro-app/latest/help/data/geodatabases/overview/the-architecture-of-a-geodatabase.htm#GUID-739D940C-FD50-4F6F-8600-EBE39B00189A
+Refers to transferring / converting geospatial data between Python objects, ESRI [geodatabases](https://pro.arcgis.com/en/pro-app/latest/help/data/geodatabases/overview/the-architecture-of-a-geodatabase.htm#GUID-739D940C-FD50-4F6F-8600-EBE39B00189A
 ), and other RDBMS such as [SQL Server](https://pro.arcgis.com/en/pro-app/latest/help/data/geodatabases/manage-sql-server/overview-geodatabases-sqlserver.htm). 
 
 
@@ -196,19 +196,20 @@ Refers to transfering / converting geospatial data between Python objects, ESRI 
 > export POSTUSR={your-postgres-username}   
 > export POSTPWD={your-postgres-pwd}  
 
-If postgreSQL was added to PATH, open a terminal.   
-If not, go to the directory where PostgreSQL is installed then into the bin directory, then open a terminal.  
+If postgreSQL was added to PATH: open a terminal      
+If not: in File Explorer, navigate into the directory where PostgreSQL is installed, then into the bin directory, then open a terminal.  
 
 #### Trust (ignore password step) in Windows:   
 Right-click "C:\Program Files\PostgreSQL\16\data\pg_hba.conf" > edit with Notepad: change method from sca-... to trust     
 
 #### Connect to database from psql
-i) Find in install location once then pin to start/taskbar: Entering nothing submits text within brackets--   
+i) Find in install location once then pin to start/taskbar:   
 Server [localhost], Database [db_name], Port[5432], Username[postgres], Password for user
+Note: Entering nothing submits text within brackets    
 
 #### From psql, create postgreSQL database
-Execute the following command to create a database, then enter user password when prompted:   
-> createdb -h localhost -p 5432 -U postgres {db_name}  
+Execute the following command to create a database called ```db_name```, then enter user password when prompted:   
+> createdb -h localhost -p 5432 -U postgres db_name     
 
 print databases in postgres db server:  
 > \l   
@@ -282,7 +283,7 @@ From OSGeo4W Shell:
 PostgreSQL database -> .gpkg:
 > ogr2ogr -f PostgreSQL "PG:user=your_username password=your_pwd dbname=your_dbname" out_filename.gpkg
 
-.gpx -> .gpkg:
+.gpx -> .gpkg (for all .gpx files in current directory):  
 > for /R %f in (*.gpx) do ogr2ogr -f "GPKG" out_filename.gpkg "%f"
 
 
