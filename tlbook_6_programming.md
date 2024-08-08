@@ -257,7 +257,7 @@ git push
 
 Ignore & delete local changes -- take remote repository:     
 ~~~
-git reset --hard git pull
+git reset --hard 
 git pull
 ~~~
 
