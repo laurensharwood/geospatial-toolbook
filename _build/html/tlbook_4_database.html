@@ -392,15 +392,13 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#joins">Joins</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#views">Views</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#access-control">Access control</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postgresql">PostgreSQL</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#store-postgresql-credentials-in-linux">Store postgreSQL credentials in Linux:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#trust-ignore-password-step-in-windows">Trust (ignore password step) in Windows:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#connect-to-database-from-psql">Connect to database from psql</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#from-psql-create-postgresql-database">From psql, create postgreSQL database</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformation">Transformation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#store-postgresql-credentials-in-linux">Store postgreSQL credentials in Linux:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trust-ignore-password-step-in-windows">Trust (ignore password step) in Windows:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connect-to-database-from-psql">Connect to database from psql</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-psql-create-postgresql-database">From psql, create postgreSQL database</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postgres-python-geopandas">postgres  -&gt; python (geopandas):</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#osgeo-ogr2ogr">OSGEO <code class="docutils literal notranslate"><span class="pre">ogr2ogr</span></code>:</a></li>
 </ul>
 </li>
 </ul>
@@ -630,13 +628,11 @@ returns all rows from both tables</p>
 <code class="docutils literal notranslate"><span class="pre">GRANT</span></code> { permissions} ON SCHEMA :: {schema} TO {user};<br />
 <code class="docutils literal notranslate"><span class="pre">DENY</span></code> { permissions} ON SCHEMA :: {schema} TO {user};</p>
 </section>
-</section>
 <hr class="docutils" />
-<section id="transformation">
-<h2>Transformation<a class="headerlink" href="#transformation" title="Link to this heading">#</a></h2>
-<p>Refers to transferring / converting geospatial data between Python objects, ESRI <a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/help/data/geodatabases/overview/the-architecture-of-a-geodatabase.htm#GUID-739D940C-FD50-4F6F-8600-EBE39B00189A">geodatabases</a>, and other RDBMS such as <a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/help/data/geodatabases/manage-sql-server/overview-geodatabases-sqlserver.htm">SQL Server</a>.</p>
+<section id="postgresql">
+<h3>PostgreSQL<a class="headerlink" href="#postgresql" title="Link to this heading">#</a></h3>
 <section id="store-postgresql-credentials-in-linux">
-<h3>Store postgreSQL credentials in Linux:<a class="headerlink" href="#store-postgresql-credentials-in-linux" title="Link to this heading">#</a></h3>
+<h4>Store postgreSQL credentials in Linux:<a class="headerlink" href="#store-postgresql-credentials-in-linux" title="Link to this heading">#</a></h4>
 <blockquote>
 <div><p>export POSTUSR={your-postgres-username}<br />
 export POSTPWD={your-postgres-pwd}</p>
@@ -645,17 +641,17 @@ export POSTPWD={your-postgres-pwd}</p>
 If not: in File Explorer, navigate into the directory where PostgreSQL is installed, then into the bin directory, then open a terminal.</p>
 </section>
 <section id="trust-ignore-password-step-in-windows">
-<h3>Trust (ignore password step) in Windows:<a class="headerlink" href="#trust-ignore-password-step-in-windows" title="Link to this heading">#</a></h3>
+<h4>Trust (ignore password step) in Windows:<a class="headerlink" href="#trust-ignore-password-step-in-windows" title="Link to this heading">#</a></h4>
 <p>Right-click “C:\Program Files\PostgreSQL\16\data\pg_hba.conf” &gt; edit with Notepad: change method from sca-… to trust</p>
 </section>
 <section id="connect-to-database-from-psql">
-<h3>Connect to database from psql<a class="headerlink" href="#connect-to-database-from-psql" title="Link to this heading">#</a></h3>
+<h4>Connect to database from psql<a class="headerlink" href="#connect-to-database-from-psql" title="Link to this heading">#</a></h4>
 <p>i) Find in install location once then pin to start/taskbar:<br />
 Server [localhost], Database [db_name], Port[5432], Username[postgres], Password for user
 Note: Entering nothing submits text within brackets</p>
 </section>
 <section id="from-psql-create-postgresql-database">
-<h3>From psql, create postgreSQL database<a class="headerlink" href="#from-psql-create-postgresql-database" title="Link to this heading">#</a></h3>
+<h4>From psql, create postgreSQL database<a class="headerlink" href="#from-psql-create-postgresql-database" title="Link to this heading">#</a></h4>
 <p>Execute the following command to create a database called <code class="docutils literal notranslate"><span class="pre">db_name</span></code>, then enter user password when prompted:</p>
 <blockquote>
 <div><p>createdb -h localhost -p 5432 -U postgres db_name</p>
@@ -668,77 +664,9 @@ Note: Entering nothing submits text within brackets</p>
 <blockquote>
 <div><p>\d</p>
 </div></blockquote>
-</section>
 <hr class="docutils" />
-<section id="postgres-python-geopandas">
-<h3>postgres  -&gt; python (geopandas):<a class="headerlink" href="#postgres-python-geopandas" title="Link to this heading">#</a></h3>
-<p><b>cursors</b> are database objects that work with tables (for instance: reading or writing) one row at a time</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">psycopg2</span>
-
-<span class="k">def</span> <span class="nf">df_to_postgres</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">table_name</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">usr</span><span class="p">,</span> <span class="n">pwd</span><span class="p">,</span> <span class="n">localhost</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="s2">&quot;5432&quot;</span><span class="p">):</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">conn</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">database</span> <span class="o">=</span> <span class="n">db</span><span class="p">,</span> <span class="n">user</span> <span class="o">=</span> <span class="n">usr</span><span class="p">,</span> <span class="n">password</span> <span class="o">=</span> <span class="n">pwd</span><span class="p">,</span> <span class="n">host</span> <span class="o">=</span> <span class="n">localhost</span><span class="p">,</span> <span class="n">port</span> <span class="o">=</span> <span class="n">port</span><span class="p">)</span>
-        <span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
-        <span class="n">col_names</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span> <span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)):</span>
-            <span class="n">values</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">col_names</span><span class="p">)</span>
-            <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;INSERT INTO </span><span class="si">{}</span><span class="s2"> (</span><span class="si">{}</span><span class="s2">) VALUES(</span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">table_name</span><span class="p">,</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">col_names</span><span class="p">),</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">col_names</span><span class="p">))))</span>
-        <span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
-
-    <span class="k">except</span> <span class="p">(</span><span class="ne">Exception</span><span class="p">,</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">Error</span><span class="p">)</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error while fetching data from PostgreSQL&quot;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
-    
-    <span class="k">finally</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">conn</span><span class="p">:</span>
-            <span class="n">cur</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-            <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PostgreSQL connection is closed&quot;</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">postgres_to_df</span><span class="p">(</span><span class="n">SQL_query</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="s2">&quot;postgres&quot;</span><span class="p">,</span> <span class="n">pwd</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">5432</span><span class="p">):</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">conn</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">database</span><span class="o">=</span><span class="n">db</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="s2">&quot;postgres&quot;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">pwd</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="n">port</span><span class="p">)</span>
-        <span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
-        <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">SQL_query</span><span class="p">)</span>
-        <span class="n">items</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
-        <span class="n">hits</span><span class="o">=</span><span class="p">[]</span>
-        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
-            <span class="n">hits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
-        <span class="n">col_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">desc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">desc</span> <span class="ow">in</span> <span class="n">cur</span><span class="o">.</span><span class="n">description</span><span class="p">]</span> 
-        <span class="n">hits_df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">hits</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">col_names</span><span class="p">)</span>
-        <span class="k">if</span> <span class="p">(</span><span class="s2">&quot;lat&quot;</span> <span class="ow">in</span> <span class="n">col_names</span> <span class="ow">and</span> <span class="s2">&quot;lon&quot;</span> <span class="ow">in</span> <span class="n">col_names</span><span class="p">):</span>
-            <span class="n">hits_gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">hits_df</span><span class="p">,</span> <span class="n">geometry</span><span class="o">=</span><span class="n">gpd</span><span class="o">.</span><span class="n">points_from_xy</span><span class="p">(</span><span class="n">hits_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;lon&#39;</span><span class="p">],</span><span class="n">hits_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;lat&#39;</span><span class="p">],</span> <span class="n">crs</span><span class="o">=</span><span class="s2">&quot;EPSG:4326&quot;</span><span class="p">))</span>
-            <span class="k">return</span> <span class="n">hits_gdf</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">hits_df</span>
-
-    <span class="k">except</span> <span class="p">(</span><span class="ne">Exception</span><span class="p">,</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">Error</span><span class="p">)</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error while fetching data from PostgreSQL&quot;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
-    
-    <span class="k">finally</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">conn</span><span class="p">:</span>
-            <span class="n">cur</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-            <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PostgreSQL connection is closed&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<section id="osgeo-ogr2ogr">
-<h3>OSGEO <code class="docutils literal notranslate"><span class="pre">ogr2ogr</span></code>:<a class="headerlink" href="#osgeo-ogr2ogr" title="Link to this heading">#</a></h3>
-<p>From OSGeo4W Shell:</p>
-<p>.shp -&gt; .gpkg:</p>
-<blockquote>
-<div><p>ogr2ogr -f “ESRI Shapefile” “input.shp” “output.gpkg” “layer”</p>
-</div></blockquote>
-<p>PostgreSQL database -&gt; .gpkg:</p>
-<blockquote>
-<div><p>ogr2ogr -f PostgreSQL “PG:user=your_username password=your_pwd dbname=your_dbname” out_filename.gpkg</p>
-</div></blockquote>
-<p>.gpx -&gt; .gpkg (for all .gpx files in current directory):</p>
-<blockquote>
-<div><p>for /R %f in (*.gpx) do ogr2ogr -f “GPKG” out_filename.gpkg “%f”</p>
-</div></blockquote>
 <hr class="docutils" />
+</section>
 </section>
 </section>
 </section>
@@ -817,15 +745,13 @@ Note: Entering nothing submits text within brackets</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#joins">Joins</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#views">Views</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#access-control">Access control</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postgresql">PostgreSQL</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#store-postgresql-credentials-in-linux">Store postgreSQL credentials in Linux:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#trust-ignore-password-step-in-windows">Trust (ignore password step) in Windows:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#connect-to-database-from-psql">Connect to database from psql</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#from-psql-create-postgresql-database">From psql, create postgreSQL database</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformation">Transformation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#store-postgresql-credentials-in-linux">Store postgreSQL credentials in Linux:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trust-ignore-password-step-in-windows">Trust (ignore password step) in Windows:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connect-to-database-from-psql">Connect to database from psql</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-psql-create-postgresql-database">From psql, create postgreSQL database</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postgres-python-geopandas">postgres  -&gt; python (geopandas):</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#osgeo-ogr2ogr">OSGEO <code class="docutils literal notranslate"><span class="pre">ogr2ogr</span></code>:</a></li>
 </ul>
 </li>
 </ul>

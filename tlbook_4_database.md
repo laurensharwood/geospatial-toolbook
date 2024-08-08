@@ -186,11 +186,7 @@ SQL Server:
 
 ---
 
-## Transformation
-
-Refers to transferring / converting geospatial data between Python objects, ESRI [geodatabases](https://pro.arcgis.com/en/pro-app/latest/help/data/geodatabases/overview/the-architecture-of-a-geodatabase.htm#GUID-739D940C-FD50-4F6F-8600-EBE39B00189A
-), and other RDBMS such as [SQL Server](https://pro.arcgis.com/en/pro-app/latest/help/data/geodatabases/manage-sql-server/overview-geodatabases-sqlserver.htm). 
-
+## PostgreSQL
 
 #### Store postgreSQL credentials in Linux:    
 > export POSTUSR={your-postgres-username}   
@@ -217,74 +213,7 @@ print databases in postgres db server:
 print tables in connected db:  
 > \d 
 
----
 
-### postgres  -> python (geopandas):  
-<b>cursors</b> are database objects that work with tables (for instance: reading or writing) one row at a time
-~~~
-import pandas as pd
-import psycopg2
-
-def df_to_postgres(df, table_name, db, usr, pwd, localhost="localhost", port="5432"):
-    try:
-        conn = psycopg2.connect(database = db, user = usr, password = pwd, host = localhost, port = port)
-        cur = conn.cursor()
-        col_names = df.columns.to_list()
-        for i in range(0 ,len(df)):
-            values = tuple(df[col][i] for col in col_names)
-            cur.execute("INSERT INTO {} ({}) VALUES({})".format(table_name, ", ".join(col_names), ", ".join(["%s"] * len(col_names))))
-        conn.commit()
-
-    except (Exception, psycopg2.Error) as error:
-        print("Error while fetching data from PostgreSQL", error)
-    
-    finally:
-        if conn:
-            cur.close()
-            conn.close()
-            print("PostgreSQL connection is closed")
-
-def postgres_to_df(SQL_query, db, user="postgres", pwd="", host="localhost", port=5432):
-    try:
-        conn = psycopg2.connect(database=db, user="postgres", password=pwd, host=host, port=port)
-        cur = conn.cursor()
-        cur.execute(SQL_query)
-        items = cur.fetchall()
-        hits=[]
-        for row in items:
-            hits.append(row)
-        col_names = [desc[0] for desc in cur.description] 
-        hits_df=pd.DataFrame(hits, columns=col_names)
-        if ("lat" in col_names and "lon" in col_names):
-            hits_gdf = gpd.GeoDataFrame(hits_df, geometry=gpd.points_from_xy(hits_df.loc[:,'lon'],hits_df.loc[:,'lat'], crs="EPSG:4326"))
-            return hits_gdf
-        else:
-            return hits_df
-
-    except (Exception, psycopg2.Error) as error:
-        print("Error while fetching data from PostgreSQL", error)
-    
-    finally:
-        if conn:
-            cur.close()
-            conn.close()
-            print("PostgreSQL connection is closed")
-~~~
-
-
-
-### OSGEO ```ogr2ogr```:
-
-From OSGeo4W Shell:  
-
-.shp -> .gpkg: 
-> ogr2ogr -f "ESRI Shapefile" "input.shp" "output.gpkg" "layer"
-
-PostgreSQL database -> .gpkg:
-> ogr2ogr -f PostgreSQL "PG:user=your_username password=your_pwd dbname=your_dbname" out_filename.gpkg
-
-.gpx -> .gpkg (for all .gpx files in current directory):  
-> for /R %f in (*.gpx) do ogr2ogr -f "GPKG" out_filename.gpkg "%f"
 
 
 ---

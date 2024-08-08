@@ -17,13 +17,13 @@ the goal is to choose a projection method that limits your project area's Eastin
 
 <b>[Projection Wizard](https://projectionwizard.org):</b>  Tool to find appropriate projection based on your project area
 
-<b>EPSG:</b> public registry of CRS info  
+<b>[PROJ.4 String](https://pygis.io/docs/d_understand_crs_codes.html#proj-4-string):</b>  Multiple parameters needed to describe a CRS     
+
+<b>[EPSG](https://epsg.io/?q=)</b>: public registry of CRS information. Spatial Reference System Identifier <b>(SRID)</b> is typically associated with a well-known text (WKT) string definition of the coordinate system, consistent with an EPSG code.   
 * EPSG 4326 - *Unprojected/Geographic* - Used for GPS field survey devices & raw survey data   
-* EPSG 3857 - *Projected* - Used for features published in web maps   
+* EPSG 3857 - *Projected* - Used for features published in web maps    
 
-<b>[PROJ.4 String](https://pygis.io/docs/d_understand_crs_codes.html#proj-4-string):</b>  Multiple parameters needed to describe a CRS. 
-
-<b>CRS Transformation:</b> Transforms geographic data as images(rasters) or coordinates(vectors) between two different CRS using [six parameters](https://rasterio.readthedocs.io/en/stable/topics/transforms.html).  
+<b>CRS Reprojection:</b> Transforms geographic data as [images](https://rasterio.readthedocs.io/en/stable/topics/transforms.html) or [vectors](https://www.earthdatascience.org/workshops/gis-open-source-python/reproject-vector-data-in-python/) between different coordinate reference systems.  
 
 ---
 
@@ -31,55 +31,148 @@ the goal is to choose a projection method that limits your project area's Eastin
 
 ### Vectors
 Vectors represent objects as features (point, line, or polygon shape) with tabular data containing attributes/fields values for each geometry.   
-<b>Feature class</b>: homogenous collection of features (points, lines, or polygons)   
-  * ESRI Shapefile
-  * Database (SQLite, MS Access, PostgreSQL, ESRI file geodatabase)
-  * [GeoJSON](https://courses.spatialthoughts.com/python-foundation.html#understanding-json-and-geojson) ([GeoJSON creator](https://geojson.io))
-  * KML/KMZ (for Google Earth Pro)
-  * [Geoparquet](https://geoparquet.org/)
+  * <b>ESRI [feature class](https://pro.arcgis.com/en/pro-app/latest/help/data/feature-classes/feature-classes.htm)</b>: homogenous collection of features (points, lines, or polygons) and can be stored in geodatabases, shapefiles, coverages, or other data formats. For instance, in an ESRI file geodatabase a feature classes can be annotations.    
+  * <b>ESRI [shapefile](https://doc.arcgis.com/en/arcgis-online/reference/shapefiles.htm)</b>: A set of files (.shp, .shx, .dbf, & .prj) that contain one feature class   
+  * <b>Databases</b>: SQLite, MS Access, PostgreSQL, ESRI file geodatabase   
+  * <b>[GeoJSON](https://geojson.org/)</b>: [JSON ```features```](https://courses.spatialthoughts.com/python-foundation.html#understanding-json-and-geojson)  have ```properties``` and ```geometry```
+	* [GeoJSON creator](https://geojson.io)   
+  * <b>KML/KMZ</b>: for Google Earth Pro   
+  * <b>[Geoparquet](https://geoparquet.org/)</b>: Supports <i>columnar</i> data storage making it a faster alternative to .csv files      
 
-
-<b>Networks:</b>   
+#### Networks:   
 * Set of connected objects in geographic space to answer questions about connections and flow.   
 * Contain objects (as nodes/points and connections/lines). May involve adjacency matrix calculation.  
 
 ### Rasters
-Rasters are grids with pixels with values that represent continuous fields (elevation, temperature, an aerial image)   
-  * Tagged Image File Format (.tiff or .tif) - standard image format   
-  * [GeoTIFF](https://ogc.org/standard/geotiff/) - tiff with metadata for geographic information   
-  * Band sequential (BSQ) - optimal for accessing any part of a single band (spatial)   
-  * Band interleaved by pixel (BIP) - optimal for accessing multiple bands (spectral)   
-  * Band interleaved by line (BIL) - compromise allowing for easy access of spectral and spatial information    
-  * netCDF - multidimensional rasters, often time-series  
-  * Hierarchical Data Format v5 ( [HDF5](https://www.ogc.org/standard/HDF5/) ) - supports large, heterogeneous data. uses a 'file directory' structure  
-  * Cloud Optimized Geotiff ( [COG](https://www.cogeo.org/) ) - GeoTiff hosted on a HTTP file server  
+Rasters are grids of cells, or pixels, with values that represent continuous fields (for example: elevation, temperature, light reflected from Earth's surface)   
+  * <b>Tagged Image File Format</b> (.tiff or .tif) - Platform-independent image format   
+  * <b>[GeoTIFF](https://ogc.org/standard/geotiff/)</b> - Tiff with metadata for geographic information   
+  * <b>Band sequential</b> ([BSQ](https://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/bil-bip-and-bsq-raster-files.htm)) - Optimal for accessing any part of a single band (spatial). Data is written one band at a time. Must have an associated ASCII file header (.hdr)      
+  * <b>Band interleaved by pixel</b> ([BIP](https://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/bsq-format-example.htm)) - Optimal for accessing multiple bands (spectral). Data for each pixel is written band by band. Must have an associated .hdr     
+  * <b>Band interleaved by line</b> ([BIL](https://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/bil-format-example.htm)) - Compromise allowing for easy access of spectral and spatial information. Pixels are written band by band for each line, or row. Must have an associated .hdr   
+  * <b>netCDF</b> - multidimensional rasters, often time-series  
+  * <b>Hierarchical Data Format v5</b> ([HDF5](https://www.ogc.org/standard/HDF5/)) - Supports large, heterogeneous data. uses a 'file directory' structure  
+  * <b>Cloud Optimized Geotiff</b> ([COG](https://www.cogeo.org/)) - GeoTiff hosted on a HTTP file server  
 
-<b>Spatial Resolution:</b> Pixel size 
-- Amount of detail, precision, granularity
-- Fine resolution = small pixel size
-- Coarse resolution = large pixel size
+##### Image Resolution  
+<b>Spatial</b> = raster pixel or cell size 
+  * Refers to the smallest detectable object, or amount of granularity/precision      
+  * Fine resolution = small pixel size    
+  * Coarse resolution = large pixel size    
 
-<b>Light Detection and Ranging (lidar):</b> used to create elevation model rasters      
+<b>Temporal</b> = data collection frequency    
+<b>Spectral</b> = number and width of spectral bands collected by a sensor     
+<b>Radiometric</b> = bits / number of possible data values    
 
-Lidar file formats:  
+ 
+### Light Detection and Ranging (lidar)
+Often used to create 3D digital surface height models (DSM) and digital elevation models (DEM).        
+
+<b>Lidar file formats</b>:  
   * ASCII: raw lidar data   
   * [LAS](https://www.ogc.org/standard/LAS/): 3D point clouds with XYZ (lon-lat-ele) values    
   * LAZ (zipped LAS)   
 
-Lidar processing tool: [rapidlasso](https://rapidlasso.de/)  
+<b>Tools</b>: 
+  * [libLAS](https://liblas.org/): reading & writing LAS   
+  * [rapidlasso](https://rapidlasso.de/): LAS processing       
+  * [GRASS](https://grasswiki.osgeo.org/wiki/LIDAR): LAS processing with QGIS      
 
-<b>[Computer Automated Design](https://pro.arcgis.com/en/pro-app/latest/help/data/cad/what-is-cad-data.htm) (CAD):</b> 
-  * From CAD software (AutoCAD, Microstation)
-  * Files: .dwg, .dxf
-    * [DWG to shp](https://gisgeography.com/dwg-to-shp/)
-    * [DXF to shp QGIS Plugin](https://docs.qgis.org/2.18/en/docs/user_manual/plugins/plugins_dxf2shape_converter.html) 
+### Computer Automated Design ([CAD](https://pro.arcgis.com/en/pro-app/latest/help/data/cad/what-is-cad-data.htm))    
+Files from typical CAD software (AutoCAD & Microstation):   
+  * .dxf (drawing exchange format): Platform-independent 2D & 3D vector files        
+  * .dwg: AutoCAD 2D & 3D vector files      
+  * .dgn: MicroStation 2D & 3D vector files    
 
-<b>Data Converter</b>: https://www.gisconvert.com/   
+---
+
+## Data Transformation
+
+Refers to transferring / converting geospatial data between formats -- Python objects, ESRI [geodatabases](https://pro.arcgis.com/en/pro-app/latest/help/data/geodatabases/overview/the-architecture-of-a-geodatabase.htm#GUID-739D940C-FD50-4F6F-8600-EBE39B00189A
+), and other RDBMS such as [SQL Server](https://pro.arcgis.com/en/pro-app/latest/help/data/geodatabases/manage-sql-server/overview-geodatabases-sqlserver.htm). 
+
+
+#### Data Converter: 
+https://www.gisconvert.com/   
+
+#### OSGEO GDAL
+<b>Available [vector](https://gdal.org/drivers/vector/index.html) and [raster](https://gdal.org/drivers/raster/index.html) drivers</b>      
+  
+```ogr2ogr``` from OSGeo4W Shell:  
+
+shp → gpkg: 
+> ogr2ogr -f "ESRI Shapefile" "input.shp" "output.gpkg" "layer"
+
+Postgres → gpkg:
+> ogr2ogr -f PostgreSQL "PG:user=your_username password=your_pwd dbname=your_dbname" out_filename.gpkg
+
+gpx → gpkg (for all gpx files in current directory):  
+> for /R %f in (*.gpx) do ogr2ogr -f "GPKG" out_filename.gpkg "%f"
+
+
+
+#### CAD ↔ SHP:  
+  * DXF to shp [QGIS Plugin](https://docs.qgis.org/2.18/en/docs/user_manual/plugins/plugins_dxf2shape_converter.html)   
+  * [DWG to shp](https://gisgeography.com/dwg-to-shp/)  
+
+
+
+#### PostgreSQL ↔ Python (geopandas):  
+Cursors are database objects that work with tables (for instance: reading or writing) one row at a time   
+~~~
+import pandas as pd
+import psycopg2
+
+def df_to_postgres(df, table_name, db, usr, pwd, localhost="localhost", port="5432"):
+    try:
+        conn = psycopg2.connect(database = db, user = usr, password = pwd, host = localhost, port = port)
+        cur = conn.cursor()
+        col_names = df.columns.to_list()
+        for i in range(0 ,len(df)):
+            values = tuple(df[col][i] for col in col_names)
+            cur.execute("INSERT INTO {} ({}) VALUES({})".format(table_name, ", ".join(col_names), ", ".join(["%s"] * len(col_names))))
+        conn.commit()
+
+    except (Exception, psycopg2.Error) as error:
+        print("Error while fetching data from PostgreSQL", error)
+    
+    finally:
+        if conn:
+            cur.close()
+            conn.close()
+            print("PostgreSQL connection is closed")
+
+def postgres_to_df(SQL_query, db, user="postgres", pwd="", host="localhost", port=5432):
+    try:
+        conn = psycopg2.connect(database=db, user="postgres", password=pwd, host=host, port=port)
+        cur = conn.cursor()
+        cur.execute(SQL_query)
+        items = cur.fetchall()
+        hits=[]
+        for row in items:
+            hits.append(row)
+        col_names = [desc[0] for desc in cur.description] 
+        hits_df=pd.DataFrame(hits, columns=col_names)
+        if ("lat" in col_names and "lon" in col_names):
+            hits_gdf = gpd.GeoDataFrame(hits_df, geometry=gpd.points_from_xy(hits_df.loc[:,'lon'],hits_df.loc[:,'lat'], crs="EPSG:4326"))
+            return hits_gdf
+        else:
+            return hits_df
+
+    except (Exception, psycopg2.Error) as error:
+        print("Error while fetching data from PostgreSQL", error)
+    
+    finally:
+        if conn:
+            cur.close()
+            conn.close()
+            print("PostgreSQL connection is closed")
+~~~
 
 
 ---
 
-## GIS Standards: 
+## GIS Data Standards  
 Improve geographic information's utility & value by increasing its interoperability, reusability, reliability, and access.   
 * Example of [City of Fremont CAD standards](https://storymaps.arcgis.com/stories/9767345c01fc4fd5a6b90e970b249dbd)  
 

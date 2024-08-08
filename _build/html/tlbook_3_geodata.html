@@ -384,11 +384,26 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coordinate-reference-system-crs">Coordinate Reference System (CRS)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-data-types-formats">Common Data Types &amp; Formats</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vectors">Vectors</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rasters">Rasters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vectors">Vectors</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#networks">Networks:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-standards">GIS Standards:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rasters">Rasters</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#image-resolution">Image Resolution</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#light-detection-and-ranging-lidar">Light Detection and Ranging (lidar)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computer-automated-design-cad">Computer Automated Design (CAD)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-transformation">Data Transformation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-converter">Data Converter:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#osgeo-gdal">OSGEO GDAL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cad-shp">CAD ↔ SHP:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postgresql-python-geopandas">PostgreSQL ↔ Python (geopandas):</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-data-standards">GIS Data Standards</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-metadata-standards">GIS metadata standards:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata-creation-best-practices">Metadata creation best practices:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata-validation">Metadata validation:</a></li>
@@ -449,77 +464,181 @@ the goal is to choose a projection method that limits your project area’s East
 </li>
 </ol>
 <p><b><a class="reference external" href="https://projectionwizard.org">Projection Wizard</a>:</b>  Tool to find appropriate projection based on your project area</p>
-<p><b>EPSG:</b> public registry of CRS info</p>
+<p><b><a class="reference external" href="https://pygis.io/docs/d_understand_crs_codes.html#proj-4-string">PROJ.4 String</a>:</b>  Multiple parameters needed to describe a CRS</p>
+<p><b><a class="reference external" href="https://epsg.io/?q=">EPSG</a></b>: public registry of CRS information. Spatial Reference System Identifier <b>(SRID)</b> is typically associated with a well-known text (WKT) string definition of the coordinate system, consistent with an EPSG code.</p>
 <ul class="simple">
 <li><p>EPSG 4326 - <em>Unprojected/Geographic</em> - Used for GPS field survey devices &amp; raw survey data</p></li>
 <li><p>EPSG 3857 - <em>Projected</em> - Used for features published in web maps</p></li>
 </ul>
-<p><b><a class="reference external" href="https://pygis.io/docs/d_understand_crs_codes.html#proj-4-string">PROJ.4 String</a>:</b>  Multiple parameters needed to describe a CRS.</p>
-<p><b>CRS Transformation:</b> Transforms geographic data as images(rasters) or coordinates(vectors) between two different CRS using <a class="reference external" href="https://rasterio.readthedocs.io/en/stable/topics/transforms.html">six parameters</a>.</p>
+<p><b>CRS Reprojection:</b> Transforms geographic data as <a class="reference external" href="https://rasterio.readthedocs.io/en/stable/topics/transforms.html">images</a> or <a class="reference external" href="https://www.earthdatascience.org/workshops/gis-open-source-python/reproject-vector-data-in-python/">vectors</a> between different coordinate reference systems.</p>
 </section>
 <hr class="docutils" />
 <section id="common-data-types-formats">
 <h2>Common Data Types &amp; Formats<a class="headerlink" href="#common-data-types-formats" title="Link to this heading">#</a></h2>
 <section id="vectors">
 <h3>Vectors<a class="headerlink" href="#vectors" title="Link to this heading">#</a></h3>
-<p>Vectors represent objects as features (point, line, or polygon shape) with tabular data containing attributes/fields values for each geometry.<br />
-<b>Feature class</b>: homogenous collection of features (points, lines, or polygons)</p>
+<p>Vectors represent objects as features (point, line, or polygon shape) with tabular data containing attributes/fields values for each geometry.</p>
 <ul class="simple">
-<li><p>ESRI Shapefile</p></li>
-<li><p>Database (SQLite, MS Access, PostgreSQL, ESRI file geodatabase)</p></li>
-<li><p><a class="reference external" href="https://courses.spatialthoughts.com/python-foundation.html#understanding-json-and-geojson">GeoJSON</a> (<a class="reference external" href="https://geojson.io">GeoJSON creator</a>)</p></li>
-<li><p>KML/KMZ (for Google Earth Pro)</p></li>
-<li><p><a class="reference external" href="https://geoparquet.org/">Geoparquet</a></p></li>
+<li><p><b>ESRI <a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/help/data/feature-classes/feature-classes.htm">feature class</a></b>: homogenous collection of features (points, lines, or polygons) and can be stored in geodatabases, shapefiles, coverages, or other data formats. For instance, in an ESRI file geodatabase a feature classes can be annotations.</p></li>
+<li><p><b>ESRI <a class="reference external" href="https://doc.arcgis.com/en/arcgis-online/reference/shapefiles.htm">shapefile</a></b>: A set of files (.shp, .shx, .dbf, &amp; .prj) that contain one feature class</p></li>
+<li><p><b>Databases</b>: SQLite, MS Access, PostgreSQL, ESRI file geodatabase</p></li>
+<li><p><b><a class="reference external" href="https://geojson.org/">GeoJSON</a></b>: <a class="reference external" href="https://courses.spatialthoughts.com/python-foundation.html#understanding-json-and-geojson">JSON <code class="docutils literal notranslate"><span class="pre">features</span></code></a>  have <code class="docutils literal notranslate"><span class="pre">properties</span></code> and <code class="docutils literal notranslate"><span class="pre">geometry</span></code></p>
+<ul>
+<li><p><a class="reference external" href="https://geojson.io">GeoJSON creator</a></p></li>
 </ul>
-<p><b>Networks:</b></p>
+</li>
+<li><p><b>KML/KMZ</b>: for Google Earth Pro</p></li>
+<li><p><b><a class="reference external" href="https://geoparquet.org/">Geoparquet</a></b>: Supports <i>columnar</i> data storage making it a faster alternative to .csv files</p></li>
+</ul>
+<section id="networks">
+<h4>Networks:<a class="headerlink" href="#networks" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Set of connected objects in geographic space to answer questions about connections and flow.</p></li>
 <li><p>Contain objects (as nodes/points and connections/lines). May involve adjacency matrix calculation.</p></li>
 </ul>
 </section>
+</section>
 <section id="rasters">
 <h3>Rasters<a class="headerlink" href="#rasters" title="Link to this heading">#</a></h3>
-<p>Rasters are grids with pixels with values that represent continuous fields (elevation, temperature, an aerial image)</p>
+<p>Rasters are grids of cells, or pixels, with values that represent continuous fields (for example: elevation, temperature, light reflected from Earth’s surface)</p>
 <ul class="simple">
-<li><p>Tagged Image File Format (.tiff or .tif) - standard image format</p></li>
-<li><p><a class="reference external" href="https://ogc.org/standard/geotiff/">GeoTIFF</a> - tiff with metadata for geographic information</p></li>
-<li><p>Band sequential (BSQ) - optimal for accessing any part of a single band (spatial)</p></li>
-<li><p>Band interleaved by pixel (BIP) - optimal for accessing multiple bands (spectral)</p></li>
-<li><p>Band interleaved by line (BIL) - compromise allowing for easy access of spectral and spatial information</p></li>
-<li><p>netCDF - multidimensional rasters, often time-series</p></li>
-<li><p>Hierarchical Data Format v5 ( <a class="reference external" href="https://www.ogc.org/standard/HDF5/">HDF5</a> ) - supports large, heterogeneous data. uses a ‘file directory’ structure</p></li>
-<li><p>Cloud Optimized Geotiff ( <a class="reference external" href="https://www.cogeo.org/">COG</a> ) - GeoTiff hosted on a HTTP file server</p></li>
+<li><p><b>Tagged Image File Format</b> (.tiff or .tif) - Platform-independent image format</p></li>
+<li><p><b><a class="reference external" href="https://ogc.org/standard/geotiff/">GeoTIFF</a></b> - Tiff with metadata for geographic information</p></li>
+<li><p><b>Band sequential</b> (<a class="reference external" href="https://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/bil-bip-and-bsq-raster-files.htm">BSQ</a>) - Optimal for accessing any part of a single band (spatial). Data is written one band at a time. Must have an associated ASCII file header (.hdr)</p></li>
+<li><p><b>Band interleaved by pixel</b> (<a class="reference external" href="https://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/bsq-format-example.htm">BIP</a>) - Optimal for accessing multiple bands (spectral). Data for each pixel is written band by band. Must have an associated .hdr</p></li>
+<li><p><b>Band interleaved by line</b> (<a class="reference external" href="https://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/bil-format-example.htm">BIL</a>) - Compromise allowing for easy access of spectral and spatial information. Pixels are written band by band for each line, or row. Must have an associated .hdr</p></li>
+<li><p><b>netCDF</b> - multidimensional rasters, often time-series</p></li>
+<li><p><b>Hierarchical Data Format v5</b> (<a class="reference external" href="https://www.ogc.org/standard/HDF5/">HDF5</a>) - Supports large, heterogeneous data. uses a ‘file directory’ structure</p></li>
+<li><p><b>Cloud Optimized Geotiff</b> (<a class="reference external" href="https://www.cogeo.org/">COG</a>) - GeoTiff hosted on a HTTP file server</p></li>
 </ul>
-<p><b>Spatial Resolution:</b> Pixel size</p>
+<section id="image-resolution">
+<h4>Image Resolution<a class="headerlink" href="#image-resolution" title="Link to this heading">#</a></h4>
+<p><b>Spatial</b> = raster pixel or cell size</p>
 <ul class="simple">
-<li><p>Amount of detail, precision, granularity</p></li>
+<li><p>Refers to the smallest detectable object, or amount of granularity/precision</p></li>
 <li><p>Fine resolution = small pixel size</p></li>
 <li><p>Coarse resolution = large pixel size</p></li>
 </ul>
-<p><b>Light Detection and Ranging (lidar):</b> used to create elevation model rasters</p>
-<p>Lidar file formats:</p>
+<p><b>Temporal</b> = data collection frequency<br />
+<b>Spectral</b> = number and width of spectral bands collected by a sensor<br />
+<b>Radiometric</b> = bits / number of possible data values</p>
+</section>
+</section>
+<section id="light-detection-and-ranging-lidar">
+<h3>Light Detection and Ranging (lidar)<a class="headerlink" href="#light-detection-and-ranging-lidar" title="Link to this heading">#</a></h3>
+<p>Often used to create 3D digital surface height models (DSM) and digital elevation models (DEM).</p>
+<p><b>Lidar file formats</b>:</p>
 <ul class="simple">
 <li><p>ASCII: raw lidar data</p></li>
 <li><p><a class="reference external" href="https://www.ogc.org/standard/LAS/">LAS</a>: 3D point clouds with XYZ (lon-lat-ele) values</p></li>
 <li><p>LAZ (zipped LAS)</p></li>
 </ul>
-<p>Lidar processing tool: <a class="reference external" href="https://rapidlasso.de/">rapidlasso</a></p>
-<p><b><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/help/data/cad/what-is-cad-data.htm">Computer Automated Design</a> (CAD):</b></p>
+<p><b>Tools</b>:</p>
 <ul class="simple">
-<li><p>From CAD software (AutoCAD, Microstation)</p></li>
-<li><p>Files: .dwg, .dxf</p>
-<ul>
-<li><p><a class="reference external" href="https://gisgeography.com/dwg-to-shp/">DWG to shp</a></p></li>
-<li><p><a class="reference external" href="https://docs.qgis.org/2.18/en/docs/user_manual/plugins/plugins_dxf2shape_converter.html">DXF to shp QGIS Plugin</a></p></li>
+<li><p><a class="reference external" href="https://liblas.org/">libLAS</a>: reading &amp; writing LAS</p></li>
+<li><p><a class="reference external" href="https://rapidlasso.de/">rapidlasso</a>: LAS processing</p></li>
+<li><p><a class="reference external" href="https://grasswiki.osgeo.org/wiki/LIDAR">GRASS</a>: LAS processing with QGIS</p></li>
 </ul>
-</li>
+</section>
+<section id="computer-automated-design-cad">
+<h3>Computer Automated Design (<a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/help/data/cad/what-is-cad-data.htm">CAD</a>)<a class="headerlink" href="#computer-automated-design-cad" title="Link to this heading">#</a></h3>
+<p>Files from typical CAD software (AutoCAD &amp; Microstation):</p>
+<ul class="simple">
+<li><p>.dxf (drawing exchange format): Platform-independent 2D &amp; 3D vector files</p></li>
+<li><p>.dwg: AutoCAD 2D &amp; 3D vector files</p></li>
+<li><p>.dgn: MicroStation 2D &amp; 3D vector files</p></li>
 </ul>
-<p><b>Data Converter</b>: <a class="reference external" href="https://www.gisconvert.com/">https://www.gisconvert.com/</a></p>
 </section>
 </section>
 <hr class="docutils" />
-<section id="gis-standards">
-<h2>GIS Standards:<a class="headerlink" href="#gis-standards" title="Link to this heading">#</a></h2>
+<section id="data-transformation">
+<h2>Data Transformation<a class="headerlink" href="#data-transformation" title="Link to this heading">#</a></h2>
+<p>Refers to transferring / converting geospatial data between formats – Python objects, ESRI <a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/help/data/geodatabases/overview/the-architecture-of-a-geodatabase.htm#GUID-739D940C-FD50-4F6F-8600-EBE39B00189A">geodatabases</a>, and other RDBMS such as <a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/help/data/geodatabases/manage-sql-server/overview-geodatabases-sqlserver.htm">SQL Server</a>.</p>
+<section id="data-converter">
+<h3>Data Converter:<a class="headerlink" href="#data-converter" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://www.gisconvert.com/">https://www.gisconvert.com/</a></p>
+</section>
+<section id="osgeo-gdal">
+<h3>OSGEO GDAL<a class="headerlink" href="#osgeo-gdal" title="Link to this heading">#</a></h3>
+<p><b>Available <a class="reference external" href="https://gdal.org/drivers/vector/index.html">vector</a> and <a class="reference external" href="https://gdal.org/drivers/raster/index.html">raster</a> drivers</b></p>
+<p><code class="docutils literal notranslate"><span class="pre">ogr2ogr</span></code> from OSGeo4W Shell:</p>
+<p>shp → gpkg:</p>
+<blockquote>
+<div><p>ogr2ogr -f “ESRI Shapefile” “input.shp” “output.gpkg” “layer”</p>
+</div></blockquote>
+<p>Postgres → gpkg:</p>
+<blockquote>
+<div><p>ogr2ogr -f PostgreSQL “PG:user=your_username password=your_pwd dbname=your_dbname” out_filename.gpkg</p>
+</div></blockquote>
+<p>gpx → gpkg (for all gpx files in current directory):</p>
+<blockquote>
+<div><p>for /R %f in (*.gpx) do ogr2ogr -f “GPKG” out_filename.gpkg “%f”</p>
+</div></blockquote>
+</section>
+<section id="cad-shp">
+<h3>CAD ↔ SHP:<a class="headerlink" href="#cad-shp" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>DXF to shp <a class="reference external" href="https://docs.qgis.org/2.18/en/docs/user_manual/plugins/plugins_dxf2shape_converter.html">QGIS Plugin</a></p></li>
+<li><p><a class="reference external" href="https://gisgeography.com/dwg-to-shp/">DWG to shp</a></p></li>
+</ul>
+</section>
+<section id="postgresql-python-geopandas">
+<h3>PostgreSQL ↔ Python (geopandas):<a class="headerlink" href="#postgresql-python-geopandas" title="Link to this heading">#</a></h3>
+<p>Cursors are database objects that work with tables (for instance: reading or writing) one row at a time</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">psycopg2</span>
+
+<span class="k">def</span> <span class="nf">df_to_postgres</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">table_name</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">usr</span><span class="p">,</span> <span class="n">pwd</span><span class="p">,</span> <span class="n">localhost</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="s2">&quot;5432&quot;</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">conn</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">database</span> <span class="o">=</span> <span class="n">db</span><span class="p">,</span> <span class="n">user</span> <span class="o">=</span> <span class="n">usr</span><span class="p">,</span> <span class="n">password</span> <span class="o">=</span> <span class="n">pwd</span><span class="p">,</span> <span class="n">host</span> <span class="o">=</span> <span class="n">localhost</span><span class="p">,</span> <span class="n">port</span> <span class="o">=</span> <span class="n">port</span><span class="p">)</span>
+        <span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+        <span class="n">col_names</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span> <span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)):</span>
+            <span class="n">values</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">col_names</span><span class="p">)</span>
+            <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;INSERT INTO </span><span class="si">{}</span><span class="s2"> (</span><span class="si">{}</span><span class="s2">) VALUES(</span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">table_name</span><span class="p">,</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">col_names</span><span class="p">),</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">col_names</span><span class="p">))))</span>
+        <span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+
+    <span class="k">except</span> <span class="p">(</span><span class="ne">Exception</span><span class="p">,</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">Error</span><span class="p">)</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error while fetching data from PostgreSQL&quot;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
+    
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">conn</span><span class="p">:</span>
+            <span class="n">cur</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PostgreSQL connection is closed&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">postgres_to_df</span><span class="p">(</span><span class="n">SQL_query</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="s2">&quot;postgres&quot;</span><span class="p">,</span> <span class="n">pwd</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">5432</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">conn</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">database</span><span class="o">=</span><span class="n">db</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="s2">&quot;postgres&quot;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">pwd</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="n">port</span><span class="p">)</span>
+        <span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+        <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">SQL_query</span><span class="p">)</span>
+        <span class="n">items</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+        <span class="n">hits</span><span class="o">=</span><span class="p">[]</span>
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+            <span class="n">hits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+        <span class="n">col_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">desc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">desc</span> <span class="ow">in</span> <span class="n">cur</span><span class="o">.</span><span class="n">description</span><span class="p">]</span> 
+        <span class="n">hits_df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">hits</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">col_names</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="s2">&quot;lat&quot;</span> <span class="ow">in</span> <span class="n">col_names</span> <span class="ow">and</span> <span class="s2">&quot;lon&quot;</span> <span class="ow">in</span> <span class="n">col_names</span><span class="p">):</span>
+            <span class="n">hits_gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">hits_df</span><span class="p">,</span> <span class="n">geometry</span><span class="o">=</span><span class="n">gpd</span><span class="o">.</span><span class="n">points_from_xy</span><span class="p">(</span><span class="n">hits_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;lon&#39;</span><span class="p">],</span><span class="n">hits_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;lat&#39;</span><span class="p">],</span> <span class="n">crs</span><span class="o">=</span><span class="s2">&quot;EPSG:4326&quot;</span><span class="p">))</span>
+            <span class="k">return</span> <span class="n">hits_gdf</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">hits_df</span>
+
+    <span class="k">except</span> <span class="p">(</span><span class="ne">Exception</span><span class="p">,</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">Error</span><span class="p">)</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error while fetching data from PostgreSQL&quot;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
+    
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">conn</span><span class="p">:</span>
+            <span class="n">cur</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PostgreSQL connection is closed&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="gis-data-standards">
+<h2>GIS Data Standards<a class="headerlink" href="#gis-data-standards" title="Link to this heading">#</a></h2>
 <p>Improve geographic information’s utility &amp; value by increasing its interoperability, reusability, reliability, and access.</p>
 <ul class="simple">
 <li><p>Example of <a class="reference external" href="https://storymaps.arcgis.com/stories/9767345c01fc4fd5a6b90e970b249dbd">City of Fremont CAD standards</a></p></li>
@@ -772,11 +891,26 @@ OGC publishes the following documents: 1) implementation standards, 2) abstract 
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coordinate-reference-system-crs">Coordinate Reference System (CRS)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-data-types-formats">Common Data Types &amp; Formats</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vectors">Vectors</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rasters">Rasters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vectors">Vectors</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#networks">Networks:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-standards">GIS Standards:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rasters">Rasters</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#image-resolution">Image Resolution</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#light-detection-and-ranging-lidar">Light Detection and Ranging (lidar)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computer-automated-design-cad">Computer Automated Design (CAD)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-transformation">Data Transformation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-converter">Data Converter:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#osgeo-gdal">OSGEO GDAL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cad-shp">CAD ↔ SHP:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postgresql-python-geopandas">PostgreSQL ↔ Python (geopandas):</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-data-standards">GIS Data Standards</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-metadata-standards">GIS metadata standards:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata-creation-best-practices">Metadata creation best practices:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata-validation">Metadata validation:</a></li>
