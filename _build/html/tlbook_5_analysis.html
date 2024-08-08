@@ -419,8 +419,8 @@ document.write(`
 <h2>Spatial Autocorrelation<a class="headerlink" href="#spatial-autocorrelation" title="Link to this heading">#</a></h2>
 <p>Spatial autocorrelation measures how similar values of a variable are relative to how close they are.</p>
 <ul class="simple">
-<li><p>Values range from -1 to +1, such that -1 would represent a checkerboard pattern and elevation in flat regions would have values closer to +1.</p></li>
 <li><p>Moran’s I - measure of spatial autocorrelation</p></li>
+<li><p>Values range from -1 to +1, such that -1 would represent a checkerboard pattern and values near +1 would represent elevation in flat regions.</p></li>
 </ul>
 </section>
 <section id="topological-relations">
@@ -454,11 +454,11 @@ document.write(`
 </section>
 <section id="interpolation">
 <h2>Interpolation<a class="headerlink" href="#interpolation" title="Link to this heading">#</a></h2>
-<p>Estimate a value at a location based on surrounding locations (time or space)</p>
+<p>Estimate a value at a location based on surrounding locations (over time or <a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-analyst/understanding-interpolation-analysis.htm#:~:text=Interpolation%20predicts%20values%20for%20cells,chemical%20concentrations%2C%20and%20noise%20levels.">space</a>)</p>
 <ul class="simple">
-<li><p>nearest neighbor, bilinear, cubic resampling methods for reprojecting rasters (NN basic/fastest -&gt; cubic most intensive)</p></li>
-<li><p>IDW - further away, less weight given</p></li>
-<li><p>Kriging - first derivative describes the rate that values change over a distance, or the effect of distance on the attribute</p></li>
+<li><p>methods: nearest neighbor, bilinear, cubic resampling methods for reprojecting rasters (NN basic/fastest -&gt; cubic most intensive)</p></li>
+<li><p>Inverse Distance Weighted (<a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/3d-analyst/idw.htm">IDW</a>) - less weight is given to point values further away</p></li>
+<li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/3d-analyst/how-kriging-works.htm">Kriging</a> - first derivative describes the rate that values change over a distance, or the effect of distance on the attribute, and is used to interpolate unknown locations across space</p></li>
 </ul>
 </section>
 <section id="global-statistics">
@@ -472,38 +472,55 @@ document.write(`
 <h2>Focal / Neighborhood statistics<a class="headerlink" href="#focal-neighborhood-statistics" title="Link to this heading">#</a></h2>
 <p>Require user-input kernel size/radius/distance for the moving window calculation</p>
 <ul class="simple">
-<li><p>Low-pass filter - smooths surface</p></li>
-<li><p>High-pass filter - edge-enhancement / sharpening</p></li>
-<li><p>Spatial Lags</p></li>
+<li><p><b>Low-pass filter</b>: Smooths surface</p></li>
+<li><p><b>High-pass filter</b>: Edge-enhancement / sharpening</p></li>
+<li><p><b>Spatial Lags</b></p></li>
 </ul>
 </section>
 <section id="descriptive-analytics">
 <h2>Descriptive Analytics<a class="headerlink" href="#descriptive-analytics" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><b>Central tendency</b>: mean, median, mode</p></li>
+<li><p><b>Dispersion</b>: range, variance, standard deviation</p></li>
+<li><p><b>Distribution visualization</b>: histogram, bar chart, box plot</p></li>
+</ul>
 </section>
 <section id="predictive-analytics">
 <h2>Predictive Analytics<a class="headerlink" href="#predictive-analytics" title="Link to this heading">#</a></h2>
 <p>Predicts future or past based value based on historical (often time-series) data</p>
+<p><b>Regression</b>:</p>
 <ul class="simple">
-<li><p>OLS</p></li>
-<li><p>GWR</p></li>
-<li><p>Clustering - DBSCAN, K-means, PCA</p></li>
-<li><p>RF, SVM - image classification</p></li>
-<li><p>NN - image segmentation</p></li>
+<li><p>Ordinary Least Squares (OLS)</p></li>
+<li><p>Geographic Weighted Regression (GWR)</p></li>
+</ul>
+<p><b>Clustering</b>:</p>
+<ul class="simple">
+<li><p>DBSCAN</p></li>
+<li><p>K-means</p></li>
+<li><p>Principal Component Analysis (PCA)</p></li>
+</ul>
+<p><b>Supervised Classification</b>:</p>
+<ul class="simple">
+<li><p>Random Forest (RF)</p></li>
+<li><p>Support Vector Machine (SVM)</p></li>
+</ul>
+<p><b>Image Segmentation</b>:</p>
+<ul class="simple">
+<li><p>Neural Networks (NN)</p></li>
 </ul>
 </section>
 <section id="perscriptive-analytics">
 <h2>Perscriptive Analytics<a class="headerlink" href="#perscriptive-analytics" title="Link to this heading">#</a></h2>
 <p>Suggests decision options for how to take advantage of a future opportunity or mitigate a future risk, and shows the implication of each decision option.</p>
 <ul class="simple">
-<li><p>site suitability analysis (SSA)</p></li>
-<li><p>vehicle routing:</p>
+<li><p><b>Site Suitability Analysis</b> (SSA)</p></li>
+<li><p><b><a class="reference external" href="https://developers.arcgis.com/python/guide/part1-introduction-to-network-analysis/">Vehicle routing</a></b>:</p>
 <ul>
-<li><p><a class="reference external" href="https://developers.arcgis.com/python/guide/part1-introduction-to-network-analysis/">https://developers.arcgis.com/python/guide/part1-introduction-to-network-analysis/</a></p></li>
-<li><p>service area - travel times to customer. ex-to decide where to put fire station. regular buffer, cost over surface (elevation/slope), network (street travel time)</p></li>
-<li><p>find closest facility for incidents</p></li>
+<li><p>Service Area: Travel times to customer. For example) to decide where to put fire station. regular buffer, cost over surface (elevation/slope), network (street travel time)</p></li>
+<li><p>Find closest facility for incidents</p></li>
 <li><p>An <a class="reference external" href="https://developers.arcgis.com/python/guide/part5-generate-od-cost-matrix/">origin-destination (OD) cost matrix</a> from multiple origins to multiple destinations, is a table that contains the cost, such as the travel time or travel distance, from each origin to each destination</p></li>
-<li><p>location allocation - be far from competition but near customers</p></li>
-<li><p><a class="reference external" href="https://developers.arcgis.com/python/guide/part7-vehicle-routing-problem/">vehicle routing problem</a> goal is to best service the orders and minimize the overall operating cost for the fleet of vehicles</p>
+<li><p>Location Allocation: be far from competition but near customers</p></li>
+<li><p><a class="reference external" href="https://developers.arcgis.com/python/guide/part7-vehicle-routing-problem/">Vehicle Routing Problem</a> goal is to best service the orders and minimize the overall operating cost for the fleet of vehicles</p>
 <ul>
 <li><p>starts with OD cost matrix, iterates adds real-world heuristics</p></li>
 </ul>

@@ -392,13 +392,13 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#joins">Joins</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#views">Views</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#access-control">Access control</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postgresql">PostgreSQL</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#store-postgresql-credentials-in-linux">Store postgreSQL credentials in Linux:</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#trust-ignore-password-step-in-windows">Trust (ignore password step) in Windows:</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#connect-to-database-from-psql">Connect to database from psql</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#from-psql-create-postgresql-database">From psql, create postgreSQL database</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#postgresql">PostgreSQL</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#store-postgresql-credentials-in-linux">Store postgreSQL credentials in Linux:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trust-ignore-password-step-in-windows">Trust (ignore password step) in Windows:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connect-to-database-from-psql">Connect to database from psql</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-psql-create-postgresql-database">From psql, create postgreSQL database</a></li>
 </ul>
 </li>
 </ul>
@@ -464,7 +464,7 @@ The process of breaking down tables in a database &amp; managing the relationshi
 <ul class="simple">
 <li><p>First Normal Form (<b>1NF</b>)  - simplest - need primary key (single column or combination of columns) has one value per key.</p></li>
 <li><p>Second Normal Form (<b>2NF</b>)  - each non-key attribute is dependent on the entire primary key (all primary key columns).</p></li>
-<li><p>Third Normal Form (<b>3NF</b>)  - <b>each non-key attribute should depend on the key, the whole key, and nothing but the key</b></p></li>
+<li><p>Third Normal Form (<b>3NF</b>)  - <i>each non-key attribute should depend on the key, the whole key, and nothing but the key</i></p></li>
 </ul>
 <section id="indexes">
 <h3>Indexes<a class="headerlink" href="#indexes" title="Link to this heading">#</a></h3>
@@ -628,11 +628,12 @@ returns all rows from both tables</p>
 <code class="docutils literal notranslate"><span class="pre">GRANT</span></code> { permissions} ON SCHEMA :: {schema} TO {user};<br />
 <code class="docutils literal notranslate"><span class="pre">DENY</span></code> { permissions} ON SCHEMA :: {schema} TO {user};</p>
 </section>
+</section>
 <hr class="docutils" />
 <section id="postgresql">
-<h3>PostgreSQL<a class="headerlink" href="#postgresql" title="Link to this heading">#</a></h3>
+<h2>PostgreSQL<a class="headerlink" href="#postgresql" title="Link to this heading">#</a></h2>
 <section id="store-postgresql-credentials-in-linux">
-<h4>Store postgreSQL credentials in Linux:<a class="headerlink" href="#store-postgresql-credentials-in-linux" title="Link to this heading">#</a></h4>
+<h3>Store postgreSQL credentials in Linux:<a class="headerlink" href="#store-postgresql-credentials-in-linux" title="Link to this heading">#</a></h3>
 <blockquote>
 <div><p>export POSTUSR={your-postgres-username}<br />
 export POSTPWD={your-postgres-pwd}</p>
@@ -641,17 +642,17 @@ export POSTPWD={your-postgres-pwd}</p>
 If not: in File Explorer, navigate into the directory where PostgreSQL is installed, then into the bin directory, then open a terminal.</p>
 </section>
 <section id="trust-ignore-password-step-in-windows">
-<h4>Trust (ignore password step) in Windows:<a class="headerlink" href="#trust-ignore-password-step-in-windows" title="Link to this heading">#</a></h4>
+<h3>Trust (ignore password step) in Windows:<a class="headerlink" href="#trust-ignore-password-step-in-windows" title="Link to this heading">#</a></h3>
 <p>Right-click “C:\Program Files\PostgreSQL\16\data\pg_hba.conf” &gt; edit with Notepad: change method from sca-… to trust</p>
 </section>
 <section id="connect-to-database-from-psql">
-<h4>Connect to database from psql<a class="headerlink" href="#connect-to-database-from-psql" title="Link to this heading">#</a></h4>
+<h3>Connect to database from psql<a class="headerlink" href="#connect-to-database-from-psql" title="Link to this heading">#</a></h3>
 <p>i) Find in install location once then pin to start/taskbar:<br />
 Server [localhost], Database [db_name], Port[5432], Username[postgres], Password for user
 Note: Entering nothing submits text within brackets</p>
 </section>
 <section id="from-psql-create-postgresql-database">
-<h4>From psql, create postgreSQL database<a class="headerlink" href="#from-psql-create-postgresql-database" title="Link to this heading">#</a></h4>
+<h3>From psql, create postgreSQL database<a class="headerlink" href="#from-psql-create-postgresql-database" title="Link to this heading">#</a></h3>
 <p>Execute the following command to create a database called <code class="docutils literal notranslate"><span class="pre">db_name</span></code>, then enter user password when prompted:</p>
 <blockquote>
 <div><p>createdb -h localhost -p 5432 -U postgres db_name</p>
@@ -665,8 +666,6 @@ Note: Entering nothing submits text within brackets</p>
 <div><p>\d</p>
 </div></blockquote>
 <hr class="docutils" />
-<hr class="docutils" />
-</section>
 </section>
 </section>
 </section>
@@ -745,13 +744,13 @@ Note: Entering nothing submits text within brackets</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#joins">Joins</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#views">Views</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#access-control">Access control</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postgresql">PostgreSQL</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#store-postgresql-credentials-in-linux">Store postgreSQL credentials in Linux:</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#trust-ignore-password-step-in-windows">Trust (ignore password step) in Windows:</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#connect-to-database-from-psql">Connect to database from psql</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#from-psql-create-postgresql-database">From psql, create postgreSQL database</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#postgresql">PostgreSQL</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#store-postgresql-credentials-in-linux">Store postgreSQL credentials in Linux:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trust-ignore-password-step-in-windows">Trust (ignore password step) in Windows:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connect-to-database-from-psql">Connect to database from psql</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-psql-create-postgresql-database">From psql, create postgreSQL database</a></li>
 </ul>
 </li>
 </ul>

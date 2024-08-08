@@ -9,9 +9,8 @@
 
 ## Spatial Autocorrelation
 Spatial autocorrelation measures how similar values of a variable are relative to how close they are. 
-- Values range from -1 to +1, such that -1 would represent a checkerboard pattern and elevation in flat regions would have values closer to +1. 
-
-- Moran's I - measure of spatial autocorrelation 
+- Moran's I - measure of spatial autocorrelation   
+- Values range from -1 to +1, such that -1 would represent a checkerboard pattern and values near +1 would represent elevation in flat regions.   
 
 ## Topological Relations
 - disjoint  / intersects 
@@ -31,10 +30,12 @@ Spatial autocorrelation measures how similar values of a variable are relative t
 - points, lines, or polygon vectors. Add or subtract buffer distance area 
 
 ## Interpolation 
-Estimate a value at a location based on surrounding locations (time or space) 
-*  nearest neighbor, bilinear, cubic resampling methods for reprojecting rasters (NN basic/fastest -> cubic most intensive)  
-* IDW - further away, less weight given   
-* Kriging - first derivative describes the rate that values change over a distance, or the effect of distance on the attribute  
+Estimate a value at a location based on surrounding locations (over time or [space](https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-analyst/understanding-interpolation-analysis.htm#:~:text=Interpolation%20predicts%20values%20for%20cells,chemical%20concentrations%2C%20and%20noise%20levels.)) 
+* methods: nearest neighbor, bilinear, cubic resampling methods for reprojecting rasters (NN basic/fastest -> cubic most intensive)  
+* Inverse Distance Weighted ([IDW](https://pro.arcgis.com/en/pro-app/latest/tool-reference/3d-analyst/idw.htm)) - less weight is given to point values further away      
+* [Kriging](https://pro.arcgis.com/en/pro-app/latest/tool-reference/3d-analyst/how-kriging-works.htm) - first derivative describes the rate that values change over a distance, or the effect of distance on the attribute, and is used to interpolate unknown locations across space   
+
+
 
 ## Global statistics
 - Band (```b```) algebra: ```b1 + b2```
@@ -42,31 +43,42 @@ Estimate a value at a location based on surrounding locations (time or space)
 
 ## Focal / Neighborhood statistics
 Require user-input kernel size/radius/distance for the moving window calculation   
-- Low-pass filter - smooths surface
-- High-pass filter - edge-enhancement / sharpening 
-- Spatial Lags
+- <b>Low-pass filter</b>: Smooths surface
+- <b>High-pass filter</b>: Edge-enhancement / sharpening 
+- <b>Spatial Lags</b>
 
 ## Descriptive Analytics
-
-
+- <b>Central tendency</b>: mean, median, mode   
+- <b>Dispersion</b>: range, variance, standard deviation    
+- <b>Distribution visualization</b>: histogram, bar chart, box plot   
 
 ## Predictive Analytics
 Predicts future or past based value based on historical (often time-series) data
-- OLS
-- GWR
-- Clustering - DBSCAN, K-means, PCA
-- RF, SVM - image classification 
-- NN - image segmentation
+
+<b>Regression</b>:   
+- Ordinary Least Squares (OLS)
+- Geographic Weighted Regression (GWR)
+
+<b>Clustering</b>:  
+- DBSCAN
+- K-means
+- Principal Component Analysis (PCA) 
+
+<b>Supervised Classification</b>:
+- Random Forest (RF)  
+- Support Vector Machine (SVM)   
+
+<b>Image Segmentation</b>:
+- Neural Networks (NN)  
 
 ## Perscriptive Analytics
 Suggests decision options for how to take advantage of a future opportunity or mitigate a future risk, and shows the implication of each decision option. 
-- site suitability analysis (SSA)
-- vehicle routing:
-  - https://developers.arcgis.com/python/guide/part1-introduction-to-network-analysis/
-  - service area - travel times to customer. ex-to decide where to put fire station. regular buffer, cost over surface (elevation/slope), network (street travel time)
-  - find closest facility for incidents 
+- <b>Site Suitability Analysis</b> (SSA)
+- <b>[Vehicle routing](https://developers.arcgis.com/python/guide/part1-introduction-to-network-analysis/)</b>:
+  - Service Area: Travel times to customer. For example) to decide where to put fire station. regular buffer, cost over surface (elevation/slope), network (street travel time)
+  - Find closest facility for incidents 
   - An [origin-destination (OD) cost matrix](https://developers.arcgis.com/python/guide/part5-generate-od-cost-matrix/) from multiple origins to multiple destinations, is a table that contains the cost, such as the travel time or travel distance, from each origin to each destination
-  - location allocation - be far from competition but near customers 
-  - [vehicle routing problem](https://developers.arcgis.com/python/guide/part7-vehicle-routing-problem/) goal is to best service the orders and minimize the overall operating cost for the fleet of vehicles   
+  - Location Allocation: be far from competition but near customers 
+  - [Vehicle Routing Problem](https://developers.arcgis.com/python/guide/part7-vehicle-routing-problem/) goal is to best service the orders and minimize the overall operating cost for the fleet of vehicles   
       - starts with OD cost matrix, iterates adds real-world heuristics 
 

@@ -41,7 +41,8 @@ Vectors represent objects as features (point, line, or polygon shape) with tabul
 
 #### Networks:   
 * Set of connected objects in geographic space to answer questions about connections and flow.   
-* Contain objects (as nodes/points and connections/lines). May involve adjacency matrix calculation.  
+* Contain elements (as nodes/points/junctions, connections/lines/edges, and turns). May involve adjacency matrix calculation.
+* Can be multimodal (using roads, railways, and buses)    
 
 ### Rasters
 Rasters are grids of cells, or pixels, with values that represent continuous fields (for example: elevation, temperature, light reflected from Earth's surface)   

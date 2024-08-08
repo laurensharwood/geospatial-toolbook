@@ -49,7 +49,7 @@ Non-normalized table issues:
 Normal form levels assess danger of redundancy:    
 - First Normal Form (<b>1NF</b>)  - simplest - need primary key (single column or combination of columns) has one value per key.   
 - Second Normal Form (<b>2NF</b>)  - each non-key attribute is dependent on the entire primary key (all primary key columns).   
-- Third Normal Form (<b>3NF</b>)  - <b>each non-key attribute should depend on the key, the whole key, and nothing but the key</b>
+- Third Normal Form (<b>3NF</b>)  - <i>each non-key attribute should depend on the key, the whole key, and nothing but the key</i>
 
 ### Indexes
 Similar to indexes in books, indexes in tables improve lookup performance, but by building a tree diagram using a unique ID key 
