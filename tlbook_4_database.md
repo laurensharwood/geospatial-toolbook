@@ -213,7 +213,8 @@ print databases in postgres db server:
 print tables in connected db:  
 > \d 
 
-
+Connect to a PostgreSQL database in QGIS:   
+![post](img/postgis_connect.png)
 
 
 ---
