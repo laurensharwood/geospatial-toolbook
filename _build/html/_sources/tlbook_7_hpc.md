@@ -46,39 +46,39 @@ sudo apt install python3-venv -y ## install venv
 ```-r``` : recursively search subdirectories
 
 ### Examples: 
-<b>list</b> ```-l``` long list, sorted by last modified time ```- t```, reversed ```- r``` --  such that last edited file is printed in the terminal last:  
+<b>List</b> ```-l``` long list, sorted by last modified time ```- t```, reversed ```- r``` --  such that last edited file is printed in the terminal last:  
 > ls -ltr  
 
-<b>list</b> two last modified files:  
+<b>List</b> two last modified files:  
 > ls -ltr | tail -2
 
-<b>size</b> of current directory:  
+<b>Size</b> of current directory:  
 > du -sh .
 
-<b>files sorted based on size</b>:  
+<b>Files sorted based on size</b>:  
 > du -sh -- * | sort -rh  
 
-<b>count</b> number of files in current directory:  
+<b>Count</b> number of files in current directory:  
 > ls | wc -l  
 
-<b>count</b> number of files in directory (that start with 004):   
+<b>Count</b> number of files in directory (that start with 004):   
 > ls -dq 004* | wc -l 
 
-<b>move </b> files that contain 'filterstring' (in current dir) and move them into out_dir:  
+<b>Move </b> files that contain 'filterstring' (in current dir) and move them into out_dir:  
 > mv * filterstring * out_dir  
 
-<b>zip</b> files in folder  
+<b>Zip</b> files in folder:     
 > zip -r out_file.zip in_dir*
 
-<b>delete</b> files in current directory that start with S1_:  
+<b>Delete</b> files in current directory that start with S1_:  
 > find . -type f -name 'S1_*' -delete  
 > find . -name gee -exec ls {} \;
 > find . -name gee -exec rm -rf {} \;  
 
-<b>delete</b> files <i>recursively</i> in current directory that start with L3A_LC):   
+<b>Delete</b> files <i>recursively</i> in current directory that start with L3A_LC):   
 > find . -name "L3A_LC*" -type f -exec rm -r {} +
 
-<b>delete</b> folders in current directory that match string (contain the string 'landsat'):  
+<b>Delete</b> folders in current directory that match string (contain the string 'landsat'):  
 > find . -name "*landsat*" -type d -exec rm -r {} +
 
 ---
