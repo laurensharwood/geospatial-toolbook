@@ -176,7 +176,7 @@ From activated venv, in your venv project directory, launch jupyter lab:
 
 
 #### PyCharm:  
-- Settings > Settings > Project > Python Interpreter > + > Add Local Interpreter > Existing (venv directory)  
+-  Settings > Project > Python Interpreter > + > Add Local Interpreter > Existing (venv directory)  
 
 
 ---
@@ -224,7 +224,7 @@ ex) every day at 10:00am run get_garmin.sh & don't send that email  (```*``` == 
 ![github](img/git.png)
 
 
-Store your GitHub login credentials:   
+<b>Store your login credentials</b>:   
 ~~~
 git	
 git config --global user.name {your-github-username}
@@ -233,7 +233,7 @@ git config --global --list
 ~~~
 
 <b>Initialize local folder</b> as a repository:    
-In File Explorer, navigate into your local repository folder. Right-click inside the directory > select <b>Show more options</b> > select <b>Open Git Bash here</b>     
+In File Explorer, navigate into your local repository folder. Right-click inside the directory > select <u>Show more options</u> > select <u>Open Git Bash here</u>     
 ~~~
 git init
 git add .
@@ -254,14 +254,14 @@ git push
 ~~~
 
 
-Take <b>remote</b> repository (ignore & delete local changes):     
+<b>Take remote</b> repository (ignore & delete local changes):     
 ~~~
 git reset --hard 
 git pull
 ~~~
 
 
-Take <b>local</b> repository (ignore remote changes):       
+<b>Take local</b> repository (ignore  & delete remote changes):       
 ~~~
 git push origin main --force
 ~~~
