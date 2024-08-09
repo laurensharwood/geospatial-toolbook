@@ -233,8 +233,7 @@ git config --global --list
 ~~~
 
 Initialize local folder as remote repository:    
-In File Explorer, navigate into your local repository folder.   
-Right-click inside the directory > select <b>Show more options</b> > select <b>Open Git Bash here</b>     
+In File Explorer, navigate into your local repository folder. Right-click inside the directory > select <b>Show more options</b> > select <b>Open Git Bash here</b>     
 ~~~
 git init
 git add .
