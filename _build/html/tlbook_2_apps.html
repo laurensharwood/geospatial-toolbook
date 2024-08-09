@@ -388,12 +388,11 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-virtual-environment">Python Virtual Environment</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrated-development-environment-ide">Integrated Development Environment (IDE)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-control">Version Control</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-notes">Install notes:</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#linux-mac-path-variable">Linux &amp; Mac PATH variable</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-notes">Install notes:</a></li>
 </ul>
 </li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-linux-distribution-ex-ubuntu-mint-on-windows">Install Linux distribution (ex: Ubuntu, Mint) on Windows:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#path-environment-variable-linux-mac">PATH environment variable (Linux &amp; Mac)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qgis">QGIS</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-basemaps">Add basemaps:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-open-source-tool-plugins">Add open-source tool plugins:</a></li>
@@ -493,9 +492,26 @@ document.write(`
 <li><p>When installing &amp; setting up application, choose the custom setup (but probably use defaults) to see where files are placed, what is installed, etc.</p></li>
 <li><p>Remember to delete app_installer.exe file from Downloads folder after install is complete.</p></li>
 </ul>
-<section id="linux-mac-path-variable">
-<h4>Linux &amp; Mac PATH variable<a class="headerlink" href="#linux-mac-path-variable" title="Link to this heading">#</a></h4>
-<p>PATH environment variable is a list of folders where the terminal looks to run a program.</p>
+</section>
+</section>
+<section id="install-linux-distribution-ex-ubuntu-mint-on-windows">
+<h2>Install Linux distribution (ex: <a class="reference external" href="https://www.makeuseof.com/tag/debian-ubuntu-linux-mint-distribution/">Ubuntu, Mint</a>) on <a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install">Windows</a>:<a class="headerlink" href="#install-linux-distribution-ex-ubuntu-mint-on-windows" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Launch PowerShell</p></li>
+<li><p>Enter <code class="docutils literal notranslate"> <span class="pre">wsl</span> <span class="pre">--install</span></code></p></li>
+<li><p>Download and double-click <a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package">update installer</a> to run</p></li>
+<li><p>Restart computer</p></li>
+<li><p>Launch distribution in the Start Menu and enter the following commands:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">update</span> <span class="o">&amp;&amp;</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="n">upgrade</span> <span class="o">-</span><span class="n">y</span> <span class="c1">## system updates </span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">python3</span><span class="o">-</span><span class="n">pip</span> <span class="o">-</span><span class="n">y</span> <span class="c1">## install pip (general package installer) </span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">python3</span><span class="o">-</span><span class="n">venv</span> <span class="o">-</span><span class="n">y</span> <span class="c1">## install venv (virtual environment manager)  </span>
+</pre></div>
+</div>
+</section>
+<section id="path-environment-variable-linux-mac">
+<h2>PATH environment variable (Linux &amp; Mac)<a class="headerlink" href="#path-environment-variable-linux-mac" title="Link to this heading">#</a></h2>
+<p>PATH variable is a list of folders where the terminal looks to run a program.</p>
 <ul class="simple">
 <li><p>When installing an application, or {app} such as python, anaconda (NOT RECOMMENDED), or Git, select <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">{app}.exe</span> <span class="pre">to</span> <span class="pre">PATH</span></code></p></li>
 <li><p>Otherwise, manually add the application to PATH by adding that program’s install location to the PATH variable from terminal:</p></li>
@@ -506,8 +522,6 @@ document.write(`
 <p>Mac:<br />
 i) open the terminal and enter the following command on a Mac: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">nano</span> <span class="pre">/etc/paths</span></code> (enter user password when prompted)<br />
 ii) in the last row of the file enter your app’s install location, for instance: <code class="docutils literal notranslate"><span class="pre">/Library/PostgreSQL/16/bin</span></code></p>
-</section>
-</section>
 </section>
 <hr class="docutils" />
 <section id="qgis">
@@ -747,12 +761,11 @@ ii) in the last row of the file enter your app’s install location, for instanc
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-virtual-environment">Python Virtual Environment</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrated-development-environment-ide">Integrated Development Environment (IDE)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-control">Version Control</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-notes">Install notes:</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#linux-mac-path-variable">Linux &amp; Mac PATH variable</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-notes">Install notes:</a></li>
 </ul>
 </li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-linux-distribution-ex-ubuntu-mint-on-windows">Install Linux distribution (ex: Ubuntu, Mint) on Windows:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#path-environment-variable-linux-mac">PATH environment variable (Linux &amp; Mac)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qgis">QGIS</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-basemaps">Add basemaps:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-open-source-tool-plugins">Add open-source tool plugins:</a></li>

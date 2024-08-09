@@ -27,7 +27,7 @@ the goal is to choose a projection method that limits your project area's Eastin
 <b>[PROJ.4 String](https://pygis.io/docs/d_understand_crs_codes.html#proj-4-string):</b>  Multiple parameters needed to describe a CRS     
    * ex) ```+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext  +no_defs```
 
-<b>CRS Reprojection:</b> Transforms geographic data as [rasters](https://rasterio.readthedocs.io/en/stable/topics/transforms.html) or [vectors](https://www.earthdatascience.org/workshops/gis-open-source-python/reproject-vector-data-in-python/) between different coordinate reference systems.  
+<b>CRS Reprojection:</b> Transforms geographic data (as [vectors](https://www.earthdatascience.org/workshops/gis-open-source-python/reproject-vector-data-in-python/) or [rasters](https://rasterio.readthedocs.io/en/stable/topics/transforms.html)) between different coordinate reference systems.  
 
 ---
 
@@ -55,7 +55,7 @@ Rasters are grids of cells, or pixels, with values that represent continuous fie
   * <b>Band sequential</b> ([BSQ](https://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/bil-bip-and-bsq-raster-files.htm)) - Optimal for accessing any part of a single band (spatial). Data is written one band at a time. Must have an associated ASCII file header (.hdr)      
   * <b>Band interleaved by pixel</b> ([BIP](https://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/bsq-format-example.htm)) - Optimal for accessing multiple bands (spectral). Data for each pixel is written band by band. Must have an associated .hdr     
   * <b>Band interleaved by line</b> ([BIL](https://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/bil-format-example.htm)) - Compromise allowing for easy access of spectral and spatial information. Pixels are written band by band for each line, or row. Must have an associated .hdr   
-  * <b>netCDF</b> - multidimensional rasters, often time-series  
+  * <b>netCDF</b> - Multidimensional rasters, often time-series  
   * <b>Hierarchical Data Format v5</b> ([HDF5](https://www.ogc.org/standard/HDF5/)) - Supports large, heterogeneous data. uses a 'file directory' structure  
   * <b>Cloud Optimized Geotiff</b> ([COG](https://www.cogeo.org/)) - GeoTiff hosted on a HTTP file server  
 
@@ -93,8 +93,8 @@ Files from typical CAD software (AutoCAD & Microstation):
 
 ## Data Transformation
 
-Refers to transferring / converting geospatial data between formats -- Python objects, ESRI [geodatabases](https://pro.arcgis.com/en/pro-app/latest/help/data/geodatabases/overview/the-architecture-of-a-geodatabase.htm#GUID-739D940C-FD50-4F6F-8600-EBE39B00189A
-), and other RDBMS such as [SQL Server](https://pro.arcgis.com/en/pro-app/latest/help/data/geodatabases/manage-sql-server/overview-geodatabases-sqlserver.htm). 
+Refers to transferring / converting geospatial data between formats -- ESRI [geodatabases](https://pro.arcgis.com/en/pro-app/latest/help/data/geodatabases/overview/the-architecture-of-a-geodatabase.htm#GUID-739D940C-FD50-4F6F-8600-EBE39B00189A
+) and other RDBMS such as [SQL Server](https://pro.arcgis.com/en/pro-app/latest/help/data/geodatabases/manage-sql-server/overview-geodatabases-sqlserver.htm). 
 
 
 #### Data Converter: 
@@ -117,7 +117,7 @@ gpx → gpkg (for all gpx files in current directory):
 
 
 #### CAD ↔ SHP:  
-  * DXF to shp [QGIS Plugin](https://docs.qgis.org/2.18/en/docs/user_manual/plugins/plugins_dxf2shape_converter.html)   
+  * [DXF to shp](https://docs.qgis.org/2.18/en/docs/user_manual/plugins/plugins_dxf2shape_converter.html) QGIS Plugin  
   * [DWG to shp](https://gisgeography.com/dwg-to-shp/)  
 
 
@@ -179,11 +179,9 @@ def postgres_to_df(SQL_query, db, user="postgres", pwd="", host="localhost", por
 
 ## GIS Data Standards  
 Improve geographic information's utility & value by increasing its interoperability, reusability, reliability, and access.   
-* Example of [City of Fremont CAD standards](https://storymaps.arcgis.com/stories/9767345c01fc4fd5a6b90e970b249dbd)  
+- Example of [City of Fremont CAD standards](https://storymaps.arcgis.com/stories/9767345c01fc4fd5a6b90e970b249dbd)  
 
-International Organization for Standardization (ISO) standards must be purchased. The American National Standards Institute (ANSI) serves as the US member agency to ISO and provides easier access to the standards and, generally, at a lower cost.   
-
-<u> Open Geospatial Consortium (OGC)</u> is a diverse array of international groups (govt, academia, private, etc.) using geospatial data, settling on standards for sharing & integrating data.   
+<b>Open Geospatial Consortium (OGC)</b> is a diverse array of international groups (govt, academia, private, etc.) using geospatial data, settling on standards for sharing & integrating data.   
 OGC publishes the following documents: 1) implementation standards, 2) abstract specifications, 3) best practices, 4) engineering reports, 5) discussion papers, and 6) change requests.  
 
 Standards:  
@@ -201,54 +199,48 @@ Standards:
 * [Metadata and Catalogue Service](http://opengeospatial.github.io/e-learning/metadata/text/specifications.html)
 </br>  
 
-<u>Federal Geographic Data Committee (FGDC)</u> is a U.S. interagency group with the same mission 
+<b>Federal Geographic Data Committee (FGDC)</b> is a U.S. interagency group with the same mission 
 
 * FGDC [standards list](https://www.fgdc.gov/standards/list) includes standards from FGDC, along with OGC and ISO
+
 
 #### GIS metadata standards:  
 - ISO 19115: Geographic information — Metadata  
 - ISO 19139: Geographic information — Metadata — XML schema  
 - [FGDC Content Standard for Digital Geospatial Metadata (CSDGM)](https://www.fgdc.gov/metadata/csdgm-standard) to Create System-level Metadata Records  
 
-#### [Metadata creation best practices](https://www.usgs.gov/data-management/metadata-creation):   
-* Gather all information together & reuse information that is already developed, e.g. abstract, purpose, date from grant or funding proposals
-* Choose a descriptive title for your data that incorporates who, what, where, when, and scale.
-* Choose keywords wisely -- consider all possible interpretations of your word choices.
-* Include as many details as you can in the metadata record for future users of the data.
-* Update the metadata date (date stamp) so that metadata repositories will know which version of the record is most recent.
-* DOI should go in the primary <onlink> in the Citation Information section and should be a URL. 
-
-#### Metadata validation:  
+<b>Metadata validation</b>:  
 * Compares the metadata standard to the XML metadata record to ensure it conforms to the structure of the standard, such that all of the required elements are filled in.
 * USGS best practices for [Checking Metadata with Data](https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/atoms/files/CheckingMetadataWithData_508-compliant.pdf) with FGDC-CSDGM metadata
 * [USGS Metadata Parser (MP)](https://geology.usgs.gov/tools/metadata/tools/doc/mp.html) 
 * [Metadata Wizard tool](https://code.usgs.gov/usgs/fort-pymdwizard)
 
+<b>[Metadata creation best practices](https://www.usgs.gov/data-management/metadata-creation)</b>
 
 ---
 
 ## Publicly available data:  
-
-* [Google Earth Engine](https://developers.google.com/earth-engine/datasets/catalog) + https://gee-community-catalog.org
-* [Microsoft Planetary Computer](https://planetarycomputer.microsoft.com/catalog)
-* [Planet Labs Basemaps](https://developers.planet.com/docs/basemaps/) 
-* [USAID Spatial Data Repository](https://spatialdata.dhsprogram.com/home/)
-* [US Govt](https://catalog.data.gov/)
-* [USGS](https://data.usgs.gov/datacatalog/search)
-* [USFS](https://data-usfs.hub.arcgis.com)
 * [California](https://gis.data.ca.gov/) & [CA vegetation](https://wildlife.ca.gov/Data/GIS/Vegetation-Data)
+* [USFS](https://data-usfs.hub.arcgis.com)
+* [USGS](https://data.usgs.gov/datacatalog/search)
+* [US Govt](https://catalog.data.gov/)
+* [Humanitarian Data Exchange](https://data.humdata.org/dataset)    
+* [USAID Spatial Data Repository](https://spatialdata.dhsprogram.com/home/)
 * [ESRI Living Atlas](https://livingatlas.arcgis.com/en/home/)
+* [Planet Labs Basemaps](https://developers.planet.com/docs/basemaps/) 
+* [Microsoft Planetary Computer](https://planetarycomputer.microsoft.com/catalog)
+* [Google Earth Engine](https://developers.google.com/earth-engine/datasets/catalog) + https://gee-community-catalog.org
 
-### Google Earth Engine: Data Catalog & Cloud Computing   
+### Google Earth Engine (GEE): Data Catalog & Cloud Computing   
 * quota - download rate limit is 2 at any given time 
 
-##### ee.FeatureCollection   
+<u>GEE Feature Collections</u>   
 
 | category         |ee.FeatureCollection|
 |------------------|---|
 | Google buildings |"GOOGLE/Research/open-buildings/v3/polygons"| 
 
-##### ee.Image
+<u>GEE Images</u>
 
 | category  |ee.Image| 
 |-----------|---| 
@@ -262,7 +254,7 @@ Standards:
 | soil      | "ISDASOIL/Africa/v1/carbon_organic" | 
 | soil      | "ISDASOIL/Africa/v1/bedrock_depth" |  
 
-##### ee.ImageCollection
+<u>GEE Image Collections</u>
 
 | name                                      |ee.ImageCollection|
 |-------------------------------------------|---|
@@ -277,7 +269,7 @@ Standards:
 | Planet monthly basemaps                   |"projects/planet-nicfi/assets/basemaps/asia"| 
 
 
-To visualize Planet Basemaps monthly time series and download composite:    
+To visualize and download <u>Planet Basemaps</u> monthly time series:    
 1) Create a Planet account under [Sign Up For Level 1 User Access](https://www.planet.com/nicfi/#sign-up)     
   *Note: Current Planet data users will need to sign up with a different email not associated with their Planet account.*    
 2) Follow [setup instructions](https://developers.planet.com/docs/integrations/gee/nicfi/) to access [NICFI Planet Basemaps - Tropical Americas](https://developers.google.com/earth-engine/datasets/catalog/projects_planet-nicfi_assets_basemaps_americas) in Google Earth Engine (GEE).    

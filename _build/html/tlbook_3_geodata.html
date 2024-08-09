@@ -405,17 +405,10 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-data-standards">GIS Data Standards</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-metadata-standards">GIS metadata standards:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata-creation-best-practices">Metadata creation best practices:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata-validation">Metadata validation:</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publicly-available-data">Publicly available data:</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#google-earth-engine-data-catalog-cloud-computing">Google Earth Engine: Data Catalog &amp; Cloud Computing</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ee-featurecollection">ee.FeatureCollection</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ee-image">ee.Image</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ee-imagecollection">ee.ImageCollection</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#google-earth-engine-gee-data-catalog-cloud-computing">Google Earth Engine (GEE): Data Catalog &amp; Cloud Computing</a></li>
 </ul>
 </li>
 </ul>
@@ -471,7 +464,7 @@ the goal is to choose a projection method that limits your project area’s East
 <ul class="simple">
 <li><p>ex) <code class="docutils literal notranslate"><span class="pre">+proj=merc</span> <span class="pre">+a=6378137</span> <span class="pre">+b=6378137</span> <span class="pre">+lat_ts=0.0</span> <span class="pre">+lon_0=0.0</span> <span class="pre">+x_0=0.0</span> <span class="pre">+y_0=0</span> <span class="pre">+k=1.0</span> <span class="pre">+units=m</span> <span class="pre">+nadgrids=&#64;null</span> <span class="pre">+wktext</span>&#160; <span class="pre">+no_defs</span></code></p></li>
 </ul>
-<p><b>CRS Reprojection:</b> Transforms geographic data as <a class="reference external" href="https://rasterio.readthedocs.io/en/stable/topics/transforms.html">rasters</a> or <a class="reference external" href="https://www.earthdatascience.org/workshops/gis-open-source-python/reproject-vector-data-in-python/">vectors</a> between different coordinate reference systems.</p>
+<p><b>CRS Reprojection:</b> Transforms geographic data (as <a class="reference external" href="https://www.earthdatascience.org/workshops/gis-open-source-python/reproject-vector-data-in-python/">vectors</a> or <a class="reference external" href="https://rasterio.readthedocs.io/en/stable/topics/transforms.html">rasters</a>) between different coordinate reference systems.</p>
 </section>
 <hr class="docutils" />
 <section id="common-data-types-formats">
@@ -509,7 +502,7 @@ the goal is to choose a projection method that limits your project area’s East
 <li><p><b>Band sequential</b> (<a class="reference external" href="https://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/bil-bip-and-bsq-raster-files.htm">BSQ</a>) - Optimal for accessing any part of a single band (spatial). Data is written one band at a time. Must have an associated ASCII file header (.hdr)</p></li>
 <li><p><b>Band interleaved by pixel</b> (<a class="reference external" href="https://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/bsq-format-example.htm">BIP</a>) - Optimal for accessing multiple bands (spectral). Data for each pixel is written band by band. Must have an associated .hdr</p></li>
 <li><p><b>Band interleaved by line</b> (<a class="reference external" href="https://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/bil-format-example.htm">BIL</a>) - Compromise allowing for easy access of spectral and spatial information. Pixels are written band by band for each line, or row. Must have an associated .hdr</p></li>
-<li><p><b>netCDF</b> - multidimensional rasters, often time-series</p></li>
+<li><p><b>netCDF</b> - Multidimensional rasters, often time-series</p></li>
 <li><p><b>Hierarchical Data Format v5</b> (<a class="reference external" href="https://www.ogc.org/standard/HDF5/">HDF5</a>) - Supports large, heterogeneous data. uses a ‘file directory’ structure</p></li>
 <li><p><b>Cloud Optimized Geotiff</b> (<a class="reference external" href="https://www.cogeo.org/">COG</a>) - GeoTiff hosted on a HTTP file server</p></li>
 </ul>
@@ -555,7 +548,7 @@ the goal is to choose a projection method that limits your project area’s East
 <hr class="docutils" />
 <section id="data-transformation">
 <h2>Data Transformation<a class="headerlink" href="#data-transformation" title="Link to this heading">#</a></h2>
-<p>Refers to transferring / converting geospatial data between formats – Python objects, ESRI <a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/help/data/geodatabases/overview/the-architecture-of-a-geodatabase.htm#GUID-739D940C-FD50-4F6F-8600-EBE39B00189A">geodatabases</a>, and other RDBMS such as <a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/help/data/geodatabases/manage-sql-server/overview-geodatabases-sqlserver.htm">SQL Server</a>.</p>
+<p>Refers to transferring / converting geospatial data between formats – ESRI <a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/help/data/geodatabases/overview/the-architecture-of-a-geodatabase.htm#GUID-739D940C-FD50-4F6F-8600-EBE39B00189A">geodatabases</a> and other RDBMS such as <a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/help/data/geodatabases/manage-sql-server/overview-geodatabases-sqlserver.htm">SQL Server</a>.</p>
 <section id="data-converter">
 <h3>Data Converter:<a class="headerlink" href="#data-converter" title="Link to this heading">#</a></h3>
 <p><a class="reference external" href="https://www.gisconvert.com/">https://www.gisconvert.com/</a></p>
@@ -580,7 +573,7 @@ the goal is to choose a projection method that limits your project area’s East
 <section id="cad-shp">
 <h3>CAD ↔ SHP:<a class="headerlink" href="#cad-shp" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>DXF to shp <a class="reference external" href="https://docs.qgis.org/2.18/en/docs/user_manual/plugins/plugins_dxf2shape_converter.html">QGIS Plugin</a></p></li>
+<li><p><a class="reference external" href="https://docs.qgis.org/2.18/en/docs/user_manual/plugins/plugins_dxf2shape_converter.html">DXF to shp</a> QGIS Plugin</p></li>
 <li><p><a class="reference external" href="https://gisgeography.com/dwg-to-shp/">DWG to shp</a></p></li>
 </ul>
 </section>
@@ -645,8 +638,7 @@ the goal is to choose a projection method that limits your project area’s East
 <ul class="simple">
 <li><p>Example of <a class="reference external" href="https://storymaps.arcgis.com/stories/9767345c01fc4fd5a6b90e970b249dbd">City of Fremont CAD standards</a></p></li>
 </ul>
-<p>International Organization for Standardization (ISO) standards must be purchased. The American National Standards Institute (ANSI) serves as the US member agency to ISO and provides easier access to the standards and, generally, at a lower cost.</p>
-<p><u> Open Geospatial Consortium (OGC)</u> is a diverse array of international groups (govt, academia, private, etc.) using geospatial data, settling on standards for sharing &amp; integrating data.<br />
+<p><b>Open Geospatial Consortium (OGC)</b> is a diverse array of international groups (govt, academia, private, etc.) using geospatial data, settling on standards for sharing &amp; integrating data.<br />
 OGC publishes the following documents: 1) implementation standards, 2) abstract specifications, 3) best practices, 4) engineering reports, 5) discussion papers, and 6) change requests.</p>
 <p>Standards:</p>
 <ul class="simple">
@@ -676,7 +668,7 @@ OGC publishes the following documents: 1) implementation standards, 2) abstract 
 <li><p><a class="reference external" href="http://opengeospatial.github.io/e-learning/metadata/text/specifications.html">Metadata and Catalogue Service</a>
 </br></p></li>
 </ul>
-<p><u>Federal Geographic Data Committee (FGDC)</u> is a U.S. interagency group with the same mission</p>
+<p><b>Federal Geographic Data Committee (FGDC)</b> is a U.S. interagency group with the same mission</p>
 <ul class="simple">
 <li><p>FGDC <a class="reference external" href="https://www.fgdc.gov/standards/list">standards list</a> includes standards from FGDC, along with OGC and ISO</p></li>
 </ul>
@@ -687,49 +679,37 @@ OGC publishes the following documents: 1) implementation standards, 2) abstract 
 <li><p>ISO 19139: Geographic information — Metadata — XML schema</p></li>
 <li><p><a class="reference external" href="https://www.fgdc.gov/metadata/csdgm-standard">FGDC Content Standard for Digital Geospatial Metadata (CSDGM)</a> to Create System-level Metadata Records</p></li>
 </ul>
-</section>
-<section id="metadata-creation-best-practices">
-<h3><a class="reference external" href="https://www.usgs.gov/data-management/metadata-creation">Metadata creation best practices</a>:<a class="headerlink" href="#metadata-creation-best-practices" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Gather all information together &amp; reuse information that is already developed, e.g. abstract, purpose, date from grant or funding proposals</p></li>
-<li><p>Choose a descriptive title for your data that incorporates who, what, where, when, and scale.</p></li>
-<li><p>Choose keywords wisely – consider all possible interpretations of your word choices.</p></li>
-<li><p>Include as many details as you can in the metadata record for future users of the data.</p></li>
-<li><p>Update the metadata date (date stamp) so that metadata repositories will know which version of the record is most recent.</p></li>
-<li><p>DOI should go in the primary <onlink> in the Citation Information section and should be a URL.</p></li>
-</ul>
-</section>
-<section id="metadata-validation">
-<h3>Metadata validation:<a class="headerlink" href="#metadata-validation" title="Link to this heading">#</a></h3>
+<p><b>Metadata validation</b>:</p>
 <ul class="simple">
 <li><p>Compares the metadata standard to the XML metadata record to ensure it conforms to the structure of the standard, such that all of the required elements are filled in.</p></li>
 <li><p>USGS best practices for <a class="reference external" href="https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/atoms/files/CheckingMetadataWithData_508-compliant.pdf">Checking Metadata with Data</a> with FGDC-CSDGM metadata</p></li>
 <li><p><a class="reference external" href="https://geology.usgs.gov/tools/metadata/tools/doc/mp.html">USGS Metadata Parser (MP)</a></p></li>
 <li><p><a class="reference external" href="https://code.usgs.gov/usgs/fort-pymdwizard">Metadata Wizard tool</a></p></li>
 </ul>
+<p><b><a class="reference external" href="https://www.usgs.gov/data-management/metadata-creation">Metadata creation best practices</a></b></p>
 </section>
 </section>
 <hr class="docutils" />
 <section id="publicly-available-data">
 <h2>Publicly available data:<a class="headerlink" href="#publicly-available-data" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://developers.google.com/earth-engine/datasets/catalog">Google Earth Engine</a> + <a class="reference external" href="https://gee-community-catalog.org">https://gee-community-catalog.org</a></p></li>
-<li><p><a class="reference external" href="https://planetarycomputer.microsoft.com/catalog">Microsoft Planetary Computer</a></p></li>
-<li><p><a class="reference external" href="https://developers.planet.com/docs/basemaps/">Planet Labs Basemaps</a></p></li>
-<li><p><a class="reference external" href="https://spatialdata.dhsprogram.com/home/">USAID Spatial Data Repository</a></p></li>
-<li><p><a class="reference external" href="https://catalog.data.gov/">US Govt</a></p></li>
-<li><p><a class="reference external" href="https://data.usgs.gov/datacatalog/search">USGS</a></p></li>
-<li><p><a class="reference external" href="https://data-usfs.hub.arcgis.com">USFS</a></p></li>
 <li><p><a class="reference external" href="https://gis.data.ca.gov/">California</a> &amp; <a class="reference external" href="https://wildlife.ca.gov/Data/GIS/Vegetation-Data">CA vegetation</a></p></li>
+<li><p><a class="reference external" href="https://data-usfs.hub.arcgis.com">USFS</a></p></li>
+<li><p><a class="reference external" href="https://data.usgs.gov/datacatalog/search">USGS</a></p></li>
+<li><p><a class="reference external" href="https://catalog.data.gov/">US Govt</a></p></li>
+<li><p><a class="reference external" href="https://data.humdata.org/dataset">Humanitarian Data Exchange</a></p></li>
+<li><p><a class="reference external" href="https://spatialdata.dhsprogram.com/home/">USAID Spatial Data Repository</a></p></li>
 <li><p><a class="reference external" href="https://livingatlas.arcgis.com/en/home/">ESRI Living Atlas</a></p></li>
+<li><p><a class="reference external" href="https://developers.planet.com/docs/basemaps/">Planet Labs Basemaps</a></p></li>
+<li><p><a class="reference external" href="https://planetarycomputer.microsoft.com/catalog">Microsoft Planetary Computer</a></p></li>
+<li><p><a class="reference external" href="https://developers.google.com/earth-engine/datasets/catalog">Google Earth Engine</a> + <a class="reference external" href="https://gee-community-catalog.org">https://gee-community-catalog.org</a></p></li>
 </ul>
-<section id="google-earth-engine-data-catalog-cloud-computing">
-<h3>Google Earth Engine: Data Catalog &amp; Cloud Computing<a class="headerlink" href="#google-earth-engine-data-catalog-cloud-computing" title="Link to this heading">#</a></h3>
+<section id="google-earth-engine-gee-data-catalog-cloud-computing">
+<h3>Google Earth Engine (GEE): Data Catalog &amp; Cloud Computing<a class="headerlink" href="#google-earth-engine-gee-data-catalog-cloud-computing" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>quota - download rate limit is 2 at any given time</p></li>
 </ul>
-<section id="ee-featurecollection">
-<h4>ee.FeatureCollection<a class="headerlink" href="#ee-featurecollection" title="Link to this heading">#</a></h4>
+<p><u>GEE Feature Collections</u></p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>category</p></th>
@@ -743,9 +723,7 @@ OGC publishes the following documents: 1) implementation standards, 2) abstract 
 </tbody>
 </table>
 </div>
-</section>
-<section id="ee-image">
-<h4>ee.Image<a class="headerlink" href="#ee-image" title="Link to this heading">#</a></h4>
+<p><u>GEE Images</u></p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>category</p></th>
@@ -783,9 +761,7 @@ OGC publishes the following documents: 1) implementation standards, 2) abstract 
 </tbody>
 </table>
 </div>
-</section>
-<section id="ee-imagecollection">
-<h4>ee.ImageCollection<a class="headerlink" href="#ee-imagecollection" title="Link to this heading">#</a></h4>
+<p><u>GEE Image Collections</u></p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>name</p></th>
@@ -823,14 +799,13 @@ OGC publishes the following documents: 1) implementation standards, 2) abstract 
 </tbody>
 </table>
 </div>
-<p>To visualize Planet Basemaps monthly time series and download composite:</p>
+<p>To visualize and download <u>Planet Basemaps</u> monthly time series:</p>
 <ol class="arabic simple">
 <li><p>Create a Planet account under <a class="reference external" href="https://www.planet.com/nicfi/#sign-up">Sign Up For Level 1 User Access</a><br />
 <em>Note: Current Planet data users will need to sign up with a different email not associated with their Planet account.</em></p></li>
 <li><p>Follow <a class="reference external" href="https://developers.planet.com/docs/integrations/gee/nicfi/">setup instructions</a> to access <a class="reference external" href="https://developers.google.com/earth-engine/datasets/catalog/projects_planet-nicfi_assets_basemaps_americas">NICFI Planet Basemaps - Tropical Americas</a> in Google Earth Engine (GEE).<br />
 <em>Note: The email associated with your GEE account might differ from the email used for your Planet account.</em></p></li>
 </ol>
-</section>
 </section>
 </section>
 </section>
@@ -922,17 +897,10 @@ OGC publishes the following documents: 1) implementation standards, 2) abstract 
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-data-standards">GIS Data Standards</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gis-metadata-standards">GIS metadata standards:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata-creation-best-practices">Metadata creation best practices:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata-validation">Metadata validation:</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publicly-available-data">Publicly available data:</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#google-earth-engine-data-catalog-cloud-computing">Google Earth Engine: Data Catalog &amp; Cloud Computing</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ee-featurecollection">ee.FeatureCollection</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ee-image">ee.Image</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ee-imagecollection">ee.ImageCollection</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#google-earth-engine-gee-data-catalog-cloud-computing">Google Earth Engine (GEE): Data Catalog &amp; Cloud Computing</a></li>
 </ul>
 </li>
 </ul>

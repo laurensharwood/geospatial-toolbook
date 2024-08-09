@@ -45,9 +45,22 @@
 * Remember to delete app_installer.exe file from Downloads folder after install is complete.   
 
 
-#### Linux & Mac PATH variable
 
-PATH environment variable is a list of folders where the terminal looks to run a program.
+## Install Linux distribution (ex: [Ubuntu, Mint](https://www.makeuseof.com/tag/debian-ubuntu-linux-mint-distribution/)) on [Windows](https://learn.microsoft.com/en-us/windows/wsl/install): 
+1. Launch PowerShell
+2. Enter ``` wsl --install``` 
+3. Download and double-click [update installer](https://learn.microsoft.com/en-us/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package) to run
+4. Restart computer  
+5. Launch distribution in the Start Menu and enter the following commands:  
+~~~
+sudo apt update && sudo apt upgrade -y ## system updates 
+sudo apt install python3-pip -y ## install pip (general package installer) 
+sudo apt install python3-venv -y ## install venv (virtual environment manager)  
+~~~
+
+## PATH environment variable (Linux & Mac)
+
+PATH variable is a list of folders where the terminal looks to run a program.
 * When installing an application, or {app} such as python, anaconda (NOT RECOMMENDED), or Git, select ```Add {app}.exe to PATH```   
 * Otherwise, manually add the application to PATH by adding that program's install location to the PATH variable from terminal:
 ~~~

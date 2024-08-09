@@ -30,23 +30,6 @@ Read in spatial subset of ```file_name``` that's within the ```region_gdf``` bou
 gdf = gpd.read_file(file_name, bbox = tuple(region_gdf.total_bounds))
 ~~~
 
-<u>Geopandas drivers</u>:  
-
-| Driver | Extension    | Name             | 
-| ----- |--------------|------------------|
-| GPKG  | .gpkg        | geopackage       |
-| ESRI Shapefile | .shp         | ESRI shapefile        |
-| OpenFileGDB    | .gdb         | ESRI file geodatabase |
-| GeoJSON    | .geojson     | geojson          |
-| SQLite | .db, .sqlite | sqlite database  |
-
-Append ```gdf``` as a layer named ```new_fields``` to an existing file, ```out_file```, if the file is an ESRI file geodatabase, geopackage, or geojson: 
-~~~
-gdf.to_file("out_file.gdb", layer="new_fields", driver="OpenFileGDB", mode="a")
-~~~
-
-
-
 Create a [STRtree](https://shapely.readthedocs.io/en/stable/strtree.html#) <b>spatial index</b> to improve query / set operation speed: 
 ~~~
 features_sub = features_gdf[features_gdf.index.isin(list(features_gdf.sindex.query(region_gdf.geometry, predicate="contains")[1]))]
