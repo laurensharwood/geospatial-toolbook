@@ -16,6 +16,7 @@
 - [ ] [MySQL](https://dev.mysql.com/downloads/mysql/) *NOTE: Select your OS*
 - [ ] [SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
 - [X] SQLite (sqlite3 pre-installed with Python)
+- [ ] [ESRI file geodatabase (.gdb)](https://pro.arcgis.com/en/pro-app/latest/help/data/geodatabases/manage-file-gdb/file-geodatabases.htm)
 
 ## Scripting
 - [ ] [Python](https://www.python.org/downloads/) 

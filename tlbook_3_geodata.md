@@ -33,7 +33,7 @@ the goal is to choose a projection method that limits your project area's Eastin
 Vectors represent objects as features (point, line, or polygon shape) with tabular data containing attributes/fields values for each geometry.   
   * <b>ESRI [feature class](https://pro.arcgis.com/en/pro-app/latest/help/data/feature-classes/feature-classes.htm)</b>: homogenous collection of features (points, lines, or polygons) and can be stored in geodatabases, shapefiles, coverages, or other data formats. For instance, in an ESRI file geodatabase a feature classes can be annotations.    
   * <b>ESRI [shapefile](https://doc.arcgis.com/en/arcgis-online/reference/shapefiles.htm)</b>: A set of files (.shp, .shx, .dbf, & .prj) that contain one feature class   
-  * <b>Databases</b>: SQLite, MS Access, PostgreSQL, ESRI file geodatabase   
+  * <b>[Databases](https://laurensharwood.github.io/geospatial-toolbook/tlbook_2_apps.html#relational-database-management-system-rdbms)</b>: SQLite, MS Access, PostgreSQL, ESRI file geodatabase   
   * <b>[GeoJSON](https://geojson.org/)</b>: [JSON ```features```](https://courses.spatialthoughts.com/python-foundation.html#understanding-json-and-geojson)  have ```properties``` and ```geometry```
 	* [GeoJSON creator](https://geojson.io)   
   * <b>KML/KMZ</b>: for Google Earth Pro   
