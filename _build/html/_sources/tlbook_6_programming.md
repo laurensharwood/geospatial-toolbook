@@ -227,8 +227,8 @@ ex) every day at 10:00am run get_garmin.sh & don't send that email  (```*``` == 
 Store your GitHub login credentials:   
 ~~~
 git	
-git config --global user.name *your-github-username*
-git config --global user.email *your-github-email*
+git config --global user.name {your-github-username}
+git config --global user.email {your-github-email}
 git config --global --list	
 ~~~
 
