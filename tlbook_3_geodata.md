@@ -76,7 +76,7 @@ Often used to create 3D digital surface height models (DSM) and digital elevatio
 <b>Lidar file formats</b>:  
   * ASCII: raw lidar data   
   * [LAS](https://www.ogc.org/standard/LAS/): 3D point clouds with XYZ (lon-lat-ele) values    
-  * LAZ (zipped LAS)   
+  * LAZ: zipped LAS   
 
 <b>Tools</b>: 
   * [libLAS](https://liblas.org/): reading & writing LAS   
