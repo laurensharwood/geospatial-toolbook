@@ -232,7 +232,7 @@ git config --global user.email {your-github-email}
 git config --global --list	
 ~~~
 
-Initialize local folder as remote repository:    
+<b>Initialize local folder</b> as a repository:    
 In File Explorer, navigate into your local repository folder. Right-click inside the directory > select <b>Show more options</b> > select <b>Open Git Bash here</b>     
 ~~~
 git init
@@ -241,7 +241,7 @@ git commit -m "message"
 git remote add origin https://github.com/your_username/your_repo.git
 ~~~
 
-Push updates to remote repository:    
+<b>Push updates</b> to remote repository:    
 ~~~
 git push -u origin main
 cd your_repo
@@ -254,14 +254,14 @@ git push
 ~~~
 
 
-Ignore & delete local changes -- take remote repository:     
+Take <b>remote</b> repository (ignore & delete local changes):     
 ~~~
 git reset --hard 
 git pull
 ~~~
 
 
-Ignore remote changes -- take local repository:       
+Take <b>local</b> repository (ignore remote changes):       
 ~~~
 git push origin main --force
 ~~~
