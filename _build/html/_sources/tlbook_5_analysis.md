@@ -53,7 +53,7 @@ Require user-input kernel size/radius/distance for the moving window calculation
 - <b>Distribution visualization</b>: histogram, bar chart, box plot   
 
 ## Predictive Analytics
-Predicts future or past based value based on historical (often time-series) data
+Predicts future or past value based on known (often time-series) values
 
 <b>Regression</b>:   
 - Ordinary Least Squares (OLS)
@@ -68,10 +68,12 @@ Predicts future or past based value based on historical (often time-series) data
 - Random Forest (RF)  
 - Support Vector Machine (SVM)   
 
-<b>Image Segmentation</b>:
-- Neural Networks (NN)  
+<b>Deep Learning</b>:
+- Neural Networks (NN) for image segmentation / object identification   
+  - ex) [cultionet](https://github.com/jgrss/cultionet)  
+  - ex) Meta Segment Anything Model ([SAM](https://samgeo.gishub.org/))  
 
-## Perscriptive Analytics
+## Prescriptive Analytics
 Suggests decision options for how to take advantage of a future opportunity or mitigate a future risk, and shows the implication of each decision option. 
 - <b>Site Suitability Analysis</b> (SSA)
 - <b>[Vehicle routing](https://developers.arcgis.com/python/guide/part1-introduction-to-network-analysis/)</b>:
