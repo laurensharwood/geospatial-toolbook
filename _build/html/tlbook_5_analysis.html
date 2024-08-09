@@ -391,7 +391,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#point-pattern-analysis">Point Pattern Analysis</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolation">Interpolation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#global-statistics">Global statistics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#focal-neighborhood-statistics">Focal / Neighborhood statistics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filters">Filters</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptive-analytics">Descriptive Analytics</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#predictive-analytics">Predictive Analytics</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prescriptive-analytics">Prescriptive Analytics</a></li>
@@ -420,8 +420,9 @@ document.write(`
 <h2>Spatial Autocorrelation<a class="headerlink" href="#spatial-autocorrelation" title="Link to this heading">#</a></h2>
 <p>Spatial autocorrelation measures how similar values of a variable are relative to how close they are.</p>
 <ul class="simple">
-<li><p>Moran’s I - measure of spatial autocorrelation</p></li>
-<li><p>Values range from -1 to +1, such that -1 would represent a checkerboard pattern and values near +1 would represent elevation in flat regions.</p></li>
+<li><p>Moran’s I: Values range from -1 to +1, such that -1 would represent a checkerboard pattern and values near +1 would represent elevation in flat regions.</p></li>
+<li><p>Geary’s C</p></li>
+<li><p>Local Indicators of Spatial Association (LISA)</p></li>
 </ul>
 </section>
 <section id="topological-relations">
@@ -454,9 +455,10 @@ document.write(`
 <h2>Point Pattern Analysis<a class="headerlink" href="#point-pattern-analysis" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-statistics/h-how-average-nearest-neighbor-distance-spatial-st.htm">Avg Nearest Neighbor</a></p></li>
-<li><p>Convex hull / envelope / minimum bounding geometry from common points</p></li>
-<li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-statistics/h-how-multi-distance-spatial-cluster-analysis-ripl.htm">Ripley’s K</a> - Point Clustering at different search distances / bandwidths</p></li>
-<li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-statistics/h-how-hot-spot-analysis-getis-ord-gi-spatial-stati.htm">Getis Ord D</a> - Hot Spot / Cold Spot Analysis</p></li>
+<li><p>[Kernel Density]</p></li>
+<li><p>Convex Hull: Minimum bounding geometry from common points</p></li>
+<li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-statistics/h-how-multi-distance-spatial-cluster-analysis-ripl.htm">Ripley’s K</a>: Point Clustering at different search distances / bandwidths</p></li>
+<li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-statistics/h-how-hot-spot-analysis-getis-ord-gi-spatial-stati.htm">Getis Ord D</a>: Hot Spot / Cold Spot Analysis</p></li>
 </ul>
 </section>
 <section id="interpolation">
@@ -475,13 +477,12 @@ document.write(`
 <li><p>Threshold/mask</p></li>
 </ul>
 </section>
-<section id="focal-neighborhood-statistics">
-<h2>Focal / Neighborhood statistics<a class="headerlink" href="#focal-neighborhood-statistics" title="Link to this heading">#</a></h2>
+<section id="filters">
+<h2>Filters<a class="headerlink" href="#filters" title="Link to this heading">#</a></h2>
 <p>Require user-input kernel size/radius/distance for the moving window calculation</p>
 <ul class="simple">
 <li><p><b>Low-pass filter</b>: Smooths surface</p></li>
 <li><p><b>High-pass filter</b>: Edge-enhancement / sharpening</p></li>
-<li><p><b>Spatial Lags</b></p></li>
 </ul>
 </section>
 <section id="descriptive-analytics">
@@ -498,6 +499,8 @@ document.write(`
 <p><b>Regression</b>:</p>
 <ul class="simple">
 <li><p>Ordinary Least Squares (OLS)</p></li>
+<li><p>Spatial Lag Model</p></li>
+<li><p>Spatial Error Model</p></li>
 <li><p>Geographic Weighted Regression (GWR)</p></li>
 </ul>
 <p><b>Clustering</b>:</p>
@@ -621,7 +624,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#point-pattern-analysis">Point Pattern Analysis</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolation">Interpolation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#global-statistics">Global statistics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#focal-neighborhood-statistics">Focal / Neighborhood statistics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filters">Filters</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptive-analytics">Descriptive Analytics</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#predictive-analytics">Predictive Analytics</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prescriptive-analytics">Prescriptive Analytics</a></li>

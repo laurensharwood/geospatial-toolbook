@@ -389,7 +389,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrated-development-environment-ide">Integrated Development Environment (IDE)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-control">Version Control</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-notes">Install notes:</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#linux-windows-path-variable">Linux &amp; Windows PATH variable</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#linux-mac-path-variable">Linux &amp; Mac PATH variable</a></li>
 </ul>
 </li>
 </ul>
@@ -490,22 +490,22 @@ document.write(`
 <section id="install-notes">
 <h3>Install notes:<a class="headerlink" href="#install-notes" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p><em>When installing &amp; setting up application, choose the custom setup (but probably use defaults) to see where files are placed, what is installed, etc.</em></p></li>
-<li><p><em>Remember to delete app_installer.exe file from Downloads folder after install is complete</em></p></li>
+<li><p>When installing &amp; setting up application, choose the custom setup (but probably use defaults) to see where files are placed, what is installed, etc.</p></li>
+<li><p>Remember to delete app_installer.exe file from Downloads folder after install is complete.</p></li>
 </ul>
-<section id="linux-windows-path-variable">
-<h4>Linux &amp; Windows PATH variable<a class="headerlink" href="#linux-windows-path-variable" title="Link to this heading">#</a></h4>
+<section id="linux-mac-path-variable">
+<h4>Linux &amp; Mac PATH variable<a class="headerlink" href="#linux-mac-path-variable" title="Link to this heading">#</a></h4>
 <p>PATH environment variable is a list of folders where the terminal looks to run a program.</p>
 <ul class="simple">
-<li><p>when installing an application, or {app} such as python, anaconda (NOT RECOMMENDED), or Git, select ‘Add {app}.exe to PATH’ to add the python install location to your user’s</p></li>
-<li><p>otherwise, manually add the application to path by adding that program’s install location to the PATH variable:</p></li>
+<li><p>When installing an application, or {app} such as python, anaconda (NOT RECOMMENDED), or Git, select <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">{app}.exe</span> <span class="pre">to</span> <span class="pre">PATH</span></code></p></li>
+<li><p>Otherwise, manually add the application to PATH by adding that program’s install location to the PATH variable from terminal:</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="n">export</span> <span class="n">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">{path_to_python}</span><span class="s2">:$PATH&quot;</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">profile</span>
 </pre></div>
 </div>
 <p>Mac:<br />
 i) open the terminal and enter the following command on a Mac: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">nano</span> <span class="pre">/etc/paths</span></code> (enter user password when prompted)<br />
-ii) in the last row of the file enter your app’s install location, ex: /Library/PostgreSQL/16/bin</p>
+ii) in the last row of the file enter your app’s install location, for instance: <code class="docutils literal notranslate"><span class="pre">/Library/PostgreSQL/16/bin</span></code></p>
 </section>
 </section>
 </section>
@@ -515,8 +515,8 @@ ii) in the last row of the file enter your app’s install location, ex: /Librar
 <section id="add-basemaps">
 <h3>Add basemaps:<a class="headerlink" href="#add-basemaps" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p>In the <b>Browser</b> pane: under <b>XYZ Tiles</b>, right-click and select <b>New Connection</b> <img alt="newconnection" src="_images/basemap1.png" /></p></li>
-<li><p>Enter the Name and URL from a row in the table below into the <b>XYZ Connection</b> popup window.</p></li>
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">Browser</span></code> pane: under <code class="docutils literal notranslate"><span class="pre">XYZ</span> <span class="pre">Tiles</span></code>, right-click and select <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Connection...</span></code><img alt="newconnection" src="_images/basemap1.png" /></p></li>
+<li><p>Enter the Name and URL from a row in the table below into the <code class="docutils literal notranslate"><span class="pre">XYZ</span> <span class="pre">Connection</span></code> popup window.</p></li>
 </ol>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -544,12 +544,12 @@ ii) in the last row of the file enter your app’s install location, ex: /Librar
 </table>
 </div>
 <ol class="arabic simple" start="3">
-<li><p>To view, drag the new connection (has a grid symbol &amp; located under <b>XYZ Tiles</b>) to the Map pane.</p></li>
+<li><p>To view, drag the new connection (has a grid symbol &amp; located under <code class="docutils literal notranslate"><span class="pre">XYZ</span> <span class="pre">Tiles</span></code>) to the Map pane.</p></li>
 </ol>
 </section>
 <section id="add-open-source-tool-plugins">
 <h3>Add open-source tool plugins:<a class="headerlink" href="#add-open-source-tool-plugins" title="Link to this heading">#</a></h3>
-<p><b>Plugins</b> dropdown &gt; <b>Manage and Install Plugins</b> &gt; search for your plugin</p>
+<p><code class="docutils literal notranslate"><span class="pre">Plugins</span></code> dropdown &gt; <code class="docutils literal notranslate"><span class="pre">Manage</span> <span class="pre">and</span> <span class="pre">Install</span> <span class="pre">Plugins</span></code> &gt; search for your plugin</p>
 </section>
 </section>
 <hr class="docutils" />
@@ -748,7 +748,7 @@ ii) in the last row of the file enter your app’s install location, ex: /Librar
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrated-development-environment-ide">Integrated Development Environment (IDE)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-control">Version Control</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-notes">Install notes:</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#linux-windows-path-variable">Linux &amp; Windows PATH variable</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#linux-mac-path-variable">Linux &amp; Mac PATH variable</a></li>
 </ul>
 </li>
 </ul>

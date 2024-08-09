@@ -164,7 +164,7 @@ From activated venv, in your venv project directory, launch jupyter lab:
 
 
 #### PyCharm:  
--  Settings > Project > Python Interpreter > + > Add Local Interpreter > Existing (venv directory)  
+-  ```Settings``` > ```Project``` > ```Python Interpreter``` > ```+``` > ```Add Local Interpreter``` > ```Existing``` (venv directory)  
 
 
 ---
@@ -172,34 +172,30 @@ From activated venv, in your venv project directory, launch jupyter lab:
 ## Cron Scheduler
 
 
-1. <b>Create bash script</b> ```get_garmin.sh``` <b>to be called by cron</b>-- which have the following lines to activate a virtual environment (venv) with necessary packages installed, then run the python script executable from that active venv:    
+1. <u>Create bash script</u> ```get_garmin.sh``` to be called by cron:    
 ~~~
 #!/bin/bash
 
-source .tlbx310/bin/activate
-python get_garmin.py
-deactivate
+source .tlbx310/bin/activate ## activate a virtual environment (venv) with necessary packages installed
+python get_garmin.py ## run python script executable
+deactivate ## deactivate venv 
 ~~~
 
-2. Enter the following commands in the terminal to ensure get_garmin.sh and get_garmin.py have <b>appropriate execute</b> permissions:    
+2. Ensure ```.sh``` and ```.py``` files have <u>appropriate execute</u> permissions by entering the following commands in the terminal:    
 ~~~
 chmod +x get_garmin.py
 chmod +x get_garmin.sh
 ~~~
 
-3. <b>Create task</b>: enter ```crontab -e``` in the terminal 
-
-Add a line specifying how often to execute a script:   
+3. <u>Create task</u>: enter ```crontab -e``` in the terminal. Add a line specifying how often to execute a script:    
 ~~~
-min hour day-of-month month day-of-week {command}  
+min hour day-of-month month day-of-week {command}    
+~~~ 
+Ex) every day at 10:00am run get_garmin.sh & don't send that email  (```*``` means all)              
 ~~~
-
-ex) every day at 10:00am run get_garmin.sh & don't send that email  (```*``` == all)    
+00 10 * * * ~/get_garmin.sh >/dev/null 2>&1   
 ~~~
-00 10 * * * ~/get_garmin.sh >/dev/null 2>&1  
-~~~
-  
-<u>To save</u>: ctrl+X (to escape editing session, then) Y (yes), enter     
+<u>To save</u>: ctrl+X (to escape editing session, then) Y (yes), enter
 
 4. <b>Print active tasks</b> to ensure it was created: ```crontab -l```  
 
@@ -212,7 +208,7 @@ ex) every day at 10:00am run get_garmin.sh & don't send that email  (```*``` == 
 ![github](img/git.png)
 
 
-<b>Store your login credentials</b>:   
+<u>Store your login credentials</u>:   
 ~~~
 git	
 git config --global user.name {your-github-username}
@@ -220,8 +216,8 @@ git config --global user.email {your-github-email}
 git config --global --list	
 ~~~
 
-<b>Initialize local folder</b> as a repository:    
-In File Explorer, navigate into your local repository folder. Right-click inside the directory > select <u>Show more options</u> > select <u>Open Git Bash here</u>     
+<u>Initialize local folder</u> as a repository:    
+In File Explorer, navigate into your local repository folder. Right-click inside the directory > select ```Show more options``` > select ```Open Git Bash here```     
 ~~~
 git init
 git add .
@@ -229,7 +225,7 @@ git commit -m "message"
 git remote add origin https://github.com/your_username/your_repo.git
 ~~~
 
-<b>Push updates</b> to remote repository:    
+<u>Push updates</u> to remote repository:    
 ~~~
 git push -u origin main
 cd your_repo
@@ -242,14 +238,14 @@ git push
 ~~~
 
 
-<b>Take remote</b> repository (ignore & delete local changes):     
+<u>Take remote</u> repository (ignore & delete local changes):     
 ~~~
 git reset --hard 
 git pull
 ~~~
 
 
-<b>Take local</b> repository (ignore  & delete remote changes):       
+<u>Take local</u> repository (ignore  & delete remote changes):       
 ~~~
 git push origin main --force
 ~~~

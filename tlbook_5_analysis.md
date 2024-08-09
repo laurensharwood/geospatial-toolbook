@@ -9,8 +9,9 @@
 
 ## Spatial Autocorrelation
 Spatial autocorrelation measures how similar values of a variable are relative to how close they are. 
-- Moran's I - measure of spatial autocorrelation   
-- Values range from -1 to +1, such that -1 would represent a checkerboard pattern and values near +1 would represent elevation in flat regions.   
+- Moran's I: Values range from -1 to +1, such that -1 would represent a checkerboard pattern and values near +1 would represent elevation in flat regions.  
+- Geary's C 
+- Local Indicators of Spatial Association (LISA)   
 
 ## Topological Relations
 - disjoint  / intersects 
@@ -29,10 +30,11 @@ Spatial autocorrelation measures how similar values of a variable are relative t
 - Add or subtract buffer distance to points, lines, or polygon vectors
 
 ## Point Pattern Analysis
-- [Avg Nearest Neighbor](https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-statistics/h-how-average-nearest-neighbor-distance-spatial-st.htm)   
-- Convex hull / envelope / minimum bounding geometry from common points    
-- [Ripley's K](https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-statistics/h-how-multi-distance-spatial-cluster-analysis-ripl.htm) - Point Clustering at different search distances / bandwidths
-- [Getis Ord D](https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-statistics/h-how-hot-spot-analysis-getis-ord-gi-spatial-stati.htm) - Hot Spot / Cold Spot Analysis 
+- [Avg Nearest Neighbor](https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-statistics/h-how-average-nearest-neighbor-distance-spatial-st.htm) 
+- [Kernel Density]  
+- Convex Hull: Minimum bounding geometry from common points    
+- [Ripley's K](https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-statistics/h-how-multi-distance-spatial-cluster-analysis-ripl.htm): Point Clustering at different search distances / bandwidths
+- [Getis Ord D](https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-statistics/h-how-hot-spot-analysis-getis-ord-gi-spatial-stati.htm): Hot Spot / Cold Spot Analysis 
 
 ## Interpolation 
 Estimate a value at a location based on surrounding locations (over time or [space](https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-analyst/understanding-interpolation-analysis.htm#:~:text=Interpolation%20predicts%20values%20for%20cells,chemical%20concentrations%2C%20and%20noise%20levels.)) 
@@ -44,11 +46,10 @@ Estimate a value at a location based on surrounding locations (over time or [spa
 - Band (```b```) algebra: ```b1 + b2```
 - Threshold/mask
 
-## Focal / Neighborhood statistics
+## Filters   
 Require user-input kernel size/radius/distance for the moving window calculation   
 - <b>Low-pass filter</b>: Smooths surface
 - <b>High-pass filter</b>: Edge-enhancement / sharpening 
-- <b>Spatial Lags</b>
 
 ## Descriptive Analytics
 - <b>Central tendency</b>: mean, median, mode   
@@ -59,8 +60,10 @@ Require user-input kernel size/radius/distance for the moving window calculation
 Predicts future or past value based on known (often time-series) values
 
 <b>Regression</b>:   
-- Ordinary Least Squares (OLS)
-- Geographic Weighted Regression (GWR)
+- Ordinary Least Squares (OLS)   
+- Spatial Lag Model 
+- Spatial Error Model 
+- Geographic Weighted Regression (GWR)  
 
 <b>Clustering</b>:  
 - DBSCAN

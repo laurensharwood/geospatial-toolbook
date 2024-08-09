@@ -20,11 +20,11 @@
   * [CodeAcademy](https://www.codecademy.com/) 
 
   
-## Data Science Books:
+## Books:
   * [Earth Engine and Geemap... with Python](https://book.geemap.org/) by Qiusheng Wu
   * [Python for Data Analysis](https://wesmckinney.com/book/) by Wes McKinney
+  * [YaRrr!](https://bookdown.org/ndphillips/YaRrr/) by Nathaniel D. Phillips
   * [Spatial Statistics for Data Science... with R](https://www.paulamoraga.com/book-spatial/index.html) by Paula Moraga
-
   
 ## Geospatial Tutorials:
   * [Geography Realm](https://www.geographyrealm.com/gis/)

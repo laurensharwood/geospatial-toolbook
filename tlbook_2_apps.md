@@ -41,23 +41,22 @@
 
 
 ### Install notes:
-* *When installing & setting up application, choose the custom setup (but probably use defaults) to see where files are placed, what is installed, etc.*  
-* *Remember to delete app_installer.exe file from Downloads folder after install is complete*   
+* When installing & setting up application, choose the custom setup (but probably use defaults) to see where files are placed, what is installed, etc.  
+* Remember to delete app_installer.exe file from Downloads folder after install is complete.   
 
 
-#### Linux & Windows PATH variable
+#### Linux & Mac PATH variable
 
 PATH environment variable is a list of folders where the terminal looks to run a program.
-* when installing an application, or {app} such as python, anaconda (NOT RECOMMENDED), or Git, select 'Add {app}.exe to PATH' to add the python install location to your user's 
-* otherwise, manually add the application to path by adding that program's install location to the PATH variable:
-
+* When installing an application, or {app} such as python, anaconda (NOT RECOMMENDED), or Git, select ```Add {app}.exe to PATH```   
+* Otherwise, manually add the application to PATH by adding that program's install location to the PATH variable from terminal:
 ~~~
 echo export PATH="{path_to_python}:$PATH" >> ~/.profile
 ~~~
 
 Mac:   
 i) open the terminal and enter the following command on a Mac: ```sudo nano /etc/paths``` (enter user password when prompted)  
-ii) in the last row of the file enter your app's install location, ex: /Library/PostgreSQL/16/bin  
+ii) in the last row of the file enter your app's install location, for instance: ```/Library/PostgreSQL/16/bin```  
 
 
 ---
@@ -66,8 +65,8 @@ ii) in the last row of the file enter your app's install location, ex: /Library/
 ## QGIS 
 
 ### Add basemaps:  
-1) In the <b>Browser</b> pane: under <b>XYZ Tiles</b>, right-click and select <b>New Connection</b> ![newconnection](img/basemap1.png)
-2) Enter the Name and URL from a row in the table below into the <b>XYZ Connection</b> popup window. 
+1) In the ```Browser``` pane: under ```XYZ Tiles```, right-click and select ```New Connection...```![newconnection](img/basemap1.png)
+2) Enter the Name and URL from a row in the table below into the ```XYZ Connection``` popup window. 
 
 
 | Name               | URL                                                                                             |
@@ -78,10 +77,10 @@ ii) in the last row of the file enter your app's install location, ex: /Library/
 | Google Hybrid      | https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}                                              |
 | Open Topo          | https://tile.opentopomap.org/{z}/{x}/{y}.png                                                    |
 
-3) To view, drag the new connection (has a grid symbol & located under <b>XYZ Tiles</b>) to the Map pane.
+3) To view, drag the new connection (has a grid symbol & located under ```XYZ Tiles```) to the Map pane.
 
 ### Add open-source tool plugins:
-<b>Plugins</b> dropdown > <b>Manage and Install Plugins</b> > search for your plugin     
+```Plugins``` dropdown > ```Manage and Install Plugins``` > search for your plugin     
 
 
 
