@@ -1,5 +1,7 @@
 # 5. Geospatial Analysis
 
+*UNDER CONSTRUCTION*
+
 ---
 
 
@@ -31,7 +33,7 @@ Spatial autocorrelation measures how similar values of a variable are relative t
 
 ## Point Pattern Analysis
 - [Avg Nearest Neighbor](https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-statistics/h-how-average-nearest-neighbor-distance-spatial-st.htm) 
-- [Kernel Density]  
+- Kernel Density Estimation  
 - Convex Hull: Minimum bounding geometry from common points    
 - [Ripley's K](https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-statistics/h-how-multi-distance-spatial-cluster-analysis-ripl.htm): Point Clustering at different search distances / bandwidths
 - [Getis Ord D](https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-statistics/h-how-hot-spot-analysis-getis-ord-gi-spatial-stati.htm): Hot Spot / Cold Spot Analysis 

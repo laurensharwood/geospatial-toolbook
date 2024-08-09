@@ -3,8 +3,8 @@
 
 
 ## Geospatial Blogs: 
+  * [ESRI](https://www.esri.com/arcgis-blog/overview/)   
   * [Element84](https://element84.com/blog/)
-  * ESRI [ArcGIS](https://www.esri.com/arcgis-blog/overview/)   
   * [GIS Geography](https://gisgeography.com/)  
   
 
