@@ -14,7 +14,7 @@ ssh {your_username}@{hpc_machine}.{host}
 
 Windows Applications:  
 * Putty  
-* MobaXterm (nice GUI)  
+* MobaXterm (*personal preference: nice GUI*)  
 
 
 ## [Install Linux on Windows](https://learn.microsoft.com/en-us/windows/wsl/install): 
