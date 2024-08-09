@@ -5,45 +5,46 @@
 ![Apps](img/app_icons.png)
 
 
-Mapping:   
+## Mapping    
 - [ ] [QGIS](https://qgis.org/en/site/forusers/download.html) (+ OSGeo4W/gdal, PostGIS/postgreSQL)
 - [ ] [Google Earth Pro](https://support.google.com/earth/answer/21955?hl=en)
 - [ ] [Geoserver](https://geoserver.org/download/) (requires [JDK](https://adoptium.net/) )
 
-Relational Database Management System (RDBMS): *NOTE [different SQL syntax](https://www.datacamp.com/blog/sql-server-postgresql-mysql-whats-the-difference-where-do-i-start?utm_source=google&utm_medium=paid_search&utm_campaignid=19589720830&utm_adgroupid=152984016694&utm_device=c&utm_keyword=&utm_matchtype=&utm_network=g&utm_adpostion=&utm_creative=684592141394&utm_targetid=dsa-2222697809758&utm_loc_interest_ms=&utm_loc_physical_ms=9031757&utm_content=DSA~blog~SQL&utm_campaign=230119_1-sea~dsa~tofu_2-b2c_3-us_4-prc_5-na_6-na_7-le_8-pdsh-go_9-nb-e_10-na_11-na&gad_source=1&gclid=Cj0KCQjws560BhCuARIsAHMqE0FYrjbIuukzGe7GNZ6eeFyRIdojfvbJMp5LreGIjlWsex3WJJ9k5aMaAvSLEALw_wcB)*    
+## Relational Database Management System (RDBMS) 
+*NOTE [different SQL syntax](https://www.datacamp.com/blog/sql-server-postgresql-mysql-whats-the-difference-where-do-i-start?utm_source=google&utm_medium=paid_search&utm_campaignid=19589720830&utm_adgroupid=152984016694&utm_device=c&utm_keyword=&utm_matchtype=&utm_network=g&utm_adpostion=&utm_creative=684592141394&utm_targetid=dsa-2222697809758&utm_loc_interest_ms=&utm_loc_physical_ms=9031757&utm_content=DSA~blog~SQL&utm_campaign=230119_1-sea~dsa~tofu_2-b2c_3-us_4-prc_5-na_6-na_7-le_8-pdsh-go_9-nb-e_10-na_11-na&gad_source=1&gclid=Cj0KCQjws560BhCuARIsAHMqE0FYrjbIuukzGe7GNZ6eeFyRIdojfvbJMp5LreGIjlWsex3WJJ9k5aMaAvSLEALw_wcB)*    
 - [ ] [postgreSQL](https://www.postgresql.org/download/) (w/ postGIS plugin to connect to QGIS)  
 - [ ] [MySQL](https://dev.mysql.com/downloads/mysql/) *NOTE: Select your OS*
 - [ ] [SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
 - [X] SQLite (sqlite3 pre-installed with Python)
 
-Scripting:
+## Scripting
 - [ ] [Python](https://www.python.org/downloads/) 
   - *Personal preference: For large-scale data processing & analysis*
 - [ ] [R](https://rstudio-education.github.io/hopr/starting.html) 
   - *Personal preference: For easier small-scale statistics/tabular analysis & data visualization*
 
-Virtual Environment:
+## Virtual Environment
 - [X] venv (pre-installed with Python)
 - [ ] [Anaconda](https://www.anaconda.com/download/success)
   - *Pro: easy GDAL install*
   - *Con: slower to install packages, though [Micromamba](https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html) is a lightweight alternative* 
 
-IDE:  
+## Integrated Development Environment (IDE)  
 - [ ] [PyCharm](https://www.jetbrains.com/pycharm/download/)
 - [ ] [Spyder](https://www.spyder-ide.org/)   
 - [X] Jupyter Lab (install from activated virtual environment with Python)
 - [ ] [RStudio](https://posit.co/downloads/)  
 
-Version Control:  
+## Version Control  
 - [ ] [Git](https://git-scm.com/downloads)  
 
 
-## Install notes:
+### Install notes:
 * *When installing & setting up application, choose the custom setup (but probably use defaults) to see where files are placed, what is installed, etc.*  
 * *Remember to delete app_installer.exe file from Downloads folder after install is complete*   
 
 
-### Linux & Windows PATH variable
+#### Linux & Windows PATH variable
 
 PATH environment variable is a list of folders where the terminal looks to run a program.
 * when installing an application, or {app} such as python, anaconda (NOT RECOMMENDED), or Git, select 'Add {app}.exe to PATH' to add the python install location to your user's 
@@ -85,7 +86,7 @@ ii) in the last row of the file enter your app's install location, ex: /Library/
 
 ---
 
-## [ESRI Products](https://www.esri.com/en-us/arcgis/products/index)
+## [ESRI Ecosystem](https://www.esri.com/en-us/arcgis/products/index)
 
 [ESRI Developer](https://developers.arcgis.com/)
 

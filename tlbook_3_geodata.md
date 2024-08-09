@@ -23,7 +23,7 @@ the goal is to choose a projection method that limits your project area's Eastin
 * EPSG 4326 - *Unprojected/Geographic* - Used for GPS field survey devices & raw survey data   
 * EPSG 3857 - *Projected* - Used for features published in web maps    
 
-<b>CRS Reprojection:</b> Transforms geographic data as [images](https://rasterio.readthedocs.io/en/stable/topics/transforms.html) or [vectors](https://www.earthdatascience.org/workshops/gis-open-source-python/reproject-vector-data-in-python/) between different coordinate reference systems.  
+<b>CRS Reprojection:</b> Transforms geographic data as [rasters](https://rasterio.readthedocs.io/en/stable/topics/transforms.html) or [vectors](https://www.earthdatascience.org/workshops/gis-open-source-python/reproject-vector-data-in-python/) between different coordinate reference systems.  
 
 ---
 
@@ -233,7 +233,7 @@ Standards:
 * [USGS](https://data.usgs.gov/datacatalog/search)
 * [USFS](https://data-usfs.hub.arcgis.com)
 * [California](https://gis.data.ca.gov/) & [CA vegetation](https://wildlife.ca.gov/Data/GIS/Vegetation-Data)
-
+* [ESRI Living Atlas](https://livingatlas.arcgis.com/en/home/)
 ### Google Earth Engine: Data Catalog & Cloud Computing   
 
 #### Data:  

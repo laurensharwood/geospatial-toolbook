@@ -185,7 +185,7 @@
 <li class="toctree-l1"><a class="reference internal" href="tlbook_3_geodata.html">3. Geographic Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tlbook_4_database.html">4. Databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tlbook_5_analysis.html">5. Geospatial Analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tlbook_6_programming.html">6.Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tlbook_6_programming.html">6. Programming</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tlbook_7_hpc.html">7. High Performance Computing</a></li>
 </ul>
 
@@ -382,8 +382,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-notes">Install notes:</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux-windows-path-variable">Linux &amp; Windows PATH variable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping">Mapping</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relational-database-management-system-rdbms">Relational Database Management System (RDBMS)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scripting">Scripting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#virtual-environment">Virtual Environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrated-development-environment-ide">Integrated Development Environment (IDE)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-control">Version Control</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-notes">Install notes:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#linux-windows-path-variable">Linux &amp; Windows PATH variable</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qgis">QGIS</a><ul class="nav section-nav flex-column">
@@ -391,7 +399,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-open-source-tool-plugins">Add open-source tool plugins:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esri-products">ESRI Products</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esri-ecosystem">ESRI Ecosystem</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arcgis-pro">1) ArcGIS Pro</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arcgis-enterprise-software-components">2) ArcGIS Enterprise  Software Components:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arcgis-online-agol-components">3) ArcGIS Online (AGOL) Components:</a><ul class="nav section-nav flex-column">
@@ -419,20 +427,26 @@ document.write(`
 <h1>2. Software<a class="headerlink" href="#software" title="Link to this heading">#</a></h1>
 <hr class="docutils" />
 <p><img alt="Apps" src="_images/app_icons.png" /></p>
-<p>Mapping:</p>
+<section id="mapping">
+<h2>Mapping<a class="headerlink" href="#mapping" title="Link to this heading">#</a></h2>
 <ul class="contains-task-list simple">
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <a class="reference external" href="https://qgis.org/en/site/forusers/download.html">QGIS</a> (+ OSGeo4W/gdal, PostGIS/postgreSQL)</p></li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <a class="reference external" href="https://support.google.com/earth/answer/21955?hl=en">Google Earth Pro</a></p></li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <a class="reference external" href="https://geoserver.org/download/">Geoserver</a> (requires <a class="reference external" href="https://adoptium.net/">JDK</a> )</p></li>
 </ul>
-<p>Relational Database Management System (RDBMS): <em>NOTE <a class="reference external" href="https://www.datacamp.com/blog/sql-server-postgresql-mysql-whats-the-difference-where-do-i-start?utm_source=google&amp;amp;utm_medium=paid_search&amp;amp;utm_campaignid=19589720830&amp;amp;utm_adgroupid=152984016694&amp;amp;utm_device=c&amp;amp;utm_keyword=&amp;amp;utm_matchtype=&amp;amp;utm_network=g&amp;amp;utm_adpostion=&amp;amp;utm_creative=684592141394&amp;amp;utm_targetid=dsa-2222697809758&amp;amp;utm_loc_interest_ms=&amp;amp;utm_loc_physical_ms=9031757&amp;amp;utm_content=DSA~blog~SQL&amp;amp;utm_campaign=230119_1-sea~dsa~tofu_2-b2c_3-us_4-prc_5-na_6-na_7-le_8-pdsh-go_9-nb-e_10-na_11-na&amp;amp;gad_source=1&amp;amp;gclid=Cj0KCQjws560BhCuARIsAHMqE0FYrjbIuukzGe7GNZ6eeFyRIdojfvbJMp5LreGIjlWsex3WJJ9k5aMaAvSLEALw_wcB">different SQL syntax</a></em></p>
+</section>
+<section id="relational-database-management-system-rdbms">
+<h2>Relational Database Management System (RDBMS)<a class="headerlink" href="#relational-database-management-system-rdbms" title="Link to this heading">#</a></h2>
+<p><em>NOTE <a class="reference external" href="https://www.datacamp.com/blog/sql-server-postgresql-mysql-whats-the-difference-where-do-i-start?utm_source=google&amp;amp;utm_medium=paid_search&amp;amp;utm_campaignid=19589720830&amp;amp;utm_adgroupid=152984016694&amp;amp;utm_device=c&amp;amp;utm_keyword=&amp;amp;utm_matchtype=&amp;amp;utm_network=g&amp;amp;utm_adpostion=&amp;amp;utm_creative=684592141394&amp;amp;utm_targetid=dsa-2222697809758&amp;amp;utm_loc_interest_ms=&amp;amp;utm_loc_physical_ms=9031757&amp;amp;utm_content=DSA~blog~SQL&amp;amp;utm_campaign=230119_1-sea~dsa~tofu_2-b2c_3-us_4-prc_5-na_6-na_7-le_8-pdsh-go_9-nb-e_10-na_11-na&amp;amp;gad_source=1&amp;amp;gclid=Cj0KCQjws560BhCuARIsAHMqE0FYrjbIuukzGe7GNZ6eeFyRIdojfvbJMp5LreGIjlWsex3WJJ9k5aMaAvSLEALw_wcB">different SQL syntax</a></em></p>
 <ul class="contains-task-list simple">
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <a class="reference external" href="https://www.postgresql.org/download/">postgreSQL</a> (w/ postGIS plugin to connect to QGIS)</p></li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <a class="reference external" href="https://dev.mysql.com/downloads/mysql/">MySQL</a> <em>NOTE: Select your OS</em></p></li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <a class="reference external" href="https://www.microsoft.com/en-us/sql-server/sql-server-downloads">SQL Server</a></p></li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> SQLite (sqlite3 pre-installed with Python)</p></li>
 </ul>
-<p>Scripting:</p>
+</section>
+<section id="scripting">
+<h2>Scripting<a class="headerlink" href="#scripting" title="Link to this heading">#</a></h2>
 <ul class="contains-task-list simple">
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <a class="reference external" href="https://www.python.org/downloads/">Python</a></p>
 <ul>
@@ -445,7 +459,9 @@ document.write(`
 </ul>
 </li>
 </ul>
-<p>Virtual Environment:</p>
+</section>
+<section id="virtual-environment">
+<h2>Virtual Environment<a class="headerlink" href="#virtual-environment" title="Link to this heading">#</a></h2>
 <ul class="contains-task-list simple">
 <li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> venv (pre-installed with Python)</p></li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <a class="reference external" href="https://www.anaconda.com/download/success">Anaconda</a></p>
@@ -455,25 +471,29 @@ document.write(`
 </ul>
 </li>
 </ul>
-<p>IDE:</p>
+</section>
+<section id="integrated-development-environment-ide">
+<h2>Integrated Development Environment (IDE)<a class="headerlink" href="#integrated-development-environment-ide" title="Link to this heading">#</a></h2>
 <ul class="contains-task-list simple">
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <a class="reference external" href="https://www.jetbrains.com/pycharm/download/">PyCharm</a></p></li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <a class="reference external" href="https://www.spyder-ide.org/">Spyder</a></p></li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Jupyter Lab (install from activated virtual environment with Python)</p></li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <a class="reference external" href="https://posit.co/downloads/">RStudio</a></p></li>
 </ul>
-<p>Version Control:</p>
+</section>
+<section id="version-control">
+<h2>Version Control<a class="headerlink" href="#version-control" title="Link to this heading">#</a></h2>
 <ul class="contains-task-list simple">
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <a class="reference external" href="https://git-scm.com/downloads">Git</a></p></li>
 </ul>
 <section id="install-notes">
-<h2>Install notes:<a class="headerlink" href="#install-notes" title="Link to this heading">#</a></h2>
+<h3>Install notes:<a class="headerlink" href="#install-notes" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><em>When installing &amp; setting up application, choose the custom setup (but probably use defaults) to see where files are placed, what is installed, etc.</em></p></li>
 <li><p><em>Remember to delete app_installer.exe file from Downloads folder after install is complete</em></p></li>
 </ul>
 <section id="linux-windows-path-variable">
-<h3>Linux &amp; Windows PATH variable<a class="headerlink" href="#linux-windows-path-variable" title="Link to this heading">#</a></h3>
+<h4>Linux &amp; Windows PATH variable<a class="headerlink" href="#linux-windows-path-variable" title="Link to this heading">#</a></h4>
 <p>PATH environment variable is a list of folders where the terminal looks to run a program.</p>
 <ul class="simple">
 <li><p>when installing an application, or {app} such as python, anaconda (NOT RECOMMENDED), or Git, select ‘Add {app}.exe to PATH’ to add the python install location to your user’s</p></li>
@@ -485,6 +505,7 @@ document.write(`
 <p>Mac:<br />
 i) open the terminal and enter the following command on a Mac: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">nano</span> <span class="pre">/etc/paths</span></code> (enter user password when prompted)<br />
 ii) in the last row of the file enter your app’s install location, ex: /Library/PostgreSQL/16/bin</p>
+</section>
 </section>
 </section>
 <hr class="docutils" />
@@ -531,8 +552,8 @@ ii) in the last row of the file enter your app’s install location, ex: /Librar
 </section>
 </section>
 <hr class="docutils" />
-<section id="esri-products">
-<h2><a class="reference external" href="https://www.esri.com/en-us/arcgis/products/index">ESRI Products</a><a class="headerlink" href="#esri-products" title="Link to this heading">#</a></h2>
+<section id="esri-ecosystem">
+<h2><a class="reference external" href="https://www.esri.com/en-us/arcgis/products/index">ESRI Ecosystem</a><a class="headerlink" href="#esri-ecosystem" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://developers.arcgis.com/">ESRI Developer</a></p>
 <section id="arcgis-pro">
 <h3>1) <a class="reference external" href="https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview">ArcGIS Pro</a><a class="headerlink" href="#arcgis-pro" title="Link to this heading">#</a></h3>
@@ -719,8 +740,16 @@ ii) in the last row of the file enter your app’s install location, ex: /Librar
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-notes">Install notes:</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux-windows-path-variable">Linux &amp; Windows PATH variable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping">Mapping</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relational-database-management-system-rdbms">Relational Database Management System (RDBMS)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scripting">Scripting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#virtual-environment">Virtual Environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrated-development-environment-ide">Integrated Development Environment (IDE)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-control">Version Control</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-notes">Install notes:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#linux-windows-path-variable">Linux &amp; Windows PATH variable</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qgis">QGIS</a><ul class="nav section-nav flex-column">
@@ -728,7 +757,7 @@ ii) in the last row of the file enter your app’s install location, ex: /Librar
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-open-source-tool-plugins">Add open-source tool plugins:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esri-products">ESRI Products</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esri-ecosystem">ESRI Ecosystem</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arcgis-pro">1) ArcGIS Pro</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arcgis-enterprise-software-components">2) ArcGIS Enterprise  Software Components:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arcgis-online-agol-components">3) ArcGIS Online (AGOL) Components:</a><ul class="nav section-nav flex-column">

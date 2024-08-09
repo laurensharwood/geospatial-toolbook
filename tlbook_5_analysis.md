@@ -78,7 +78,9 @@ Predicts future or past value based on known (often time-series) values
 
 ## Prescriptive Analytics
 Suggests decision options for how to take advantage of a future opportunity or mitigate a future risk, and shows the implication of each decision option. 
-- <b>Site Suitability Analysis</b> (SSA)
+- <b>Site Suitability Analysis</b> (SSA)   
+  - Multi-Criteria Decision Analysis (MCDA)   
+  - Analytical Hierarchy Process (AHP)  
 - <b>[Vehicle routing](https://developers.arcgis.com/python/guide/part1-introduction-to-network-analysis/)</b>:
   - Service Area: Travel times to customer. For example) to decide where to put fire station. regular buffer, cost over surface (elevation/slope), network (street travel time)
   - Find closest facility for incidents 

@@ -4,9 +4,8 @@
 
 ## Geospatial Blogs: 
   * [Element84](https://element84.com/blog/)
-  * [ESRI](https://www.esri.com/arcgis-blog/overview/)   
-  * [GIS Geography](https://gisgeography.com/)
-
+  * ESRI [ArcGIS](https://www.esri.com/arcgis-blog/overview/)   
+  * [GIS Geography](https://gisgeography.com/)  
   
 
 ## Podcasts:
