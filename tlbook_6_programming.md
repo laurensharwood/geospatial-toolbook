@@ -111,11 +111,6 @@ Google Earth Engine (GEE):
 - ```earthengine-api``` GEE   
 - ```geemap``` GEE mapping helper   
 
-### Google Earth Engine - Python API
-
-[Earth Engine Data Catalog](https://developers.google.com/earth-engine/datasets)+ https://gee-community-catalog.org   & Cloud Computing
-* quota - download rate limit at 2 at any given time 
-
 ~~~
 import ee
 

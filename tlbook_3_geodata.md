@@ -238,9 +238,10 @@ Standards:
 * [USFS](https://data-usfs.hub.arcgis.com)
 * [California](https://gis.data.ca.gov/) & [CA vegetation](https://wildlife.ca.gov/Data/GIS/Vegetation-Data)
 * [ESRI Living Atlas](https://livingatlas.arcgis.com/en/home/)
-### Google Earth Engine: Data Catalog & Cloud Computing   
 
-#### Data:  
+### Google Earth Engine: Data Catalog & Cloud Computing   
+* quota - download rate limit is 2 at any given time 
+
 ##### ee.FeatureCollection   
 
 | category         |ee.FeatureCollection|
