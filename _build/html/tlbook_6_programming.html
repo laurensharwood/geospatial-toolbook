@@ -655,7 +655,7 @@ Microsoft Stac Catalog:</p>
 <section id="cron-scheduler">
 <h2>Cron Scheduler<a class="headerlink" href="#cron-scheduler" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p><b>create bash script</b> <code class="docutils literal notranslate"><span class="pre">get_garmin.sh</span></code> <b>to be called by cron</b>– which have the following lines to activate a virtual environment (venv) with necessary packages installed, then run the python script executable from that active venv:</p></li>
+<li><p><b>Create bash script</b> <code class="docutils literal notranslate"><span class="pre">get_garmin.sh</span></code> <b>to be called by cron</b>– which have the following lines to activate a virtual environment (venv) with necessary packages installed, then run the python script executable from that active venv:</p></li>
 </ol>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 
@@ -665,14 +665,14 @@ Microsoft Stac Catalog:</p>
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
-<li><p>enter the following commands in the terminal to ensure get_garmin.sh and get_garmin.py have <b>appropriate execute</b> permissions:</p></li>
+<li><p>Enter the following commands in the terminal to ensure get_garmin.sh and get_garmin.py have <b>appropriate execute</b> permissions:</p></li>
 </ol>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">get_garmin</span><span class="o">.</span><span class="n">py</span>
 <span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">get_garmin</span><span class="o">.</span><span class="n">sh</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
-<li><p><b>create task</b>: enter <code class="docutils literal notranslate"><span class="pre">crontab</span> <span class="pre">-e</span></code> in the terminal</p></li>
+<li><p><b>Create task</b>: enter <code class="docutils literal notranslate"><span class="pre">crontab</span> <span class="pre">-e</span></code> in the terminal</p></li>
 </ol>
 <p>Add a line specifying how often to execute a script:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">min</span> <span class="n">hour</span> <span class="n">day</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">month</span> <span class="n">month</span> <span class="n">day</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">week</span> <span class="p">{</span><span class="n">command</span><span class="p">}</span>  
@@ -682,9 +682,9 @@ Microsoft Stac Catalog:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">00</span> <span class="mi">10</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">~/</span><span class="n">get_garmin</span><span class="o">.</span><span class="n">sh</span> <span class="o">&gt;/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span> <span class="mi">2</span><span class="o">&gt;&amp;</span><span class="mi">1</span>  
 </pre></div>
 </div>
-<p><u>to save</u>: ctrl+X (to escape editing session, then) Y (yes), enter</p>
+<p><u>To save</u>: ctrl+X (to escape editing session, then) Y (yes), enter</p>
 <ol class="arabic simple" start="4">
-<li><p><b>print active tasks</b> to ensure it was created: <code class="docutils literal notranslate"><span class="pre">crontab</span> <span class="pre">-l</span></code></p></li>
+<li><p><b>Print active tasks</b> to ensure it was created: <code class="docutils literal notranslate"><span class="pre">crontab</span> <span class="pre">-l</span></code></p></li>
 </ol>
 </section>
 <hr class="docutils" />

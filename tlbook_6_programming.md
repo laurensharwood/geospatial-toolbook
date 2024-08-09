@@ -184,7 +184,7 @@ From activated venv, in your venv project directory, launch jupyter lab:
 ## Cron Scheduler
 
 
-1. <b>create bash script</b> ```get_garmin.sh``` <b>to be called by cron</b>-- which have the following lines to activate a virtual environment (venv) with necessary packages installed, then run the python script executable from that active venv:    
+1. <b>Create bash script</b> ```get_garmin.sh``` <b>to be called by cron</b>-- which have the following lines to activate a virtual environment (venv) with necessary packages installed, then run the python script executable from that active venv:    
 ~~~
 #!/bin/bash
 
@@ -193,13 +193,13 @@ python get_garmin.py
 deactivate
 ~~~
 
-2. enter the following commands in the terminal to ensure get_garmin.sh and get_garmin.py have <b>appropriate execute</b> permissions:    
+2. Enter the following commands in the terminal to ensure get_garmin.sh and get_garmin.py have <b>appropriate execute</b> permissions:    
 ~~~
 chmod +x get_garmin.py
 chmod +x get_garmin.sh
 ~~~
 
-3. <b>create task</b>: enter ```crontab -e``` in the terminal 
+3. <b>Create task</b>: enter ```crontab -e``` in the terminal 
 
 Add a line specifying how often to execute a script:   
 ~~~
@@ -211,9 +211,9 @@ ex) every day at 10:00am run get_garmin.sh & don't send that email  (```*``` == 
 00 10 * * * ~/get_garmin.sh >/dev/null 2>&1  
 ~~~
   
-<u>to save</u>: ctrl+X (to escape editing session, then) Y (yes), enter     
+<u>To save</u>: ctrl+X (to escape editing session, then) Y (yes), enter     
 
-4. <b>print active tasks</b> to ensure it was created: ```crontab -l```  
+4. <b>Print active tasks</b> to ensure it was created: ```crontab -l```  
 
 ---
 

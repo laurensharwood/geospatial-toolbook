@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'tlbook_7_hpc';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="6.Programming" href="tlbook_6_programming.html" />
+    <link rel="prev" title="6. Programming" href="tlbook_6_programming.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -184,7 +184,7 @@
 <li class="toctree-l1"><a class="reference internal" href="tlbook_3_geodata.html">3. Geographic Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tlbook_4_database.html">4. Databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tlbook_5_analysis.html">5. Geospatial Analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tlbook_6_programming.html">6.Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tlbook_6_programming.html">6. Programming</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">7. High Performance Computing</a></li>
 </ul>
 
@@ -513,15 +513,12 @@ find . -name gee -exec rm -rf {} ;</p>
 <span class="n">sbatch</span> <span class="p">{</span><span class="n">bash_script_name</span><span class="p">}</span><span class="o">.</span><span class="n">sh</span>
 </pre></div>
 </div>
-<p>Check on bash script progress:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">squeue</span> <span class="c1">## to make sure it&#39;s running, see how busy the cluster is    </span>
-<span class="n">ls</span> <span class="o">-</span><span class="n">ltr</span> <span class="c1">## to    </span>
-<span class="n">cat</span> <span class="p">{</span><span class="n">bottom_file</span><span class="o">.</span><span class="n">err</span><span class="p">}</span> 
+<p>Check on bash script progress from <code class="docutils literal notranslate"><span class="pre">~/code/bash</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">squeue</span> <span class="c1">## to make sure it&#39;s running and see how busy the cluster is    </span>
+<span class="n">ls</span> <span class="o">-</span><span class="n">ltr</span> <span class="c1">## print most recently edited file at the bottom, to copy {last.err} filename then paste after cat command in the following line      </span>
+<span class="n">cat</span> <span class="p">{</span><span class="n">last</span><span class="o">.</span><span class="n">err</span><span class="p">}</span> <span class="c1">## prints the contents of the last edited file, last.err, in the terminal   </span>
 </pre></div>
 </div>
-<p>from ~/code/bash, prints the last file to be created printed at the bottom.<br />
-copy filename, bottom_file.err<br />
-cat command prints the contents of the file, bottom_file.err, in the terminal</p>
 <hr class="docutils" />
 </section>
 </section>
@@ -562,7 +559,7 @@ cat command prints the contents of the file, bottom_file.err, in the terminal</p
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">6.Programming</p>
+        <p class="prev-next-title">6. Programming</p>
       </div>
     </a>
 </div>

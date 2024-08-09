@@ -97,17 +97,13 @@ cd ~/code/bash
 sbatch {bash_script_name}.sh
 ~~~
 
-Check on bash script progress:
+Check on bash script progress from ```~/code/bash```:
 ~~~
-squeue ## to make sure it's running, see how busy the cluster is    
-ls -ltr ## to    
-cat {bottom_file.err} 
+squeue ## to make sure it's running and see how busy the cluster is    
+ls -ltr ## print most recently edited file at the bottom, to copy {last.err} filename then paste after cat command in the following line      
+cat {last.err} ## prints the contents of the last edited file, last.err, in the terminal   
 ~~~
-from ~/code/bash, prints the last file to be created printed at the bottom.   
-copy filename, bottom_file.err   
-cat command prints the contents of the file, bottom_file.err, in the terminal        
-
-
+  
 
 ---
 

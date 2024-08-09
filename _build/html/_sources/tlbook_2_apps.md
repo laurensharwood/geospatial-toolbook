@@ -6,7 +6,7 @@
 
 
 ## Mapping    
-- [ ] [QGIS](https://qgis.org/en/site/forusers/download.html) (+ OSGeo4W/gdal, PostGIS/postgreSQL)
+- [ ] [QGIS](https://qgis.org/en/site/forusers/download.html) (+ OSGeo4W/GDAL, PostGIS/postgreSQL)
 - [ ] [Google Earth Pro](https://support.google.com/earth/answer/21955?hl=en)
 - [ ] [Geoserver](https://geoserver.org/download/) (requires [JDK](https://adoptium.net/))
 
