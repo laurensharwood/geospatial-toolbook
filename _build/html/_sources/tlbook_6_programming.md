@@ -124,13 +124,6 @@ ee.Authenticate()
 ee.Initialize()
 ~~~
 
-#### Visualize Planet Basemaps monthly time series and download composite 
-1) Create a Planet account under [Sign Up For Level 1 User Access](https://www.planet.com/nicfi/#sign-up)     
-  *Note: Current Planet data users will need to sign up with a different email not associated with their Planet account.*    
-2) Follow [setup instructions](https://developers.planet.com/docs/integrations/gee/nicfi/) to access [NICFI Planet Basemaps - Tropical Americas](https://developers.google.com/earth-engine/datasets/catalog/projects_planet-nicfi_assets_basemaps_americas) in Google Earth Engine (GEE).    
-  *Note: The email associated with your GEE account might differ from the email used for your Planet account.*  
-
-
 Jupyter IDE:   
 - ```jupyterlab``` (*note to launch: > jupyter lab)   
 - ```jupyter_contrib_nbextensions```   
