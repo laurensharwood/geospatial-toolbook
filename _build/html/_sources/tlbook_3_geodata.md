@@ -15,13 +15,17 @@ the goal is to choose a projection method that limits your project area's Eastin
    - Types: Conformal projections preserve angular distortion, equidistant projections preserve distance, and equal area projections preserve area. 
    * ex) Due to its long shape (elongated North to South), California is divided into 6 State Plane (CASP) Zones. For each CASP Zone, a *Lambert conformal conic projection* is optimal do to the East-West elongation and mid-latitude location. 
 
-<b>[Projection Wizard](https://projectionwizard.org):</b>  Tool to find appropriate projection based on your project area
+![proj](img/projection.png)
 
-<b>[PROJ.4 String](https://pygis.io/docs/d_understand_crs_codes.html#proj-4-string):</b>  Multiple parameters needed to describe a CRS     
+
+<b>[Projection Wizard](https://projectionwizard.org):</b>  Tool to find appropriate projection based on your project area
 
 <b>[EPSG](https://epsg.io/?q=)</b>: public registry of CRS information. Spatial Reference System Identifier <b>(SRID)</b> is typically associated with a well-known text (WKT) string definition of the coordinate system, consistent with an EPSG code.   
 * EPSG 4326 - *Unprojected/Geographic* - Used for GPS field survey devices & raw survey data   
 * EPSG 3857 - *Projected* - Used for features published in web maps    
+
+<b>[PROJ.4 String](https://pygis.io/docs/d_understand_crs_codes.html#proj-4-string):</b>  Multiple parameters needed to describe a CRS     
+   * ex) ```+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext  +no_defs```
 
 <b>CRS Reprojection:</b> Transforms geographic data as [rasters](https://rasterio.readthedocs.io/en/stable/topics/transforms.html) or [vectors](https://www.earthdatascience.org/workshops/gis-open-source-python/reproject-vector-data-in-python/) between different coordinate reference systems.  
 

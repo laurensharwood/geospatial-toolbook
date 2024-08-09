@@ -463,12 +463,16 @@ the goal is to choose a projection method that limits your project area’s East
 </ul>
 </li>
 </ol>
+<p><img alt="proj" src="_images/projection.png" /></p>
 <p><b><a class="reference external" href="https://projectionwizard.org">Projection Wizard</a>:</b>  Tool to find appropriate projection based on your project area</p>
-<p><b><a class="reference external" href="https://pygis.io/docs/d_understand_crs_codes.html#proj-4-string">PROJ.4 String</a>:</b>  Multiple parameters needed to describe a CRS</p>
 <p><b><a class="reference external" href="https://epsg.io/?q=">EPSG</a></b>: public registry of CRS information. Spatial Reference System Identifier <b>(SRID)</b> is typically associated with a well-known text (WKT) string definition of the coordinate system, consistent with an EPSG code.</p>
 <ul class="simple">
 <li><p>EPSG 4326 - <em>Unprojected/Geographic</em> - Used for GPS field survey devices &amp; raw survey data</p></li>
 <li><p>EPSG 3857 - <em>Projected</em> - Used for features published in web maps</p></li>
+</ul>
+<p><b><a class="reference external" href="https://pygis.io/docs/d_understand_crs_codes.html#proj-4-string">PROJ.4 String</a>:</b>  Multiple parameters needed to describe a CRS</p>
+<ul class="simple">
+<li><p>ex) <code class="docutils literal notranslate"><span class="pre">+proj=merc</span> <span class="pre">+a=6378137</span> <span class="pre">+b=6378137</span> <span class="pre">+lat_ts=0.0</span> <span class="pre">+lon_0=0.0</span> <span class="pre">+x_0=0.0</span> <span class="pre">+y_0=0</span> <span class="pre">+k=1.0</span> <span class="pre">+units=m</span> <span class="pre">+nadgrids=&#64;null</span> <span class="pre">+wktext</span>&#160; <span class="pre">+no_defs</span></code></p></li>
 </ul>
 <p><b>CRS Reprojection:</b> Transforms geographic data as <a class="reference external" href="https://rasterio.readthedocs.io/en/stable/topics/transforms.html">rasters</a> or <a class="reference external" href="https://www.earthdatascience.org/workshops/gis-open-source-python/reproject-vector-data-in-python/">vectors</a> between different coordinate reference systems.</p>
 </section>
