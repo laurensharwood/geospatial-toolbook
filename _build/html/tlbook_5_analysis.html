@@ -386,8 +386,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spatial-autocorrelation">Spatial Autocorrelation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topological-relations">Topological Relations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-operations">Set Operations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#point-pattern-analysis">Point Pattern Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clip">Clip</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buffer">Buffer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#point-pattern-analysis">Point Pattern Analysis</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolation">Interpolation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#global-statistics">Global statistics</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#focal-neighborhood-statistics">Focal / Neighborhood statistics</a></li>
@@ -437,6 +438,18 @@ document.write(`
 <h2>Set Operations<a class="headerlink" href="#set-operations" title="Link to this heading">#</a></h2>
 <p><img alt="setoperations" src="_images/setoperations.png" /></p>
 </section>
+<section id="clip">
+<h2>Clip<a class="headerlink" href="#clip" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Keeps only part of a raster or vector that intersects with the clipping shape</p></li>
+</ul>
+</section>
+<section id="buffer">
+<h2>Buffer<a class="headerlink" href="#buffer" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Add or subtract buffer distance to points, lines, or polygon vectors</p></li>
+</ul>
+</section>
 <section id="point-pattern-analysis">
 <h2>Point Pattern Analysis<a class="headerlink" href="#point-pattern-analysis" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -444,12 +457,6 @@ document.write(`
 <li><p>Convex hull / envelope / minimum bounding geometry from common points</p></li>
 <li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-statistics/h-how-multi-distance-spatial-cluster-analysis-ripl.htm">Ripley’s K</a> - Point Clustering at different search distances / bandwidths</p></li>
 <li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-statistics/h-how-hot-spot-analysis-getis-ord-gi-spatial-stati.htm">Getis Ord D</a> - Hot Spot / Cold Spot Analysis</p></li>
-</ul>
-</section>
-<section id="buffer">
-<h2>Buffer<a class="headerlink" href="#buffer" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>points, lines, or polygon vectors. Add or subtract buffer distance area</p></li>
 </ul>
 </section>
 <section id="interpolation">
@@ -508,8 +515,8 @@ document.write(`
 <ul class="simple">
 <li><p>Neural Networks (NN) for image segmentation / object identification</p>
 <ul>
+<li><p>ex) Meta AI Segment Anything Model (<a class="reference external" href="https://samgeo.gishub.org/">SAM</a>)</p></li>
 <li><p>ex) <a class="reference external" href="https://github.com/jgrss/cultionet">cultionet</a></p></li>
-<li><p>ex) Meta Segment Anything Model (<a class="reference external" href="https://samgeo.gishub.org/">SAM</a>)</p></li>
 </ul>
 </li>
 </ul>
@@ -604,8 +611,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spatial-autocorrelation">Spatial Autocorrelation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topological-relations">Topological Relations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-operations">Set Operations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#point-pattern-analysis">Point Pattern Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clip">Clip</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buffer">Buffer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#point-pattern-analysis">Point Pattern Analysis</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolation">Interpolation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#global-statistics">Global statistics</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#focal-neighborhood-statistics">Focal / Neighborhood statistics</a></li>

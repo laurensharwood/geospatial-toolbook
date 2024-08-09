@@ -21,21 +21,24 @@ Spatial autocorrelation measures how similar values of a variable are relative t
 
 ## Set Operations
 ![setoperations](img/setoperations.png)
+
+## Clip
+- Keeps only part of a raster or vector that intersects with the clipping shape 
+
+## Buffer 
+- Add or subtract buffer distance to points, lines, or polygon vectors
+
 ## Point Pattern Analysis
 - [Avg Nearest Neighbor](https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-statistics/h-how-average-nearest-neighbor-distance-spatial-st.htm)   
 - Convex hull / envelope / minimum bounding geometry from common points    
 - [Ripley's K](https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-statistics/h-how-multi-distance-spatial-cluster-analysis-ripl.htm) - Point Clustering at different search distances / bandwidths
 - [Getis Ord D](https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-statistics/h-how-hot-spot-analysis-getis-ord-gi-spatial-stati.htm) - Hot Spot / Cold Spot Analysis 
-## Buffer 
-- points, lines, or polygon vectors. Add or subtract buffer distance area 
 
 ## Interpolation 
 Estimate a value at a location based on surrounding locations (over time or [space](https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-analyst/understanding-interpolation-analysis.htm#:~:text=Interpolation%20predicts%20values%20for%20cells,chemical%20concentrations%2C%20and%20noise%20levels.)) 
 * methods: nearest neighbor, bilinear, cubic resampling methods for reprojecting rasters (NN basic/fastest -> cubic most intensive)  
 * Inverse Distance Weighted ([IDW](https://pro.arcgis.com/en/pro-app/latest/tool-reference/3d-analyst/idw.htm)) - less weight is given to point values further away      
 * [Kriging](https://pro.arcgis.com/en/pro-app/latest/tool-reference/3d-analyst/how-kriging-works.htm) - first derivative describes the rate that values change over a distance, or the effect of distance on the attribute, and is used to interpolate unknown locations across space   
-
-
 
 ## Global statistics
 - Band (```b```) algebra: ```b1 + b2```
@@ -70,8 +73,8 @@ Predicts future or past value based on known (often time-series) values
 
 <b>Deep Learning</b>:
 - Neural Networks (NN) for image segmentation / object identification   
+  - ex) Meta AI Segment Anything Model ([SAM](https://samgeo.gishub.org/))  
   - ex) [cultionet](https://github.com/jgrss/cultionet)  
-  - ex) Meta Segment Anything Model ([SAM](https://samgeo.gishub.org/))  
 
 ## Prescriptive Analytics
 Suggests decision options for how to take advantage of a future opportunity or mitigate a future risk, and shows the implication of each decision option. 
