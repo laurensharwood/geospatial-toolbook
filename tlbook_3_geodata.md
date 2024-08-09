@@ -219,7 +219,7 @@ Standards:
 
 ---
 
-## Publicly available data:  
+## Publicly available data  
 * [California](https://gis.data.ca.gov/) & [CA vegetation](https://wildlife.ca.gov/Data/GIS/Vegetation-Data)
 * [USFS](https://data-usfs.hub.arcgis.com)
 * [USGS](https://data.usgs.gov/datacatalog/search)
