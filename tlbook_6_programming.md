@@ -197,7 +197,7 @@ Ex) every day at 10:00am run get_garmin.sh & don't send that email  (```*``` mea
 ~~~
 <u>To save</u>: ctrl+X (to escape editing session, then) Y (yes), enter
 
-4. <b>Print active tasks</b> to ensure it was created: ```crontab -l```  
+4. <u>Print active tasks</u> to ensure it was created: ```crontab -l```  
 
 ---
 
