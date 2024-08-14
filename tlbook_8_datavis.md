@@ -4,6 +4,8 @@
 
 To clearly convey your message, consider i) exactly what your point is, ii) the audience, and iii) the setting in which it's being delivered. This information should help determine the appropriate chart (histogram, barchart, boxplot) or map (static, web) type, along with appropriate symbology (symbol, size, clustering), and colors (random, diverging, sequential). 
 
+[Color Contrast Checker](https://accessibleweb.com/color-contrast-checker/)   
+
 ## Static Charts  
 ### matplotlib   
 
