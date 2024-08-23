@@ -11,8 +11,8 @@
 ## Podcasts:
   * [Mapscaping](https://mapscaping.com/podcasts/)  
   * [Geography is Everything](https://geographyiseverything.substack.com/podcast)
+  * [Data Skeptic](https://dataskeptic.com/episodes)
   * [Think Fast, Talk Smart](https://www.gsb.stanford.edu/business-podcasts/think-fast-talk-smart-podcast)   
-           *<sup>*Science communication is poor - starting with general communication should help*</sup>
   
 
 ## Data Science Courses: offer free trials   

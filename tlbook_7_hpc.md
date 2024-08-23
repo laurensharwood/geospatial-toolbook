@@ -17,7 +17,7 @@ Windows Applications:
 * MobaXterm (*personal preference: nice GUI*)  
 
 
-## Linux Commands   
+## Bash Commands   
 
 - Press tab-tab following a command (such as ```cd```: change directory , ```ls```: list files, or ```vim```: to launch text editor) will list all possible files/folders and autofill if there's only one match   
 - Enter ```pwd```: print working directory to have that path in the terminal to easily copy + paste it later    
